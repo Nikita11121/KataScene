@@ -1,0 +1,395 @@
+fileFormatVersion: 2
+guid: 08ac6f69d8867b5459754cbf9677ca98
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: celling
+    100004: floor
+    100006: Kicking_line
+    100008: polySurface36
+    100010: polySurface37
+    100012: polySurface38
+    100014: polySurface39
+    100016: polySurface41
+    100018: polySurface42
+    100020: polySurface43
+    100022: polySurface46
+    100024: polySurface49
+    100026: polySurface50
+    100028: polySurface51
+    100030: polySurface52
+    100032: polySurface53
+    100034: polySurface54
+    100036: polySurface55
+    100038: polySurface56
+    100040: polySurface57
+    100042: polySurface58
+    100044: polySurface59
+    100046: polySurface61
+    100048: polySurface62
+    100050: polySurface63
+    100052: polySurface64
+    100054: polySurface65
+    100056: polySurface66
+    100058: polySurface68
+    100060: polySurface69
+    100062: polySurface70
+    100064: polySurface71
+    100066: polySurface72
+    100068: polySurface74
+    100070: polySurface75
+    100072: polySurface76
+    100074: wall2
+    100076: wall_main
+    100078: window_frame
+    100080: polySurface77
+    100082: polySurface80
+    400000: //RootNode
+    400002: celling
+    400004: floor
+    400006: Kicking_line
+    400008: polySurface36
+    400010: polySurface37
+    400012: polySurface38
+    400014: polySurface39
+    400016: polySurface41
+    400018: polySurface42
+    400020: polySurface43
+    400022: polySurface46
+    400024: polySurface49
+    400026: polySurface50
+    400028: polySurface51
+    400030: polySurface52
+    400032: polySurface53
+    400034: polySurface54
+    400036: polySurface55
+    400038: polySurface56
+    400040: polySurface57
+    400042: polySurface58
+    400044: polySurface59
+    400046: polySurface61
+    400048: polySurface62
+    400050: polySurface63
+    400052: polySurface64
+    400054: polySurface65
+    400056: polySurface66
+    400058: polySurface68
+    400060: polySurface69
+    400062: polySurface70
+    400064: polySurface71
+    400066: polySurface72
+    400068: polySurface74
+    400070: polySurface75
+    400072: polySurface76
+    400074: wall2
+    400076: wall_main
+    400078: window_frame
+    400080: polySurface77
+    400082: polySurface80
+    2100000: wall_main_mia
+    2100002: wall_bedroom1_1
+    2100004: wall_bedroom1_2
+    2100006: Ceiling
+    2100008: wall_livingroom
+    2100010: wall_livingroom2
+    2100012: wall_bedroom2_1
+    2100014: wall_bedroom2_2
+    2100016: wall_kitchen
+    2100018: wall_bathroom
+    2100020: celling_kitchen
+    2100022: celling_bathroom
+    2100024: window_frame_metal
+    2100026: floor_main
+    2100028: floor_kitchen
+    2100030: floor_bathroom
+    2100032: floor_bedroom
+    2100034: Kicking_line_mia
+    2100036: Floor_blackline
+    2300000: polySurface36
+    2300002: polySurface37
+    2300004: polySurface38
+    2300006: polySurface39
+    2300008: polySurface41
+    2300010: polySurface42
+    2300012: polySurface43
+    2300014: polySurface46
+    2300016: polySurface49
+    2300018: polySurface50
+    2300020: polySurface51
+    2300022: polySurface52
+    2300024: polySurface53
+    2300026: polySurface54
+    2300028: polySurface55
+    2300030: polySurface56
+    2300032: polySurface57
+    2300034: polySurface58
+    2300036: polySurface59
+    2300038: polySurface61
+    2300040: polySurface62
+    2300042: polySurface63
+    2300044: polySurface64
+    2300046: polySurface65
+    2300048: polySurface66
+    2300050: polySurface68
+    2300052: polySurface69
+    2300054: polySurface70
+    2300056: polySurface71
+    2300058: polySurface72
+    2300060: polySurface74
+    2300062: polySurface75
+    2300064: polySurface76
+    2300066: wall2
+    2300068: wall_main
+    2300070: polySurface77
+    2300072: polySurface80
+    3300000: polySurface36
+    3300002: polySurface37
+    3300004: polySurface38
+    3300006: polySurface39
+    3300008: polySurface41
+    3300010: polySurface42
+    3300012: polySurface43
+    3300014: polySurface46
+    3300016: polySurface49
+    3300018: polySurface50
+    3300020: polySurface51
+    3300022: polySurface52
+    3300024: polySurface53
+    3300026: polySurface54
+    3300028: polySurface55
+    3300030: polySurface56
+    3300032: polySurface57
+    3300034: polySurface58
+    3300036: polySurface59
+    3300038: polySurface61
+    3300040: polySurface62
+    3300042: polySurface63
+    3300044: polySurface64
+    3300046: polySurface65
+    3300048: polySurface66
+    3300050: polySurface68
+    3300052: polySurface69
+    3300054: polySurface70
+    3300056: polySurface71
+    3300058: polySurface72
+    3300060: polySurface74
+    3300062: polySurface75
+    3300064: polySurface76
+    3300066: wall2
+    3300068: wall_main
+    3300070: polySurface77
+    3300072: polySurface80
+    4300000: wall_main
+    4300002: wall2
+    4300004: polySurface41
+    4300006: polySurface42
+    4300008: polySurface43
+    4300010: polySurface49
+    4300012: polySurface50
+    4300014: polySurface51
+    4300016: polySurface52
+    4300018: polySurface53
+    4300020: polySurface54
+    4300022: polySurface55
+    4300024: polySurface56
+    4300026: polySurface57
+    4300028: polySurface58
+    4300030: polySurface59
+    4300032: polySurface46
+    4300034: polySurface39
+    4300036: polySurface38
+    4300038: polySurface37
+    4300040: polySurface36
+    4300042: polySurface61
+    4300044: polySurface62
+    4300046: polySurface63
+    4300048: polySurface64
+    4300050: polySurface65
+    4300052: polySurface66
+    4300054: polySurface68
+    4300056: polySurface69
+    4300058: polySurface70
+    4300060: polySurface71
+    4300062: polySurface72
+    4300064: polySurface74
+    4300066: polySurface75
+    4300068: polySurface76
+    4300070: polySurface77
+    4300072: polySurface80
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ceiling
+    second: {fileID: 2100000, guid: 69a558da9aa3afa4280fb1b495874039, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_blackline
+    second: {fileID: 2100000, guid: 4ffe6f15f00bc714b9fa21fc994942ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kicking_line_mia
+    second: {fileID: 2100000, guid: 7d110964a37b30244875adffdf9c17a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: celling_bathroom
+    second: {fileID: 2100000, guid: f2b2928e3fc6c0b4f86110f7778718f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: celling_kitchen
+    second: {fileID: 2100000, guid: fdd702a63652f7d42b18fdd3fd7ecd82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_bathroom
+    second: {fileID: 2100000, guid: 4f20dbe25ca3a914fb5c7c18022546ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_bedroom
+    second: {fileID: 2100000, guid: d18a67ffef9f8c14f973c229babc267d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_kitchen
+    second: {fileID: 2100000, guid: 22c766b56f6381144afb7d29cd95ce21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_main
+    second: {fileID: 2100000, guid: 7d8c4f6f45bf23147a5b61feed22d40c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_bathroom
+    second: {fileID: 2100000, guid: 3f6c1854aff0f5541b31c893a6bae5e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_bedroom1_1
+    second: {fileID: 2100000, guid: c96c3882a860e3b49a03129b65c2eda3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_bedroom1_2
+    second: {fileID: 2100000, guid: bda9b0f94a13c7e4cb35e7d456c91634, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_bedroom2_1
+    second: {fileID: 2100000, guid: 2c80d382e744d3849bad30768509d377, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_bedroom2_2
+    second: {fileID: 2100000, guid: 0e217d03730f98d46870a025547ddb31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_kitchen
+    second: {fileID: 2100000, guid: ed4114a85aa13cd4fa94fc043fac211f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_livingroom
+    second: {fileID: 2100000, guid: fd48763b5695d804dac8321d4f7d7665, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_livingroom2
+    second: {fileID: 2100000, guid: 1a68c84440029e4449df139db2e77425, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_main_mia
+    second: {fileID: 2100000, guid: a7101dd96dd67fd4c9167f9a53d49944, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: window_frame_metal
+    second: {fileID: 2100000, guid: 209ec2d4a96faa54f85409e2712699cf, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

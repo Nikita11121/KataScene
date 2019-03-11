@@ -1,0 +1,245 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &270484957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 270484958}
+  - component: {fileID: 270484959}
+  m_Layer: 0
+  m_Name: Directional Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &270484958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270484957}
+  m_LocalRotation: {x: 0.20774654, y: 0.52449864, z: 0.1337336, w: 0.81477475}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7757820790095683197}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 11.434001, y: 68.232, z: 26.403002}
+--- !u!108 &270484959
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270484957}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 1, g: 0.977351, b: 0.76865673, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: 3
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.024
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967039
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 11.5
+--- !u!1 &7757820790095683199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7757820790095683197}
+  - component: {fileID: 7757820790095683198}
+  m_Layer: 0
+  m_Name: Castle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7757820790095683197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7757820790095683199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7757820790105368863}
+  - {fileID: 270484958}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7757820790095683198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7757820790095683199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c992e8fbb96f7b3498a28a9e664f95df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specularCube: {fileID: 8900000, guid: 770cca72c4dc1844baf8203eb1fb2728, type: 2}
+  skyboxCube: {fileID: 8900000, guid: e33da73fefc9cae47bc3eba7eacad881, type: 2}
+  IsProbe: 0
+  dimensions:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+  masterIntensity: 1
+  skyIntensity: 1
+  specIntensity: 1
+  diffIntensity: 1
+  camExposure: 1
+  specIntensityLM: 1
+  diffIntensityLM: 1
+  hdrSky: 1
+  hdrSpec: 1
+  linearSpace: 0
+  autoDetectColorSpace: 1
+  hasDimensions: 0
+  SH:
+    c:
+    - 1.8390417
+    - 1.6545365
+    - 1.7240448
+    - 0.48702955
+    - 0.6359897
+    - 0.78170526
+    - 0.39514726
+    - 0.41343945
+    - 0.45231283
+    - 0.31754273
+    - 0.36640295
+    - 0.4250773
+    - 0.057390817
+    - 0.13630302
+    - 0.181233
+    - 0.014709011
+    - 0.09228208
+    - 0.13702215
+    - 0.17363755
+    - 0.08356588
+    - 0.04220174
+    - -0.015112406
+    - -0.023580002
+    - -0.02799711
+    - 0.09056766
+    - 0.04980338
+    - 0.02530376
+    cBuffer:
+    - {x: 0.51878405, y: 0.4667361, z: 0.48634404, w: 0}
+    - {x: 0.23796386, y: 0.31074616, z: 0.38194314, w: 0}
+    - {x: 0.19306993, y: 0.20200755, z: 0.22100118, w: 0}
+    - {x: 0.15515217, y: 0.1790254, z: 0.20769382, w: 0}
+    - {x: 0.06270225, y: 0.14891766, z: 0.19800584, w: 0}
+    - {x: 0.016070308, y: 0.10082265, z: 0.14970334, w: 0}
+    - {x: 0.05476382, y: 0.026355974, z: 0.013310073, w: 0}
+    - {x: -0.016511036, y: -0.025762295, z: -0.0305882, w: 0}
+    - {x: 0.049474783, y: 0.027206304, z: 0.013822793, w: 0}
+  CustomSH: {fileID: 0}
+  _blackCube: {fileID: 0}
+  _SkyboxMaterial: {fileID: 0}
+--- !u!1 &7757820790105369056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7757820790105368863}
+  - component: {fileID: 7757820790105368862}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &7757820790105368863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7757820790105369056}
+  m_LocalRotation: {x: 0.20774654, y: 0.52449864, z: 0.1337336, w: 0.81477475}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7757820790095683197}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 11.434001, y: 68.232, z: 26.403002}
+--- !u!108 &7757820790105368862
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7757820790105369056}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 1, g: 0.977351, b: 0.76865673, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: 3
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.024
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967039
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
