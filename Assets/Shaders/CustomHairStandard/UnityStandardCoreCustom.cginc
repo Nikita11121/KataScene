@@ -11,6 +11,12 @@
 #include "UnityStandardUtils.cginc"
 #include "UnityGBuffer.cginc"
 #include "UnityStandardBRDF.cginc"
+
+#define MARMO_SPECULAR_IBL 1
+#define MARMO_DIFFUSE_IBL 1
+//#define MARMO_SKY_BLEND 1
+#define LIGHTMAP_ON 1
+#include "./Assets/Marmoset/Shader/MarmosetCore.cginc"
 #include "HairShading.cginc"
 
 #include "AutoLight.cginc"
