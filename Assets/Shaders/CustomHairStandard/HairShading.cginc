@@ -44,7 +44,7 @@ float3 CalculateMarmosetDiffuseIBL(float3 worldN, float3 smoothN, float hairMask
 	//DIFFUSE IBL
 	#ifdef MARMO_DIFFUSE_IBL
 		
-		float3 skyN = worldN;//skyRotate(_SkyMatrix, worldN); //per-fragment matrix multiply, expensive
+		float3 skyN = skyRotate(_SkyMatrix, worldN); //per-fragment matrix multiply, expensive
 		skyN = normalize(skyN);
 		#ifdef MARMO_SKIN_IBL						
 			//SH DIFFUSE			
@@ -52,7 +52,7 @@ float3 CalculateMarmosetDiffuseIBL(float3 worldN, float3 smoothN, float hairMask
 			float3 unity0, unity1, unity2;
 			SHLookup(skyN,band0,band1,band2);
 			#ifdef MARMO_SKY_BLEND
-				float3 skyN1 = skyN;//skyRotate(_SkyMatrix1, worldN); //per-fragment matrix multiply, expensive
+				float3 skyN1 = skyRotate(_SkyMatrix1, worldN); //per-fragment matrix multiply, expensive
 				skyN1 = normalize(skyN1);
 				float3 band01, band11, band21;
 				SHLookup1(skyN1,band01,band11,band21);
@@ -166,7 +166,7 @@ float4 HairLighting(half3 diffColor, half3 specColor, half3 shiftTexValue, half 
 #endif
 
     float4 o;
-    o.rgb = CalculateMarmosetDiffuseIBL(normal, normal, shiftTexValue.y) * 0.03 + (diffuse + specular * _Color) * nl + diffColor + gi.specular * surfaceReduction * FresnelLerpFast (specular * nl, grazingTerm, nv);
+    o.rgb = CalculateMarmosetDiffuseIBL(normal, normal, shiftTexValue.y) * diffuse + (diffuse + specular * _Color) * nl + gi.diffuse * diffColor + gi.specular * surfaceReduction * FresnelLerpFast (specular, grazingTerm, nv);
     //o.rgb = (diffuse + specular * _Color) * nl * lightColor + CalculateMarmosetDiffuseIBL(normal, normal, 1) * diffColor + gi.specular * surfaceReduction * FresnelLerpFast (specular * nl, grazingTerm, nv);
     o.a = 1;
     
