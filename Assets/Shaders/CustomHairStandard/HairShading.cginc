@@ -145,8 +145,8 @@ float4 HairLighting(half3 diffColor, half3 specColor, half3 shiftTexValue, half 
     half perceptualRoughness = SmoothnessToPerceptualRoughness (smoothness);
     half roughness = PerceptualRoughnessToRoughness(perceptualRoughness);
 
-    float3 specular = _SpecularColor1.a * CalculateSpecular(roughness * _SpecularExponent1, dot(t1, halfDir), nl);
-    specular += _SpecularColor2.a * shiftTexValue.y * CalculateSpecular(roughness * _SpecularExponent2, dot(t2, halfDir), nl);
+    float3 specular = _SpecularColor1.rgb * _SpecularColor1.a * CalculateSpecular(roughness * _SpecularExponent1, dot(t1, halfDir), nl);
+    specular += _SpecularColor2.rgb * _SpecularColor2.a * shiftTexValue.y * CalculateSpecular(roughness * _SpecularExponent2, dot(t2, halfDir), nl);
     
     half nv = saturate(dot(normal, viewDir));
 
