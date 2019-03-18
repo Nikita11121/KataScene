@@ -208,8 +208,10 @@ float4 HairLighting(half3 diffColor, half3 specColor, half3 shiftTexValue, half 
 #endif
 
     float4 o;
-    o.rgb = (diffuse + specular) * nl * lightColor + (gi.diffuse + CalculateMarmosetDiffuseIBL(normal, normal, shiftTexValue.y)) * diffColor + (gi.specular + CalculateMarmosetSpecularIBL(reflect(viewDir, normal), 1)) * surfaceReduction * FresnelLerpFast (specular * nl, grazingTerm, nv);
-    //o.rgb = (diffuse + specular * _Color) * nl * lightColor + CalculateMarmosetDiffuseIBL(normal, normal, 1) * diffColor + gi.specular * surfaceReduction * FresnelLerpFast (specular * nl, grazingTerm, nv);
+    o.rgb = (diffuse + specular) * nl * lightColor 
+          + (gi.diffuse + CalculateMarmosetDiffuseIBL(normal, normal, shiftTexValue.y)) * diffColor 
+          + (gi.specular + CalculateMarmosetSpecularIBL(reflect(-viewDir, normal), 1)) * surfaceReduction * FresnelLerpFast (specColor, grazingTerm, nv);
+          
     o.a = 1;
     
     return o;
