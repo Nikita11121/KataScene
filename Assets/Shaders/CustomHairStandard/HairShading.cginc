@@ -26,8 +26,9 @@ fixed _SpecularExponent2;
 fixed _WrapLightingStrength;
 
 #define MARMO_SKIN_IBL 1
+#define MARMO_MIP_GLOSS 1
 
-float3 CalculateMarmosetSpecularIBL(float3 reflectionVec, float specIntensity)
+float3 CalculateMarmosetSpecularIBL(float3 reflectionVec, float specIntensity, float glossLod)
 {
     float3 result = 0;
     
@@ -208,9 +209,9 @@ float4 HairLighting(half3 diffColor, half3 specColor, half3 shiftTexValue, half 
 #endif
 
     float4 o;
-    o.rgb = (diffuse + specular) * nl * lightColor 
+    o.rgb = (diffuse + specular) * nl * lightColor
           + (gi.diffuse + CalculateMarmosetDiffuseIBL(normal, normal, shiftTexValue.y)) * diffColor 
-          + (gi.specular + CalculateMarmosetSpecularIBL(reflect(-viewDir, normal), 1)) * surfaceReduction * FresnelLerpFast (specColor, grazingTerm, nv);
+          + (gi.specular + CalculateMarmosetSpecularIBL(-reflect(viewDir, normal), 1, roughness)) * surfaceReduction * FresnelLerpFast (specColor, grazingTerm, nv);
           
     o.a = 1;
     
