@@ -458,8 +458,8 @@ half4 fragForwardBaseInternal (VertexOutputForwardBase i)
     UNITY_EXTRACT_FOG_FROM_EYE_VEC(i);
     UNITY_APPLY_FOG(_unity_fogCoord, c.rgb);
 
-    #if defined(_ALPHABLEND_ON)
-       // s.alpha = pow(s.alpha, 0.2);
+    #if defined(_ALPHA_PASS)
+        s.alpha = s.alpha / _Cutoff;
        // c.rgb = float3(1, 0, 0) * s.alpha;
        // c.rgb *= s.alpha;
        // s.alpha = 1;
