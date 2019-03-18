@@ -75,38 +75,17 @@ public class HairAlphaPassGenerator : MonoBehaviour
                 each.RemoveCommandBuffer(CameraEvent.AfterForwardAlpha, _commandBuffer);
             }
         }
+
+        foreach (var each in _alphaPassMaterials)
+        {
+            Object.Destroy(each);
+        }
+
+        _alphaPassMaterials = null;
         
         _cameras.Clear();
         
         _commandBuffer.Dispose();
         _commandBuffer = null;
-    }
-
-    void Start()
-    {
-        return;
-        GatherMaterials();
-
-        _mesh = _targetHair.GetComponent<MeshFilter>().sharedMesh;
-    }
-
-    void Update()
-    {
-        return;
-        for (var i = 0; i < _subMeshIndices.Length; ++i)
-        {
-            var subMeshIndex = _subMeshIndices[i];
-            Graphics.DrawMesh(_mesh, _targetHair.transform.localToWorldMatrix, _alphaPassMaterials[subMeshIndex], 0, Camera.current, subMeshIndex);
-        }
-    }
-
-    private void GatherMaterials()
-    {
-        _alphaPassMaterials = _targetHair.sharedMaterials.Select(Instantiate).ToArray();
-
-        foreach (var each in _alphaPassMaterials)
-        {
-            HairShaderUtility.SetupMaterialWithBlendMode(each, HairShaderUtility.BlendMode.Fade);
-        }
     }
 }
