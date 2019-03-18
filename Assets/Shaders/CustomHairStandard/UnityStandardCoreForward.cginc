@@ -7,6 +7,7 @@
 #   define UNITY_STANDARD_SIMPLE 1
 #endif
 
+#define UNITY_HALF_PRECISION_FRAGMENT_SHADER_REGISTERS 1
 #define _TANGENT_TO_WORLD 1
 
 #include "UnityStandardConfig.cginc"

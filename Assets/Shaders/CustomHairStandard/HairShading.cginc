@@ -27,6 +27,48 @@ fixed _WrapLightingStrength;
 
 #define MARMO_SKIN_IBL 1
 
+float3 CalculateMarmosetSpecularIBL(float3 reflectionVec, float specIntensity)
+{
+    float3 result = 0;
+    
+    #ifdef MARMO_SKY_BLEND
+		half4 exposureIBL = lerp(_ExposureIBL1, _ExposureIBL, _BlendWeightIBL);
+	#else
+		half4 exposureIBL = _ExposureIBL;
+	#endif
+	
+    #if LIGHTMAP_ON
+		exposureIBL.xy *= _ExposureLM;
+	#endif
+
+	#ifdef MARMO_SPECULAR_IBL
+		float3 skyR = reflectionVec;
+		#ifdef MARMO_SKY_BLEND
+			float3 skyR1 = skyRotate(_SkyMatrix1, skyR); //per-fragment matrix multiply, expensive			
+		#endif
+		skyR = skyRotate(_SkyMatrix,skyR); //per-fragment matrix multiply, expensive
+		
+		#ifdef MARMO_MIP_GLOSS
+			half3 specIBL = glossCubeLookup(_SpecCubeIBL, skyR, glossLod);
+		#else
+			half3 specIBL =  specCubeLookup(_SpecCubeIBL, skyR) * specIntensity;
+		#endif
+		
+		#ifdef MARMO_SKY_BLEND
+			#ifdef MARMO_MIP_GLOSS
+				half3 specIBL1 = glossCubeLookup(_SpecCubeIBL, skyR1, glossLod);
+			#else
+				half3 specIBL1 =  specCubeLookup(_SpecCubeIBL, skyR1) * specIntensity;
+			#endif
+			specIBL = lerp(specIBL1, specIBL, _BlendWeightIBL);
+		#endif
+		
+		result = specIBL.rgb * 1 * exposureIBL.y;
+	#endif
+
+    return result;
+}
+
 float3 CalculateMarmosetDiffuseIBL(float3 worldN, float3 smoothN, float hairMask)
 {
     float3 result = 0;
@@ -166,7 +208,7 @@ float4 HairLighting(half3 diffColor, half3 specColor, half3 shiftTexValue, half 
 #endif
 
     float4 o;
-    o.rgb = CalculateMarmosetDiffuseIBL(normal, normal, shiftTexValue.y) * diffuse + (diffuse + specular * _Color) * nl + gi.diffuse * diffColor + gi.specular * surfaceReduction * FresnelLerpFast (specular, grazingTerm, nv);
+    o.rgb = (diffuse + specular) * nl * lightColor + (gi.diffuse + CalculateMarmosetDiffuseIBL(normal, normal, shiftTexValue.y)) * diffColor + (gi.specular + CalculateMarmosetSpecularIBL(reflect(viewDir, normal), 1)) * surfaceReduction * FresnelLerpFast (specular * nl, grazingTerm, nv);
     //o.rgb = (diffuse + specular * _Color) * nl * lightColor + CalculateMarmosetDiffuseIBL(normal, normal, 1) * diffColor + gi.specular * surfaceReduction * FresnelLerpFast (specular * nl, grazingTerm, nv);
     o.a = 1;
     
