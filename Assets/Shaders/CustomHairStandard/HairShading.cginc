@@ -28,21 +28,11 @@ fixed _WrapLightingStrength;
 #define MARMO_SKIN_IBL 1
 #define MARMO_MIP_GLOSS 1
 
-float3 CalculateMarmosetSpecularIBL(float3 reflectionVec, float specIntensity, float glossLod)
+inline fixed3 CalculateMarmosetSpecularIBL(half4 exposureIBL, float3 reflectionVec, fixed specIntensity, fixed glossLod)
 {
-    float3 result = 0;
+    fixed3 result = 0;
     
-    #ifdef MARMO_SKY_BLEND
-		half4 exposureIBL = lerp(_ExposureIBL1, _ExposureIBL, _BlendWeightIBL);
-	#else
-		half4 exposureIBL = _ExposureIBL;
-	#endif
-	
-    #if LIGHTMAP_ON
-		exposureIBL.xy *= _ExposureLM;
-	#endif
-
-	#ifdef MARMO_SPECULAR_IBL
+    #ifdef MARMO_SPECULAR_IBL
 		float3 skyR = reflectionVec;
 		#ifdef MARMO_SKY_BLEND
 			float3 skyR1 = skyRotate(_SkyMatrix1, skyR); //per-fragment matrix multiply, expensive			
@@ -70,19 +60,9 @@ float3 CalculateMarmosetSpecularIBL(float3 reflectionVec, float specIntensity, f
     return result;
 }
 
-float3 CalculateMarmosetDiffuseIBL(float3 worldN, float3 smoothN, float hairMask)
+inline fixed3 CalculateMarmosetDiffuseIBL(half4 exposureIBL, float3 worldN, fixed hairMask)
 {
     float3 result = 0;
-    
-    #ifdef MARMO_SKY_BLEND
-		half4 exposureIBL = lerp(_ExposureIBL1, _ExposureIBL, _BlendWeightIBL);
-	#else
-		half4 exposureIBL = _ExposureIBL;
-	#endif
-	
-    #if LIGHTMAP_ON
-		exposureIBL.xy *= _ExposureLM;
-	#endif
     
 	//DIFFUSE IBL
 	#ifdef MARMO_DIFFUSE_IBL
@@ -115,6 +95,22 @@ float3 CalculateMarmosetDiffuseIBL(float3 worldN, float3 smoothN, float hairMask
 	#endif
 
     return result * exposureIBL.w;
+}
+
+void CalculateMarmosetIBL(float3 worldN, fixed hairMask, float3 reflectionVec, fixed specIntensity, fixed glossLod, out fixed3 diffuse, out fixed3 specular)
+{
+    #ifdef MARMO_SKY_BLEND
+		half4 exposureIBL = lerp(_ExposureIBL1, _ExposureIBL, _BlendWeightIBL);
+	#else
+		half4 exposureIBL = _ExposureIBL;
+	#endif
+	
+    #if LIGHTMAP_ON
+		exposureIBL.xy *= _ExposureLM;
+	#endif
+	
+	diffuse = CalculateMarmosetDiffuseIBL(exposureIBL, worldN, hairMask);
+	specular = CalculateMarmosetSpecularIBL(exposureIBL, reflectionVec, specIntensity, glossLod);
 }
 
 float3 ShiftTangent(float3 T, float3 N,float shift)
@@ -209,9 +205,14 @@ float4 HairLighting(half3 diffColor, half3 specColor, half3 shiftTexValue, half 
 #endif
 
     float4 o;
+    fixed3 diffuseIBL;
+    fixed3 specularIBL;
+    
+    CalculateMarmosetIBL(normal, shiftTexValue.y, -reflect(viewDir, normal), roughness, roughness * 7, diffuseIBL, specularIBL);
+
     o.rgb = (diffuse + specular) * nl * lightColor
-          + (gi.diffuse + CalculateMarmosetDiffuseIBL(normal, normal, shiftTexValue.y)) * diffColor 
-          + (gi.specular + CalculateMarmosetSpecularIBL(-reflect(viewDir, normal), 1, roughness * 7)) * surfaceReduction * FresnelLerpFast (specColor, grazingTerm, nv);
+          + (gi.diffuse + diffuseIBL) * diffColor 
+          + (gi.specular + specularIBL) * surfaceReduction * FresnelLerpFast (specColor, grazingTerm, nv);
           
     o.a = 1;
     
