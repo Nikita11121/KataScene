@@ -211,7 +211,7 @@ float4 HairLighting(half3 diffColor, half3 specColor, half3 shiftTexValue, half 
     float4 o;
     o.rgb = (diffuse + specular) * nl * lightColor
           + (gi.diffuse + CalculateMarmosetDiffuseIBL(normal, normal, shiftTexValue.y)) * diffColor 
-          + (gi.specular + CalculateMarmosetSpecularIBL(-reflect(viewDir, normal), 1, roughness)) * surfaceReduction * FresnelLerpFast (specColor, grazingTerm, nv);
+          + (gi.specular + CalculateMarmosetSpecularIBL(-reflect(viewDir, normal), 1, roughness * 7)) * surfaceReduction * FresnelLerpFast (specColor, grazingTerm, nv);
           
     o.a = 1;
     
