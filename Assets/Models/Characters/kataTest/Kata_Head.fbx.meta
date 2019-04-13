@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 0cc4b906aebff834ab8d7d1a548931d4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Eyelishes
+    100002: //RootNode
+    100004: pasted__pasted__Hair.001
+    100006: pasted__polySurface15
+    100008: pasted__polySurface18
+    100010: pasted__polySurface19
+    100012: pasted__pTorus3
+    100014: polySurface6
+    100016: pasted__pasted__BodyLow.002
+    400000: Eyelishes
+    400002: //RootNode
+    400004: pasted__pasted__Hair.001
+    400006: pasted__polySurface15
+    400008: pasted__polySurface18
+    400010: pasted__polySurface19
+    400012: pasted__pTorus3
+    400014: polySurface6
+    400016: pasted__pasted__BodyLow.002
+    2100000: blinn2
+    2100002: Eyelashes
+    2100004: lambert1
+    2100006: pasted__blinn2
+    2100008: pasted__blinn1
+    2300000: Eyelishes
+    2300002: pasted__pasted__Hair.001
+    2300004: pasted__polySurface15
+    2300006: pasted__polySurface18
+    2300008: pasted__polySurface19
+    2300010: pasted__pTorus3
+    2300012: polySurface6
+    2300014: pasted__pasted__BodyLow.002
+    3300000: Eyelishes
+    3300002: pasted__pasted__Hair.001
+    3300004: pasted__polySurface15
+    3300006: pasted__polySurface18
+    3300008: pasted__polySurface19
+    3300010: pasted__pTorus3
+    3300012: polySurface6
+    3300014: pasted__pasted__BodyLow.002
+    4300000: polySurface6
+    4300002: Eyelishes
+    4300004: pasted__pTorus3
+    4300006: pasted__pasted__Hair.001
+    4300008: pasted__polySurface15
+    4300010: pasted__polySurface19
+    4300012: pasted__polySurface18
+    4300014: pasted__pasted__BodyLow.002
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 180
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 2
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
