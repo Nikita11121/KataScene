@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: ad177bdb4695d314fa404266bc63ec7c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: SW_Zofia_37871.Shape.000
+    100004: SW_Zofia_37871.Shape.001
+    100006: Hair
+    100008: Hair_L.002
+    100010: Hair_L.003
+    100012: Hair_L.004
+    100014: Hair_L.005
+    100016: Hair_L.006
+    100018: Hair_L.007
+    100020: Hair_L.008
+    100022: Hair_L.009
+    100024: Hair_L.010
+    100026: Hair_L.011
+    100028: Hair_L.012
+    100030: Hair_L.013
+    100032: Hair_L.014
+    100034: Hair_L.015
+    100036: Hair_R.002
+    100038: Hair_R.003
+    100040: Hair_R.004
+    100042: Hair_R.005
+    100044: Hair_R.006
+    100046: Hair_R.007
+    100048: Hair_R.008
+    100050: Hair_R.009
+    100052: Hair_R.010
+    100054: HairZofiaSkelet
+    100056: ZofiaHair.001
+    100058: ZofiaHair.003
+    400000: //RootNode
+    400002: SW_Zofia_37871.Shape.000
+    400004: SW_Zofia_37871.Shape.001
+    400006: Hair
+    400008: Hair_L.002
+    400010: Hair_L.003
+    400012: Hair_L.004
+    400014: Hair_L.005
+    400016: Hair_L.006
+    400018: Hair_L.007
+    400020: Hair_L.008
+    400022: Hair_L.009
+    400024: Hair_L.010
+    400026: Hair_L.011
+    400028: Hair_L.012
+    400030: Hair_L.013
+    400032: Hair_L.014
+    400034: Hair_L.015
+    400036: Hair_R.002
+    400038: Hair_R.003
+    400040: Hair_R.004
+    400042: Hair_R.005
+    400044: Hair_R.006
+    400046: Hair_R.007
+    400048: Hair_R.008
+    400050: Hair_R.009
+    400052: Hair_R.010
+    400054: HairZofiaSkelet
+    400056: ZofiaHair.001
+    400058: ZofiaHair.003
+    2100000: Hair.001
+    2100002: Base.001
+    2100004: ZofiaHair
+    2100006: ZofiaHairFade
+    2100008: ZofiaHairScalp
+    2300000: //RootNode
+    2300002: SW_Zofia_37871.Shape.000
+    2300004: SW_Zofia_37871.Shape.001
+    2300006: ZofiaHair.001
+    2300008: ZofiaHair.003
+    3300000: //RootNode
+    3300002: SW_Zofia_37871.Shape.000
+    3300004: SW_Zofia_37871.Shape.001
+    3300006: ZofiaHair.001
+    3300008: ZofiaHair.003
+    4300000: SW_Zofia_37871.Shape
+    4300002: SW_Zofia_37871.Shape.001
+    4300004: SW_Zofia_37871.Shape.000
+    4300006: ZofiaHair.003
+    4300008: ZofiaHair.001
+    11100000: //RootNode
+    13700000: ZofiaHair.001
+    13700002: ZofiaHair.003
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base.001
+    second: {fileID: 2100000, guid: b99de4825a2bff746a1adfc56a78d8ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair.001
+    second: {fileID: 2100000, guid: e935b564ba381e34b84f892467ee637a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ZofiaHair
+    second: {fileID: 2100000, guid: 5b4abd0eaf5821145a3b0f650948c66a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ZofiaHairFade
+    second: {fileID: 2100000, guid: e3e34428a03ff5749985e3b881c42af3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ZofiaHairScalp
+    second: {fileID: 2100000, guid: 8315474acfb96254699c9a4462a26e7e, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
