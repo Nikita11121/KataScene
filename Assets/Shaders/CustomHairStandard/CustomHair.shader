@@ -98,7 +98,7 @@ Shader "CustomHair"
             #pragma shader_feature _ _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
             #pragma shader_feature _ _SPECULARHIGHLIGHTS_OFF
             #pragma shader_feature _ _GLOSSYREFLECTIONS_OFF
-            #pragma shader_feature _PARALLAXMAP
+            #pragma shader_feature _ _PARALLAXMAP _ALPHA_PASS
 
             #pragma multi_compile_fwdbase
             #pragma multi_compile_fog
@@ -135,7 +135,7 @@ Shader "CustomHair"
             #pragma shader_feature _ _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
             #pragma shader_feature _ _SPECULARHIGHLIGHTS_OFF
             #pragma shader_feature ___ _DETAIL_MULX2
-            #pragma shader_feature _PARALLAXMAP
+            #pragma shader_feature _ _PARALLAXMAP _ALPHA_PASS
 
             #pragma multi_compile_fwdadd_fullshadows
             #pragma multi_compile_fog

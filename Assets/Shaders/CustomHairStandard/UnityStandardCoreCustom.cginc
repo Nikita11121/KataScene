@@ -458,8 +458,8 @@ half4 fragForwardBaseInternal (VertexOutputForwardBase i)
     UNITY_EXTRACT_FOG_FROM_EYE_VEC(i);
     UNITY_APPLY_FOG(_unity_fogCoord, c.rgb);
 
-    #if defined(_ALPHABLEND_ON)
-       // s.alpha = pow(s.alpha, 0.2);
+    #if defined(_ALPHA_PASS)
+        s.alpha = s.alpha / _Cutoff;
        // c.rgb = float3(1, 0, 0) * s.alpha;
        // c.rgb *= s.alpha;
        // s.alpha = 1;
@@ -551,7 +551,8 @@ half4 fragForwardAddInternal (VertexOutputForwardAdd i)
     UnityLight light = AdditiveLight (IN_LIGHTDIR_FWDADD(i), atten);
     UnityIndirect noIndirect = ZeroIndirect ();
 
-    half4 c = UNITY_BRDF_PBS (s.diffColor, s.specColor, s.oneMinusReflectivity, s.smoothness, s.normalWorld, -s.eyeVec, light, noIndirect);
+    half3 specularShift = tex2D(_SpecularShiftTex, i.tex.zw);
+    half4 c = BRDF3_Unity_PBS_Hair (s.diffColor, s.specColor, specularShift, s.oneMinusReflectivity, s.smoothness, s.normalWorld, s.tangentWorld, -s.eyeVec, light, noIndirect);
 
     UNITY_EXTRACT_FOG_FROM_EYE_VEC(i);
     UNITY_APPLY_FOG_COLOR(_unity_fogCoord, c.rgb, half4(0,0,0,0)); // fog towards black in additive pass

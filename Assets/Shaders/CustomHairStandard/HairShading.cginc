@@ -26,20 +26,43 @@ fixed _SpecularExponent2;
 fixed _WrapLightingStrength;
 
 #define MARMO_SKIN_IBL 1
+#define MARMO_MIP_GLOSS 1
 
-float3 CalculateMarmosetDiffuseIBL(float3 worldN, float3 smoothN, float hairMask)
+inline fixed3 CalculateMarmosetSpecularIBL(half4 exposureIBL, float3 reflectionVec, fixed specIntensity, fixed glossLod)
 {
-    float3 result = 0;
+    fixed3 result = 0;
     
-    #ifdef MARMO_SKY_BLEND
-		half4 exposureIBL = lerp(_ExposureIBL1, _ExposureIBL, _BlendWeightIBL);
-	#else
-		half4 exposureIBL = _ExposureIBL;
+    #ifdef MARMO_SPECULAR_IBL
+		float3 skyR = reflectionVec;
+		#ifdef MARMO_SKY_BLEND
+			float3 skyR1 = skyRotate(_SkyMatrix1, skyR); //per-fragment matrix multiply, expensive			
+		#endif
+		skyR = skyRotate(_SkyMatrix,skyR); //per-fragment matrix multiply, expensive
+		
+		#ifdef MARMO_MIP_GLOSS
+			half3 specIBL = glossCubeLookup(_SpecCubeIBL, skyR, glossLod);
+		#else
+			half3 specIBL =  specCubeLookup(_SpecCubeIBL, skyR) * specIntensity;
+		#endif
+		
+		#ifdef MARMO_SKY_BLEND
+			#ifdef MARMO_MIP_GLOSS
+				half3 specIBL1 = glossCubeLookup(_SpecCubeIBL, skyR1, glossLod);
+			#else
+				half3 specIBL1 =  specCubeLookup(_SpecCubeIBL, skyR1) * specIntensity;
+			#endif
+			specIBL = lerp(specIBL1, specIBL, _BlendWeightIBL);
+		#endif
+		
+		result = specIBL.rgb * exposureIBL.y;
 	#endif
-	
-    #if LIGHTMAP_ON
-		exposureIBL.xy *= _ExposureLM;
-	#endif
+
+    return result;
+}
+
+inline fixed3 CalculateMarmosetDiffuseIBL(half4 exposureIBL, float3 worldN, fixed hairMask)
+{
+    fixed3 result = 0;
     
 	//DIFFUSE IBL
 	#ifdef MARMO_DIFFUSE_IBL
@@ -74,38 +97,45 @@ float3 CalculateMarmosetDiffuseIBL(float3 worldN, float3 smoothN, float hairMask
     return result * exposureIBL.w;
 }
 
-float3 ShiftTangent(float3 T, float3 N,float shift)
+void CalculateMarmosetIBL(float3 worldN, fixed hairMask, float3 reflectionVec, fixed specIntensity, fixed glossLod, out fixed3 diffuse, out fixed3 specular)
+{
+    #ifdef MARMO_SKY_BLEND
+		half4 exposureIBL = lerp(_ExposureIBL1, _ExposureIBL, _BlendWeightIBL);
+	#else
+		half4 exposureIBL = _ExposureIBL;
+	#endif
+	
+    #if LIGHTMAP_ON
+		exposureIBL.xy *= _ExposureLM;
+	#endif
+	
+	diffuse = CalculateMarmosetDiffuseIBL(exposureIBL, worldN, hairMask);
+	specular = CalculateMarmosetSpecularIBL(exposureIBL, reflectionVec, specIntensity, glossLod);
+}
+
+inline float3 ShiftTangent(float3 T, float3 N,float shift)
 {
     float3 shiftedT = T + shift * N;//cross(T, N);
     return normalize (shiftedT);
 }
-        
-float StrandSpecular(float3 T, float3 halfDir, float exponent)
-{
-    float dotTH = dot(T, halfDir);
-    float sinTH= sqrt(1.0 - dotTH * dotTH);
-    float dirAtten = smoothstep(-1.0, 0.0, dotTH);
 
-    return dirAtten* pow(sinTH, exponent);
-}
-
-inline float3 CalculateSpecular(half roughness, float nh, float lh)
+inline float2 CalculateSpecularTwo(half2 roughness, half2 nh, float lh)
 {
     // GGX Distribution multiplied by combined approximation of Visibility and Fresnel
     // See "Optimizing PBR for Mobile" from Siggraph 2015 moving mobile graphics course
     // https://community.arm.com/events/1155
-    half a = roughness;
-    float a2 = a*a;
+    half2 a = roughness;
+    float2 a2 = a*a;
 
-    float d = nh * nh * (a2 - 1.f) + 1.00001f;
+    float2 d = nh * nh * (a2 - 1.f) + 1.00001f;
 
 #ifdef UNITY_COLORSPACE_GAMMA
     // Tighter approximation for Gamma only rendering mode!
     // DVF = sqrt(DVF);
     // DVF = (a * sqrt(.25)) / (max(sqrt(0.1), lh)*sqrt(roughness + .5) * d);
-    float specularTerm = a / (max(0.32f, lh) * (1.5f + roughness) * d);
+    float2 specularTerm = a / (max(0.32f, lh) * (1.5f + roughness) * d);
 #else
-    float specularTerm = a2 / (max(0.1f, lh*lh) * (roughness + 0.5f) * (d * d) * 4);
+    float2 specularTerm = a2 / (max(0.1f, lh*lh) * (roughness + 0.5f) * (d * d) * 4);
 #endif
 
     // on mobiles (where half actually means something) denominator have risk of overflow
@@ -124,7 +154,6 @@ inline float3 CalculateSpecular(half roughness, float nh, float lh)
 #endif
 
     return specularTerm;
-
 }
 
 float4 HairLighting(half3 diffColor, half3 specColor, half3 shiftTexValue, half oneMinusReflectivity, half smoothness,
@@ -136,7 +165,6 @@ float4 HairLighting(half3 diffColor, half3 specColor, half3 shiftTexValue, half 
     // shift tangents
     float3 t1 = ShiftTangent(tangent, normal, _SpecularShift1 + shiftTexValue.x);
     float3 t2 = ShiftTangent(tangent, normal, _SpecularShift2 + shiftTexValue.x);// diffuse lighting: the lerp shifts the shadow boundary for asofter look
-    float3 diffuse = diffColor;
     
     float3 halfDir = Unity_SafeNormalize (float3(light.dir) + viewDir);
     half nl = saturate((dot(normal, light.dir) + _WrapLightingStrength) / (1.0f + _WrapLightingStrength));
@@ -145,8 +173,12 @@ float4 HairLighting(half3 diffColor, half3 specColor, half3 shiftTexValue, half 
     half perceptualRoughness = SmoothnessToPerceptualRoughness (smoothness);
     half roughness = PerceptualRoughnessToRoughness(perceptualRoughness);
 
-    float3 specular = _SpecularColor1.a * CalculateSpecular(roughness * _SpecularExponent1, dot(t1, halfDir), nl);
-    specular += _SpecularColor2.a * shiftTexValue.y * CalculateSpecular(roughness * _SpecularExponent2, dot(t2, halfDir), nl);
+    float2 specularComponents = CalculateSpecularTwo(
+        half2(_SpecularExponent1, _SpecularExponent2), 
+        half2(dot(t1, halfDir), dot(t2, halfDir)), nl);
+        
+    float3 specular = _SpecularColor1.rgb * _SpecularColor1.a * specularComponents.x;
+    specular += _SpecularColor2.rgb * _SpecularColor2.a * shiftTexValue.y * specularComponents.y;
     
     half nv = saturate(dot(normal, viewDir));
 
@@ -159,15 +191,16 @@ float4 HairLighting(half3 diffColor, half3 specColor, half3 shiftTexValue, half 
     surfaceReduction = 1.0 - roughness*perceptualRoughness*surfaceReduction;
 
     // final color assembly
-#ifdef _ALPHABLEND_ON
-    half3 lightColor = light.color * saturate(sign(nl));
-#else
-    half3 lightColor = light.color;
-#endif
-
     float4 o;
-    o.rgb = CalculateMarmosetDiffuseIBL(normal, normal, shiftTexValue.y) * diffuse + (diffuse + specular * _Color) * nl + gi.diffuse * diffColor + gi.specular * surfaceReduction * FresnelLerpFast (specular, grazingTerm, nv);
-    //o.rgb = (diffuse + specular * _Color) * nl * lightColor + CalculateMarmosetDiffuseIBL(normal, normal, 1) * diffColor + gi.specular * surfaceReduction * FresnelLerpFast (specular * nl, grazingTerm, nv);
+    fixed3 diffuseIBL;
+    fixed3 specularIBL;
+    
+    CalculateMarmosetIBL(normal, shiftTexValue.y, -reflect(viewDir, normal), roughness, roughness * 7, diffuseIBL, specularIBL);
+
+    o.rgb = (diffColor + specular) * nl * light.color
+          + (gi.diffuse + diffuseIBL) * diffColor 
+          + (gi.specular + specularIBL) * surfaceReduction * FresnelLerpFast (specColor, grazingTerm, nv);
+          
     o.a = 1;
     
     return o;
