@@ -6910,12 +6910,12 @@ PrefabInstance:
     - target: {fileID: 224219386302859256, guid: d3d25aa450850054d8c06c880886e67b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00008870673
+      value: -0.000027671573
       objectReference: {fileID: 0}
     - target: {fileID: 224219386302859256, guid: d3d25aa450850054d8c06c880886e67b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224552596490201236, guid: d3d25aa450850054d8c06c880886e67b,
         type: 3}
@@ -8718,7 +8718,7 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   mat: {fileID: 2100000, guid: 12b9c8d891acabd44b66186cee0c24d5, type: 2}
   mainTex: {fileID: 2800000, guid: ff12f8b251e4d1d45824f120b4f63386, type: 3}
-  occlusionText: {fileID: 2800000, guid: e4b5f7469d9bec945b712917e2c79e5a, type: 3}
+  occlusionTex: {fileID: 2800000, guid: e4b5f7469d9bec945b712917e2c79e5a, type: 3}
   normalMap: {fileID: 2800000, guid: ed489f038176d0745a55e8b30db8890f, type: 3}
   subdermisMap: {fileID: 2800000, guid: 0ebcff4cea96fd549b929de5151abdd5, type: 3}
   specularMap: {fileID: 2800000, guid: 37371eff58d901f41a150ae85b9ce6be, type: 3}
@@ -8739,7 +8739,7 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 1}
   mat: {fileID: 2100000, guid: d8028ad55a0ecd847a77cfa6d4438c45, type: 2}
   mainTex: {fileID: 2800000, guid: 24a4b01faa270954a8f19420c79ad763, type: 3}
-  occlusionText: {fileID: 0}
+  occlusionTex: {fileID: 0}
   normalMap: {fileID: 0}
   subdermisMap: {fileID: 0}
   specularMap: {fileID: 0}
