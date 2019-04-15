@@ -18,12 +18,12 @@ namespace AlchemistLab
         [SerializeField] private Texture2D specularMap;
         [SerializeField] private Texture2D translucencyMap;
 
-        [SerializeField] private Texture2D _albedo;
+        private Texture2D _albedo;
 
         void Refresh()
         {
-            if (_albedo != null)
-                Destroy(_albedo);
+            if (_albedo != null && _albedo)
+                DestroyImmediate(_albedo);
             _albedo = new Texture2D(mainTex.width, mainTex.height);
             for (int x = 0; x < mainTex.width; x++)
             {
