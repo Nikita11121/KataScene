@@ -73,7 +73,7 @@
             //o.Metallic = _Metallic;
             //o.Smoothness = _Glossiness;
 			o.Alpha = c.a;
-			clip(c.a - 0.3);
+			clip(c.a - 0.5);
         }
         ENDCG
     }

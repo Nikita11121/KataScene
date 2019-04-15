@@ -7,7 +7,7 @@ namespace AlchemistLab
     public class PostEffect : MonoBehaviour
     {
         [SerializeField] private Material mat;
-        private void PassesMat(RenderTexture source, RenderTexture destination, Material mat)
+        void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
             Graphics.Blit(source, destination, mat);
         }

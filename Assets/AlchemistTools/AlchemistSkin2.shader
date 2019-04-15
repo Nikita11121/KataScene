@@ -52,7 +52,10 @@
 
 			half4 c;
 
-			c.rgb = (1.5 * atten - 0.2) * s.Albedo * _LightColor0.rgb *  diff; // (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * pow(spec, 1))*/; //s.Albedo * _LightColor0.rgb * diff;// (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * /*pow(spec, 1) * 7*/pow(spec, POW) * 7 * POWER) * atten;
+			half attenuationChange = fwidth(atten);
+			half shadow = atten - attenuationChange / 2;//smoothstep(0, attenuationChange, atten);
+
+			c.rgb = (1.5 * shadow - 0.2) * s.Albedo * _LightColor0.rgb *  diff; // (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * pow(spec, 1))*/; //s.Albedo * _LightColor0.rgb * diff;// (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * /*pow(spec, 1) * 7*/pow(spec, POW) * 7 * POWER) * atten;
 
 			c.a = s.Alpha;
 			return c;
