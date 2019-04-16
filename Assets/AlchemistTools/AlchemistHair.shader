@@ -4,7 +4,7 @@
     {
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
 		[Normal]_Normals("Normals", 2D) = "bump" {}
-		_NormalScale ("NormalScale", Range(0,4)) = 0.5
+		_NormalScale ("NormalScale", Range(0,6)) = 0.5
         //_Glossiness ("Smoothness", Range(0,1)) = 0.5
         //_Metallic ("Metallic", Range(0,1)) = 0.0
     }
@@ -16,7 +16,7 @@
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
         //#pragma surface surf Standard fullforwardshadows
-		#pragma surface surf SimpleSpecular fullforwardshadows
+		#pragma surface surf SimpleSpecular// fullforwardshadows
 		//#include "AutoLight.cginc"
 
         // Use shader model 3.0 target, to get nicer looking lighting
@@ -47,12 +47,12 @@
 
 			half diff = max(0, dot(s.Normal, lightDir));
 
-			/*half nh = max(0, dot(s.Normal, h));
-			half spec = 0.1 * pow(nh, 48.0);*/
+			half nh = max(0, dot(s.Normal, h));
+			half spec = 0.06 * pow(nh, 48.0);
 
 			half4 c;
 
-			c.rgb = (1.5 * atten - 0.2) * s.Albedo * _LightColor0.rgb *  diff; // (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * pow(spec, 1))*/; //s.Albedo * _LightColor0.rgb * diff;// (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * /*pow(spec, 1) * 7*/pow(spec, POW) * 7 * POWER) * atten;
+			c.rgb = (1.5 * atten - 0.2) * s.Albedo * _LightColor0.rgb *  diff + pow(spec, 1); // (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * pow(spec, 1))*/; //s.Albedo * _LightColor0.rgb * diff;// (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * /*pow(spec, 1) * 7*/pow(spec, POW) * 7 * POWER) * atten;
 
 			c.a = s.Alpha;
 			return c;
