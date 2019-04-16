@@ -2439,7 +2439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &369808049
 Transform:
   m_ObjectHideFlags: 0
@@ -8736,7 +8736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRefresh: 0
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0.7075472, g: 0.34594673, b: 0.1768868, a: 1}
   mat: {fileID: 2100000, guid: d8028ad55a0ecd847a77cfa6d4438c45, type: 2}
   mainTex: {fileID: 2800000, guid: 24a4b01faa270954a8f19420c79ad763, type: 3}
   occlusionTex: {fileID: 0}

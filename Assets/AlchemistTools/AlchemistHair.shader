@@ -10,13 +10,15 @@
     }
     SubShader
     {
-        Tags { "RenderType"="Transform" }
-        LOD 200
-
+        Tags { "Queue"="Opaque" "RenderType"="Opaque" "IgnoreProjector"="True"}
+        //Blend SrcAlpha OneMinusSrcAlpha
+		LOD 200
+		//ZWrite Off
+		
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
         //#pragma surface surf Standard fullforwardshadows
-		#pragma surface surf SimpleSpecular// fullforwardshadows
+		#pragma surface surf SimpleSpecular //fullforwardshadows//alpha:fade noambient novertexlights nodirlightmap nolightmap noforwardadd// fullforwardshadows
 		//#include "AutoLight.cginc"
 
         // Use shader model 3.0 target, to get nicer looking lighting
@@ -38,23 +40,23 @@
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
         // #pragma instancing_options assumeuniformscaling
-        UNITY_INSTANCING_BUFFER_START(Props)
+        /*UNITY_INSTANCING_BUFFER_START(Props)
             // put more per-instance properties here
-        UNITY_INSTANCING_BUFFER_END(Props)
+        UNITY_INSTANCING_BUFFER_END(Props)*/
 
-		half4 LightingSimpleSpecular(SurfaceOutput s, half3 lightDir, half3 viewDir, half atten) {
-			half3 h = normalize(lightDir + viewDir);
+		float4 LightingSimpleSpecular(SurfaceOutput s, float3 lightDir, float3 viewDir, float atten) {
+			float3 h = normalize(lightDir + viewDir);
 
-			half diff = max(0, dot(s.Normal, lightDir));
+			float diff = max(0, dot(s.Normal, lightDir));
 
-			half nh = max(0, dot(s.Normal, h));
-			half spec = 0.06 * pow(nh, 48.0);
+			float nh = max(0, dot(s.Normal, h));
+			float spec = 0.28 * pow(nh, 48.0);
 
-			half4 c;
+			float4 c;
 
-			c.rgb = (1.5 * atten - 0.2) * s.Albedo * _LightColor0.rgb *  diff + pow(spec, 1); // (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * pow(spec, 1))*/; //s.Albedo * _LightColor0.rgb * diff;// (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * /*pow(spec, 1) * 7*/pow(spec, POW) * 7 * POWER) * atten;
+			c.rgb = (1.5 * atten - 0.2) * s.Albedo * _LightColor0.rgb *  diff + _LightColor0.rgb * pow(spec, 3); // (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * pow(spec, 1))*/; //s.Albedo * _LightColor0.rgb * diff;// (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * /*pow(spec, 1) * 7*/pow(spec, POW) * 7 * POWER) * atten;
 
-			c.a = s.Alpha;
+			c.a = 1;//s.Alpha;
 			return c;
 		}
 
@@ -63,7 +65,7 @@
         {
 
             // Albedo comes from a texture tinted by color
-            fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * fixed4(4.62, 2.77, 2.05, 2.05); //* 2.05;
+            float4 c = tex2D (_MainTex, IN.uv_MainTex) * float4(4.62, 2.77, 2.05, 2.05); //* 2.05;
 			//c.r = c.r * 2.25;
 			//c.g = c.g * 1.35;
 
@@ -72,8 +74,8 @@
             // Metallic and smoothness come from slider variables
             //o.Metallic = _Metallic;
             //o.Smoothness = _Glossiness;
-			o.Alpha = c.a;
-			clip(c.a - 0.5);
+			//o.Alpha = c.a * 4 ;
+			clip(c.a - 0.3);
         }
         ENDCG
     }
