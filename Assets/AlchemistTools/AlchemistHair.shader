@@ -50,7 +50,7 @@
 			float diff = max(0, dot(s.Normal, lightDir));
 
 			float nh = max(0, dot(s.Normal, h));
-			float spec = 0.28 * pow(nh, 48.0);
+			float spec = 0.38 * pow(nh, 48.0);
 
 			float4 c;
 
@@ -75,7 +75,7 @@
             //o.Metallic = _Metallic;
             //o.Smoothness = _Glossiness;
 			//o.Alpha = c.a * 4 ;
-			clip(c.a - 0.3);
+			clip(c.a - 0.4);
         }
         ENDCG
     }

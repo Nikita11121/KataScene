@@ -10,6 +10,7 @@ namespace AlchemistLab
         [SerializeField] private bool isRefresh = false;
 
         [SerializeField] private Color color;
+        [SerializeField] private Renderer[] renderers;
         [SerializeField] private Material mat;
         [SerializeField] private Texture2D mainTex;
         [SerializeField] private Texture2D occlusionTex;
@@ -39,7 +40,7 @@ namespace AlchemistLab
                     if (subdermisMap != null)
                         subdermisCol = subdermisMap.GetPixel(x * subdermisMap.width / mainTex.width, y * subdermisMap.height / mainTex.height);
 
-                    Color outCol = mainCol * oclusionCol * color * (Color.white * 0.75f + subdermisCol / 4);
+                    Color outCol = mainCol * oclusionCol * color * (Color.white * 0.75f + subdermisCol / 4); //* Color.white/**/;
                     if (translucencyMap != null)
                         outCol.a = translucencyMap.GetPixel(x * translucencyMap.width / mainTex.width, y * translucencyMap.height / mainTex.height).r;
                     _albedo.SetPixel(x, y, outCol);
@@ -64,6 +65,9 @@ namespace AlchemistLab
             }
             _albedo2.Apply();
             mat.SetTexture("_SpecularTex", _albedo2);
+
+            for (int i = 0; i < renderers.Length; i++)
+                renderers[i].material = mat;
         }
 
         // Start is called before the first frame update

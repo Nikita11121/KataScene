@@ -2,10 +2,14 @@
 {
     Properties
     {
+		_Color("Color", Color) = (1,1,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_SpecularTex ("Specular", 2D) = "black" {}
 		[Normal]_Normals("Normals", 2D) = "bump" {}
 		_NormalScale ("NormalScale", Range(0,4)) = 0.5
+
+		_LightAdd ("LightAdd", Range(-0.3, 0.3)) = 0
+		_LightMul ("LightMul", Range(0, 2)) = 1
         //_Glossiness ("Smoothness", Range(0,1)) = 0.5
         //_Metallic ("Metallic", Range(0,1)) = 0.0
     }
@@ -34,6 +38,9 @@
         };
 
 		half _NormalScale;
+		half4 _Color;
+		half _LightAdd;
+        half _LightMul;
         //half _Glossiness;
         //half _Metallic;
 
@@ -47,7 +54,7 @@
 		float4 LightingSimpleSpecular(SurfaceOutput s, float3 lightDir, float3 viewDir, float atten) {
 			float3 h = normalize(lightDir + viewDir);
 
-			float diff = max(0, dot(s.Normal, lightDir) + s.Alpha * 0.1);
+			float diff = max(0, dot(s.Normal, lightDir)/* + s.Alpha * 0.2*/);
 
 			half nh = max(0, dot(s.Normal, h));
 			half spec = max(0, 0.35 * s.Specular * pow(nh, 48.0));
@@ -55,9 +62,9 @@
 			float4 c;
 
 			float attenuationChange = fwidth(atten);
-			float shadow = atten - attenuationChange / 2;//smoothstep(0, attenuationChange, atten);
+			float shadow = atten - 0 * attenuationChange / 2;//smoothstep(0, attenuationChange, atten);
 
-			c.rgb = (1.3 * shadow - 0.1) * (s.Albedo * _LightColor0.rgb *  diff + _LightColor0.rgb * pow(spec, 1)); // (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * pow(spec, 1))*/; //s.Albedo * _LightColor0.rgb * diff;// (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * /*pow(spec, 1) * 7*/pow(spec, POW) * 7 * POWER) * atten;
+			c.rgb = (_LightMul * shadow + _LightAdd) * (s.Albedo * _LightColor0.rgb *  diff + _LightColor0.rgb * pow(spec, 1)); // (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * pow(spec, 1))*/; //s.Albedo * _LightColor0.rgb * diff;// (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * /*pow(spec, 1) * 7*/pow(spec, POW) * 7 * POWER) * atten;
 
 			c.a = s.Alpha;
 			return c;
@@ -68,7 +75,7 @@
         {
 
             // Albedo comes from a texture tinted by color
-            fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * fixed4(3.42, 2.35, 2.05, 2.05) * 1.5; //* 2.05;
+            fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color * 3;// * fixed4(1.2, 1.64, 2.00, 2.00) * 2.1;; //* fixed4(2.72, 2.45, 2.05, 2.05);// * 1.5; //* 2.05;
 			//c.r = c.r * 2.25;
 			//c.g = c.g * 1.35;
             o.Albedo = c.rgb;
