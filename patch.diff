@@ -1,0 +1,4277 @@
+From 4a836916f7dd993f39afc53bf236a3e8d6dfd8ab Mon Sep 17 00:00:00 2001
+From: ZakRenat <strong.lazzy@gmail.com>
+Date: Thu, 25 Apr 2019 01:10:44 +0600
+Subject: [PATCH] no message
+
+---
+ .../Examples/Panorama/castle.png.meta         |  10 +-
+ .../Examples/Panorama/forest.png.meta         |  10 +-
+ .../Marmoset/Skyshop/Resources/skyboxMat.mat  |   2 +-
+ .../Characters/1KataNewSkan/mat/body.mat      |   2 +-
+ .../Characters/1KataNewSkan/mat/head.mat      |   2 +-
+ Assets/Models/Characters/Kata.meta            |   8 +
+ Assets/Models/Characters/Kata/Materials.meta  |   8 +
+ .../Models/Characters/Kata/Materials/Bust.mat |   3 +
+ .../Characters/Kata/Materials/Bust.mat.meta   |   8 +
+ .../Models/Characters/Kata/Materials/Eye.mat  |   3 +
+ .../Characters/Kata/Materials/Eye.mat.meta    |   8 +
+ .../Characters/Kata/Materials/EyeBrows.mat    |   3 +
+ .../Kata/Materials/EyeBrows.mat.meta          |   8 +
+ .../Characters/Kata/Materials/EyeLashes.mat   |   3 +
+ .../Kata/Materials/EyeLashes.mat.meta         |   8 +
+ .../Kata/Materials/EyeTransparent.mat         |   3 +
+ .../Kata/Materials/EyeTransparent.mat.meta    |   8 +
+ .../Characters/Kata/Materials/Shirt.mat       |   3 +
+ .../Characters/Kata/Materials/Shirt.mat.meta  |   8 +
+ Assets/Models/Characters/Kata/Meshes.meta     |   8 +
+ .../Kata/Meshes/FemaleHead_LP 1.mat           |   3 +
+ .../Kata/Meshes/FemaleHead_LP 1.mat.meta      |   8 +
+ .../Characters/Kata/Meshes/FemaleHead_LP.fbx  |   3 +
+ .../Kata/Meshes/FemaleHead_LP.fbx.meta        | 129 ++++
+ .../Characters/Kata/Meshes/FemaleHead_LP.mat  |   3 +
+ .../Kata/Meshes/FemaleHead_LP.mat.meta        |   8 +
+ Assets/Models/Characters/Kata/Prefabs.meta    |   8 +
+ .../Kata/Prefabs/FemaleHead_LP.prefab         | 427 ++++++++++++++
+ .../Kata/Prefabs/FemaleHead_LP.prefab.meta    |   7 +
+ Assets/Models/Characters/Kata/Textures.meta   |   8 +
+ .../Kata/Textures/Bust_DiffuseAlpha.png       |   3 +
+ .../Kata/Textures/Bust_DiffuseAlpha.png.meta  |  90 +++
+ .../Characters/Kata/Textures/Bust_Normal.png  |   3 +
+ .../Kata/Textures/Bust_Normal.png.meta        | 101 ++++
+ .../Kata/Textures/Bust_SpecularGloss.png      |   3 +
+ .../Kata/Textures/Bust_SpecularGloss.png.meta |  90 +++
+ .../Kata/Textures/Bust_Subdermis.png          |   3 +
+ .../Kata/Textures/Bust_Subdermis.png.meta     |  90 +++
+ .../Kata/Textures/Bust_TranslucencyMap.png    |   3 +
+ .../Textures/Bust_TranslucencyMap.png.meta    |  90 +++
+ .../Kata/Textures/Eye_DiffuseAlpha.png        |   3 +
+ .../Kata/Textures/Eye_DiffuseAlpha.png.meta   |  90 +++
+ .../Characters/Kata/Textures/Eye_Normal.png   |   3 +
+ .../Kata/Textures/Eye_Normal.png.meta         | 101 ++++
+ .../Kata/Textures/Eye_SpecularGloss.png       |   3 +
+ .../Kata/Textures/Eye_SpecularGloss.png.meta  |  90 +++
+ .../Kata/Textures/Eye_Subdermis.png           |   3 +
+ .../Kata/Textures/Eye_Subdermis.png.meta      |  90 +++
+ .../Kata/Textures/Eye_TranslucencyMap.png     |   3 +
+ .../Textures/Eye_TranslucencyMap.png.meta     |  90 +++
+ .../Kata/Textures/Eyelashes_DiffuseAlpha.png  |   3 +
+ .../Textures/Eyelashes_DiffuseAlpha.png.meta  |  90 +++
+ .../Kata/Textures/Eyelashes_Normal.png        |   3 +
+ .../Kata/Textures/Eyelashes_Normal.png.meta   | 101 ++++
+ .../Kata/Textures/Eyelashes_SpecularGloss.png |   3 +
+ .../Textures/Eyelashes_SpecularGloss.png.meta |  90 +++
+ .../FemaleHead_LP_Eye_AlbedoTransparency.tga  |   3 +
+ ...aleHead_LP_Eye_AlbedoTransparency.tga.meta |  90 +++
+ .../Textures/FemaleHead_LP_Eye_Normal.tga     |   3 +
+ .../FemaleHead_LP_Eye_Normal.tga.meta         |  90 +++
+ .../FemaleHead_LP_Eye_SpecularSmoothness.tga  |   3 +
+ ...aleHead_LP_Eye_SpecularSmoothness.tga.meta | 101 ++++
+ .../Kata/Textures/Shirt_DiffuseAlpha.png      |   3 +
+ .../Kata/Textures/Shirt_DiffuseAlpha.png.meta |  90 +++
+ .../Characters/Kata/Textures/Shirt_Normal.png |   3 +
+ .../Kata/Textures/Shirt_Normal.png.meta       | 101 ++++
+ .../Kata/Textures/Shirt_SpecularGloss.png     |   3 +
+ .../Textures/Shirt_SpecularGloss.png.meta     |  90 +++
+ Assets/Scenes/MarmosetBaseScene.unity         | 553 ++++++++++++++++--
+ Packages/manifest.json                        |  13 +-
+ ProjectSettings/ProjectVersion.txt            |   3 +-
+ ProjectSettings/XRSettings.asset              |  10 +
+ 72 files changed, 3057 insertions(+), 64 deletions(-)
+ create mode 100644 Assets/Models/Characters/Kata.meta
+ create mode 100644 Assets/Models/Characters/Kata/Materials.meta
+ create mode 100644 Assets/Models/Characters/Kata/Materials/Bust.mat
+ create mode 100644 Assets/Models/Characters/Kata/Materials/Bust.mat.meta
+ create mode 100644 Assets/Models/Characters/Kata/Materials/Eye.mat
+ create mode 100644 Assets/Models/Characters/Kata/Materials/Eye.mat.meta
+ create mode 100644 Assets/Models/Characters/Kata/Materials/EyeBrows.mat
+ create mode 100644 Assets/Models/Characters/Kata/Materials/EyeBrows.mat.meta
+ create mode 100644 Assets/Models/Characters/Kata/Materials/EyeLashes.mat
+ create mode 100644 Assets/Models/Characters/Kata/Materials/EyeLashes.mat.meta
+ create mode 100644 Assets/Models/Characters/Kata/Materials/EyeTransparent.mat
+ create mode 100644 Assets/Models/Characters/Kata/Materials/EyeTransparent.mat.meta
+ create mode 100644 Assets/Models/Characters/Kata/Materials/Shirt.mat
+ create mode 100644 Assets/Models/Characters/Kata/Materials/Shirt.mat.meta
+ create mode 100644 Assets/Models/Characters/Kata/Meshes.meta
+ create mode 100644 Assets/Models/Characters/Kata/Meshes/FemaleHead_LP 1.mat
+ create mode 100644 Assets/Models/Characters/Kata/Meshes/FemaleHead_LP 1.mat.meta
+ create mode 100644 Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.fbx
+ create mode 100644 Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.fbx.meta
+ create mode 100644 Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.mat
+ create mode 100644 Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.mat.meta
+ create mode 100644 Assets/Models/Characters/Kata/Prefabs.meta
+ create mode 100644 Assets/Models/Characters/Kata/Prefabs/FemaleHead_LP.prefab
+ create mode 100644 Assets/Models/Characters/Kata/Prefabs/FemaleHead_LP.prefab.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Bust_DiffuseAlpha.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Bust_DiffuseAlpha.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Bust_Normal.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Bust_Normal.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Bust_SpecularGloss.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Bust_SpecularGloss.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Bust_Subdermis.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Bust_Subdermis.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Bust_TranslucencyMap.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Bust_TranslucencyMap.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eye_DiffuseAlpha.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eye_DiffuseAlpha.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eye_Normal.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eye_Normal.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eye_SpecularGloss.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eye_SpecularGloss.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eye_Subdermis.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eye_Subdermis.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eye_TranslucencyMap.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eye_TranslucencyMap.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eyelashes_DiffuseAlpha.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eyelashes_DiffuseAlpha.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eyelashes_Normal.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eyelashes_Normal.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eyelashes_SpecularGloss.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Eyelashes_SpecularGloss.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_AlbedoTransparency.tga
+ create mode 100644 Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_AlbedoTransparency.tga.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_Normal.tga
+ create mode 100644 Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_Normal.tga.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_SpecularSmoothness.tga
+ create mode 100644 Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_SpecularSmoothness.tga.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Shirt_DiffuseAlpha.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Shirt_DiffuseAlpha.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Shirt_Normal.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Shirt_Normal.png.meta
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Shirt_SpecularGloss.png
+ create mode 100644 Assets/Models/Characters/Kata/Textures/Shirt_SpecularGloss.png.meta
+ create mode 100644 ProjectSettings/XRSettings.asset
+
+diff --git a/Assets/Marmoset/Examples/Panorama/castle.png.meta b/Assets/Marmoset/Examples/Panorama/castle.png.meta
+index fddabe4..571c0b2 100644
+--- a/Assets/Marmoset/Examples/Panorama/castle.png.meta
++++ b/Assets/Marmoset/Examples/Panorama/castle.png.meta
+@@ -1,10 +1,12 @@
+ fileFormatVersion: 2
+ guid: 7731d9f9df2a4c24fb18ece19181665a
+ TextureImporter:
+-  fileIDToRecycleName:
+-    2186277476908879412: ImportLogs
++  internalIDToNameTable:
++  - first:
++      41386430: 2186277476908879412
++    second: ImportLogs
+   externalObjects: {}
+-  serializedVersion: 9
++  serializedVersion: 10
+   mipmaps:
+     mipMapMode: 0
+     enableMipMap: 0
+@@ -77,10 +79,12 @@ TextureImporter:
+     physicsShape: []
+     bones: []
+     spriteID: 
++    internalID: 0
+     vertices: []
+     indices: 
+     edges: []
+     weights: []
++    secondaryTextures: []
+   spritePackingTag: 
+   pSDRemoveMatte: 0
+   pSDShowRemoveMatteOption: 0
+diff --git a/Assets/Marmoset/Examples/Panorama/forest.png.meta b/Assets/Marmoset/Examples/Panorama/forest.png.meta
+index 1cd079c..a3171fc 100644
+--- a/Assets/Marmoset/Examples/Panorama/forest.png.meta
++++ b/Assets/Marmoset/Examples/Panorama/forest.png.meta
+@@ -1,10 +1,12 @@
+ fileFormatVersion: 2
+ guid: 864c5db1aaa09f645a85dafebb5c8429
+ TextureImporter:
+-  fileIDToRecycleName:
+-    2186277476908879412: ImportLogs
++  internalIDToNameTable:
++  - first:
++      41386430: 2186277476908879412
++    second: ImportLogs
+   externalObjects: {}
+-  serializedVersion: 9
++  serializedVersion: 10
+   mipmaps:
+     mipMapMode: 0
+     enableMipMap: 0
+@@ -77,10 +79,12 @@ TextureImporter:
+     physicsShape: []
+     bones: []
+     spriteID: 
++    internalID: 0
+     vertices: []
+     indices: 
+     edges: []
+     weights: []
++    secondaryTextures: []
+   spritePackingTag: 
+   pSDRemoveMatte: 0
+   pSDShowRemoveMatteOption: 0
+diff --git a/Assets/Marmoset/Skyshop/Resources/skyboxMat.mat b/Assets/Marmoset/Skyshop/Resources/skyboxMat.mat
+index ce30935..43ec3b4 100644
+--- a/Assets/Marmoset/Skyshop/Resources/skyboxMat.mat
++++ b/Assets/Marmoset/Skyshop/Resources/skyboxMat.mat
+@@ -1,3 +1,3 @@
+ version https://git-lfs.github.com/spec/v1
+-oid sha256:7424b8191608565d45800355bfd060bcd35b48b740a73b17ba64a173b5376b7e
++oid sha256:2d07393efbeccfc418ff83d90cb5f1494463b1452794920e0f6b68907359e00b
+ size 1115
+diff --git a/Assets/Models/Characters/1KataNewSkan/mat/body.mat b/Assets/Models/Characters/1KataNewSkan/mat/body.mat
+index e4b06b7..b6d356f 100644
+--- a/Assets/Models/Characters/1KataNewSkan/mat/body.mat
++++ b/Assets/Models/Characters/1KataNewSkan/mat/body.mat
+@@ -1,3 +1,3 @@
+ version https://git-lfs.github.com/spec/v1
+-oid sha256:fa50eadec576ba7e36fd86fc38a13e68682d192ad0211fa0abb56f43b934671f
++oid sha256:2ba477ca2bb5bf09bda806bb3c86a55e2ae00c90762ce0d16ee90495dcb9e70f
+ size 3111
+diff --git a/Assets/Models/Characters/1KataNewSkan/mat/head.mat b/Assets/Models/Characters/1KataNewSkan/mat/head.mat
+index 6679f69..4407fd1 100644
+--- a/Assets/Models/Characters/1KataNewSkan/mat/head.mat
++++ b/Assets/Models/Characters/1KataNewSkan/mat/head.mat
+@@ -1,3 +1,3 @@
+ version https://git-lfs.github.com/spec/v1
+-oid sha256:261485276cbd2fca67325340178d208c9c5f8f256fac4135ba6fc4f330ddcbda
++oid sha256:2733218d30aa75f0b6c2e7ea49633474e80c73b86b5e56d865555624b839f75d
+ size 3111
+diff --git a/Assets/Models/Characters/Kata.meta b/Assets/Models/Characters/Kata.meta
+new file mode 100644
+index 0000000..d36c90a
+--- /dev/null
++++ b/Assets/Models/Characters/Kata.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: 412b946601ff97d42a67c00f61074df7
++folderAsset: yes
++DefaultImporter:
++  externalObjects: {}
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Materials.meta b/Assets/Models/Characters/Kata/Materials.meta
+new file mode 100644
+index 0000000..b6df083
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: 60adaafb2419ea346b5c08be73dfaf03
++folderAsset: yes
++DefaultImporter:
++  externalObjects: {}
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Materials/Bust.mat b/Assets/Models/Characters/Kata/Materials/Bust.mat
+new file mode 100644
+index 0000000..ea98f2d
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials/Bust.mat
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:725ce8d1cc53ed0a96d729fb111c3726394cf8dd9f599c5e4c1199bae80e0f28
++size 3108
+diff --git a/Assets/Models/Characters/Kata/Materials/Bust.mat.meta b/Assets/Models/Characters/Kata/Materials/Bust.mat.meta
+new file mode 100644
+index 0000000..bd05c7b
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials/Bust.mat.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: 796bb6dcac97115458c53dc46358b84e
++NativeFormatImporter:
++  externalObjects: {}
++  mainObjectFileID: 2100000
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Materials/Eye.mat b/Assets/Models/Characters/Kata/Materials/Eye.mat
+new file mode 100644
+index 0000000..2f7aa58
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials/Eye.mat
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:c8507c956221607105d5c4f9fe9c298ec3ed7f00e4a3f88f4e854ca7b84c2e7e
++size 3097
+diff --git a/Assets/Models/Characters/Kata/Materials/Eye.mat.meta b/Assets/Models/Characters/Kata/Materials/Eye.mat.meta
+new file mode 100644
+index 0000000..9a4f9b2
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials/Eye.mat.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: c2a9541817703b24ca12556dd7384742
++NativeFormatImporter:
++  externalObjects: {}
++  mainObjectFileID: 2100000
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Materials/EyeBrows.mat b/Assets/Models/Characters/Kata/Materials/EyeBrows.mat
+new file mode 100644
+index 0000000..5718111
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials/EyeBrows.mat
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:8891d3c49a3c5b9efa3c4d31a8699a4a67f58969636559e02df2a9523a588e5b
++size 2787
+diff --git a/Assets/Models/Characters/Kata/Materials/EyeBrows.mat.meta b/Assets/Models/Characters/Kata/Materials/EyeBrows.mat.meta
+new file mode 100644
+index 0000000..0bac97b
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials/EyeBrows.mat.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: 3f8dc8c9015d8eb488b053013c8bc525
++NativeFormatImporter:
++  externalObjects: {}
++  mainObjectFileID: 2100000
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Materials/EyeLashes.mat b/Assets/Models/Characters/Kata/Materials/EyeLashes.mat
+new file mode 100644
+index 0000000..83d46bc
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials/EyeLashes.mat
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:bf9ad7901cea49bf9a6fcab4ff474bccd740409ee8b350670040be01f3849271
++size 2954
+diff --git a/Assets/Models/Characters/Kata/Materials/EyeLashes.mat.meta b/Assets/Models/Characters/Kata/Materials/EyeLashes.mat.meta
+new file mode 100644
+index 0000000..6c2b529
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials/EyeLashes.mat.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: e8d36ccc0802d7242bae96dc6bb58abd
++NativeFormatImporter:
++  externalObjects: {}
++  mainObjectFileID: 2100000
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Materials/EyeTransparent.mat b/Assets/Models/Characters/Kata/Materials/EyeTransparent.mat
+new file mode 100644
+index 0000000..6c3aa39
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials/EyeTransparent.mat
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:148d77ac328773aefed0770b3f2db2a1cd41b816c242e49592a15b1ca477c567
++size 2088
+diff --git a/Assets/Models/Characters/Kata/Materials/EyeTransparent.mat.meta b/Assets/Models/Characters/Kata/Materials/EyeTransparent.mat.meta
+new file mode 100644
+index 0000000..79e361d
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials/EyeTransparent.mat.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: 42be5ab34c8f47b42958803261cae97a
++NativeFormatImporter:
++  externalObjects: {}
++  mainObjectFileID: 2100000
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Materials/Shirt.mat b/Assets/Models/Characters/Kata/Materials/Shirt.mat
+new file mode 100644
+index 0000000..cd7b225
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials/Shirt.mat
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:207b616e1903cbd491edf412d8e12fcee26b3e56cb4c48acc1add2c5d3e550f2
++size 2616
+diff --git a/Assets/Models/Characters/Kata/Materials/Shirt.mat.meta b/Assets/Models/Characters/Kata/Materials/Shirt.mat.meta
+new file mode 100644
+index 0000000..9969aaa
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Materials/Shirt.mat.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: 67324bab5a329c040a0e6b0ccb22c1ff
++NativeFormatImporter:
++  externalObjects: {}
++  mainObjectFileID: 2100000
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Meshes.meta b/Assets/Models/Characters/Kata/Meshes.meta
+new file mode 100644
+index 0000000..b233fa2
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Meshes.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: 5a5b01abb46cda7419d3f525803fcd6a
++folderAsset: yes
++DefaultImporter:
++  externalObjects: {}
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP 1.mat b/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP 1.mat
+new file mode 100644
+index 0000000..bb2e3c7
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP 1.mat	
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:ea15e8571d59000a18fe446e6e5f5a6eec5a1c06a1b0836b2061b0461e41b4b9
++size 2043
+diff --git a/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP 1.mat.meta b/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP 1.mat.meta
+new file mode 100644
+index 0000000..431748f
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP 1.mat.meta	
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: e1bc992c5b134a6458dfcb0fb98f7f54
++NativeFormatImporter:
++  externalObjects: {}
++  mainObjectFileID: 2100000
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.fbx b/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.fbx
+new file mode 100644
+index 0000000..8aff131
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.fbx
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:b69b787725d7d7127fbdcd0539a3f92e8d00288ff2c8b11a9ca3b164039f5fa0
++size 1106028
+diff --git a/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.fbx.meta b/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.fbx.meta
+new file mode 100644
+index 0000000..62f770f
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.fbx.meta
+@@ -0,0 +1,129 @@
++fileFormatVersion: 2
++guid: 79e36125a0a20be458031b2eb749d6cf
++ModelImporter:
++  serializedVersion: 25
++  internalIDToNameTable: []
++  externalObjects:
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Bust
++    second: {fileID: 2100000, guid: 796bb6dcac97115458c53dc46358b84e, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Eye
++    second: {fileID: 2100000, guid: c2a9541817703b24ca12556dd7384742, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: EyeTransparent
++    second: {fileID: 2100000, guid: 42be5ab34c8f47b42958803261cae97a, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Eyebrows
++    second: {fileID: 2100000, guid: e8d36ccc0802d7242bae96dc6bb58abd, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Eyelashes
++    second: {fileID: 2100000, guid: e8d36ccc0802d7242bae96dc6bb58abd, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Hair
++    second: {fileID: 2100000, guid: b852311cdb3a93a46b50ec74c8dcd3e8, type: 2}
++  - first:
++      type: UnityEngine:Material
++      assembly: UnityEngine.CoreModule
++      name: Shirt
++    second: {fileID: 2100000, guid: 67324bab5a329c040a0e6b0ccb22c1ff, type: 2}
++  materials:
++    importMaterials: 1
++    materialName: 0
++    materialSearch: 1
++    materialLocation: 1
++  animations:
++    legacyGenerateAnimations: 4
++    bakeSimulation: 0
++    resampleCurves: 1
++    optimizeGameObjects: 0
++    motionNodeName: 
++    rigImportErrors: 
++    rigImportWarnings: 
++    animationImportErrors: 
++    animationImportWarnings: 
++    animationRetargetingWarnings: 
++    animationDoRetargetingWarnings: 0
++    importAnimatedCustomProperties: 0
++    importConstraints: 0
++    animationCompression: 1
++    animationRotationError: 0.5
++    animationPositionError: 0.5
++    animationScaleError: 0.5
++    animationWrapMode: 0
++    extraExposedTransformPaths: []
++    extraUserProperties: []
++    clipAnimations: []
++    isReadable: 0
++  meshes:
++    lODScreenPercentages: []
++    globalScale: 0.3
++    meshCompression: 0
++    addColliders: 0
++    useSRGBMaterialColor: 1
++    importVisibility: 1
++    importBlendShapes: 1
++    importCameras: 1
++    importLights: 1
++    swapUVChannels: 0
++    generateSecondaryUV: 0
++    useFileUnits: 1
++    keepQuads: 0
++    weldVertices: 1
++    preserveHierarchy: 0
++    skinWeightsMode: 0
++    maxBonesPerVertex: 4
++    minBoneWeight: 0.001
++    meshOptimizationFlags: -1
++    indexFormat: 0
++    secondaryUVAngleDistortion: 8
++    secondaryUVAreaDistortion: 15.000001
++    secondaryUVHardAngle: 88
++    secondaryUVPackMargin: 4
++    useFileScale: 1
++  tangentSpace:
++    normalSmoothAngle: 60
++    normalImportMode: 0
++    tangentImportMode: 3
++    normalCalculationMode: 4
++    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
++    blendShapeNormalImportMode: 1
++    normalSmoothingSource: 0
++  referencedClips: []
++  importAnimation: 1
++  copyAvatar: 0
++  humanDescription:
++    serializedVersion: 3
++    human: []
++    skeleton: []
++    armTwist: 0.5
++    foreArmTwist: 0.5
++    upperLegTwist: 0.5
++    legTwist: 0.5
++    armStretch: 0.05
++    legStretch: 0.05
++    feetSpacing: 0
++    globalScale: 0.3
++    rootMotionBoneName: 
++    hasTranslationDoF: 0
++    hasExtraRoot: 0
++    skeletonHasParents: 1
++  lastHumanDescriptionAvatarSource: {instanceID: 0}
++  animationType: 0
++  humanoidOversampling: 1
++  additionalBone: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.mat b/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.mat
+new file mode 100644
+index 0000000..bc8982b
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.mat
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:f143d4682150ebc6c336329886cf812e115fe63dcba345e4585d5338c016c43e
++size 2041
+diff --git a/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.mat.meta b/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.mat.meta
+new file mode 100644
+index 0000000..869ee14
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Meshes/FemaleHead_LP.mat.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: 8e4c333cb9508704fb8c8d44024f96f8
++NativeFormatImporter:
++  externalObjects: {}
++  mainObjectFileID: 2100000
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Prefabs.meta b/Assets/Models/Characters/Kata/Prefabs.meta
+new file mode 100644
+index 0000000..4d6fa0f
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Prefabs.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: aca2984b762a88f43ae2b83adf387f7e
++folderAsset: yes
++DefaultImporter:
++  externalObjects: {}
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Prefabs/FemaleHead_LP.prefab b/Assets/Models/Characters/Kata/Prefabs/FemaleHead_LP.prefab
+new file mode 100644
+index 0000000..a01825e
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Prefabs/FemaleHead_LP.prefab
+@@ -0,0 +1,427 @@
++%YAML 1.1
++%TAG !u! tag:unity3d.com,2011:
++--- !u!1 &1431631293367503724
++GameObject:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  serializedVersion: 6
++  m_Component:
++  - component: {fileID: 1431631293367503725}
++  - component: {fileID: 1431631293367503714}
++  m_Layer: 9
++  m_Name: Hair.001
++  m_TagString: Untagged
++  m_Icon: {fileID: 0}
++  m_NavMeshLayer: 0
++  m_StaticEditorFlags: 0
++  m_IsActive: 1
++--- !u!4 &1431631293367503725
++Transform:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 1431631293367503724}
++  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
++  m_LocalPosition: {x: -27.53, y: 0, z: 0}
++  m_LocalScale: {x: 1, y: 1, z: 1}
++  m_Children: []
++  m_Father: {fileID: 6243284159254116804}
++  m_RootOrder: 2
++  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
++--- !u!137 &1431631293367503714
++SkinnedMeshRenderer:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 1431631293367503724}
++  m_Enabled: 1
++  m_CastShadows: 1
++  m_ReceiveShadows: 1
++  m_DynamicOccludee: 1
++  m_MotionVectors: 1
++  m_LightProbeUsage: 1
++  m_ReflectionProbeUsage: 1
++  m_RenderingLayerMask: 1
++  m_RendererPriority: 0
++  m_Materials:
++  - {fileID: 2100000, guid: 22515f2447cf45b44af584db3f42b901, type: 2}
++  - {fileID: 2100000, guid: b852311cdb3a93a46b50ec74c8dcd3e8, type: 2}
++  m_StaticBatchInfo:
++    firstSubMesh: 0
++    subMeshCount: 0
++  m_StaticBatchRoot: {fileID: 0}
++  m_ProbeAnchor: {fileID: 0}
++  m_LightProbeVolumeOverride: {fileID: 0}
++  m_ScaleInLightmap: 1
++  m_PreserveUVs: 0
++  m_IgnoreNormalsForChartDetection: 0
++  m_ImportantGI: 0
++  m_StitchLightmapSeams: 0
++  m_SelectedEditorRenderState: 3
++  m_MinimumChartSize: 4
++  m_AutoUVMaxDistance: 0.5
++  m_AutoUVMaxAngle: 89
++  m_LightmapParameters: {fileID: 0}
++  m_SortingLayerID: 0
++  m_SortingLayer: 0
++  m_SortingOrder: 0
++  serializedVersion: 2
++  m_Quality: 0
++  m_UpdateWhenOffscreen: 0
++  m_SkinnedMotionVectors: 1
++  m_Mesh: {fileID: 4300010, guid: 797f8c9ae9af54b448fd2d849e5a188e, type: 3}
++  m_Bones:
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  - {fileID: 0}
++  m_BlendShapeWeights: []
++  m_RootBone: {fileID: 0}
++  m_AABB:
++    m_Center: {x: -0.025277894, y: 0.15916067, z: 0.47148654}
++    m_Extent: {x: 0.14998867, y: 0.25486982, z: 0.32752183}
++  m_DirtyAABB: 0
++--- !u!1 &5533862354375379492
++GameObject:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  serializedVersion: 6
++  m_Component:
++  - component: {fileID: 8700558611124662614}
++  - component: {fileID: 6057455913262105146}
++  - component: {fileID: 5053192936315956976}
++  m_Layer: 0
++  m_Name: Group61243
++  m_TagString: Untagged
++  m_Icon: {fileID: 0}
++  m_NavMeshLayer: 0
++  m_StaticEditorFlags: 0
++  m_IsActive: 1
++--- !u!4 &8700558611124662614
++Transform:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 5533862354375379492}
++  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
++  m_LocalPosition: {x: 0, y: 0, z: 0}
++  m_LocalScale: {x: 100, y: 100, z: 100}
++  m_Children: []
++  m_Father: {fileID: 6243284159254116804}
++  m_RootOrder: 1
++  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
++--- !u!33 &6057455913262105146
++MeshFilter:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 5533862354375379492}
++  m_Mesh: {fileID: -2851885371135012534, guid: 79e36125a0a20be458031b2eb749d6cf, type: 3}
++--- !u!23 &5053192936315956976
++MeshRenderer:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 5533862354375379492}
++  m_Enabled: 1
++  m_CastShadows: 1
++  m_ReceiveShadows: 1
++  m_DynamicOccludee: 1
++  m_MotionVectors: 1
++  m_LightProbeUsage: 1
++  m_ReflectionProbeUsage: 1
++  m_RenderingLayerMask: 1
++  m_RendererPriority: 0
++  m_Materials:
++  - {fileID: 2100000, guid: b852311cdb3a93a46b50ec74c8dcd3e8, type: 2}
++  m_StaticBatchInfo:
++    firstSubMesh: 0
++    subMeshCount: 0
++  m_StaticBatchRoot: {fileID: 0}
++  m_ProbeAnchor: {fileID: 0}
++  m_LightProbeVolumeOverride: {fileID: 0}
++  m_ScaleInLightmap: 1
++  m_PreserveUVs: 0
++  m_IgnoreNormalsForChartDetection: 0
++  m_ImportantGI: 0
++  m_StitchLightmapSeams: 1
++  m_SelectedEditorRenderState: 3
++  m_MinimumChartSize: 4
++  m_AutoUVMaxDistance: 0.5
++  m_AutoUVMaxAngle: 89
++  m_LightmapParameters: {fileID: 0}
++  m_SortingLayerID: 0
++  m_SortingLayer: 0
++  m_SortingOrder: 0
++--- !u!1 &6067528418439906776
++GameObject:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  serializedVersion: 6
++  m_Component:
++  - component: {fileID: 3106262957024778258}
++  - component: {fileID: 7834975759309108184}
++  - component: {fileID: 3551568214937726114}
++  m_Layer: 0
++  m_Name: Group16509.006
++  m_TagString: Untagged
++  m_Icon: {fileID: 0}
++  m_NavMeshLayer: 0
++  m_StaticEditorFlags: 0
++  m_IsActive: 1
++--- !u!4 &3106262957024778258
++Transform:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 6067528418439906776}
++  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
++  m_LocalPosition: {x: -0, y: 0, z: 0}
++  m_LocalScale: {x: 100, y: 100, z: 100}
++  m_Children: []
++  m_Father: {fileID: 6243284159254116804}
++  m_RootOrder: 0
++  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
++--- !u!33 &7834975759309108184
++MeshFilter:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 6067528418439906776}
++  m_Mesh: {fileID: -2520133362087116608, guid: 79e36125a0a20be458031b2eb749d6cf, type: 3}
++--- !u!23 &3551568214937726114
++MeshRenderer:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 6067528418439906776}
++  m_Enabled: 1
++  m_CastShadows: 1
++  m_ReceiveShadows: 1
++  m_DynamicOccludee: 1
++  m_MotionVectors: 1
++  m_LightProbeUsage: 1
++  m_ReflectionProbeUsage: 1
++  m_RenderingLayerMask: 1
++  m_RendererPriority: 0
++  m_Materials:
++  - {fileID: 2100000, guid: 796bb6dcac97115458c53dc46358b84e, type: 2}
++  - {fileID: -2249960132812961191, guid: 79e36125a0a20be458031b2eb749d6cf, type: 3}
++  - {fileID: -3509080000778881128, guid: 79e36125a0a20be458031b2eb749d6cf, type: 3}
++  - {fileID: -414921334540547795, guid: 79e36125a0a20be458031b2eb749d6cf, type: 3}
++  - {fileID: 3511325375820423461, guid: 79e36125a0a20be458031b2eb749d6cf, type: 3}
++  - {fileID: 2100000, guid: c2a9541817703b24ca12556dd7384742, type: 2}
++  - {fileID: -5319564673281973831, guid: 79e36125a0a20be458031b2eb749d6cf, type: 3}
++  m_StaticBatchInfo:
++    firstSubMesh: 0
++    subMeshCount: 0
++  m_StaticBatchRoot: {fileID: 0}
++  m_ProbeAnchor: {fileID: 0}
++  m_LightProbeVolumeOverride: {fileID: 0}
++  m_ScaleInLightmap: 1
++  m_PreserveUVs: 0
++  m_IgnoreNormalsForChartDetection: 0
++  m_ImportantGI: 0
++  m_StitchLightmapSeams: 1
++  m_SelectedEditorRenderState: 3
++  m_MinimumChartSize: 4
++  m_AutoUVMaxDistance: 0.5
++  m_AutoUVMaxAngle: 89
++  m_LightmapParameters: {fileID: 0}
++  m_SortingLayerID: 0
++  m_SortingLayer: 0
++  m_SortingOrder: 0
++--- !u!1 &6989516277626489815
++GameObject:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  serializedVersion: 6
++  m_Component:
++  - component: {fileID: 6243284159254116804}
++  m_Layer: 0
++  m_Name: FemaleHead_LP
++  m_TagString: Untagged
++  m_Icon: {fileID: 0}
++  m_NavMeshLayer: 0
++  m_StaticEditorFlags: 0
++  m_IsActive: 1
++--- !u!4 &6243284159254116804
++Transform:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 6989516277626489815}
++  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
++  m_LocalPosition: {x: 3.108, y: 1.558, z: -0.36}
++  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
++  m_Children:
++  - {fileID: 3106262957024778258}
++  - {fileID: 8700558611124662614}
++  - {fileID: 1431631293367503725}
++  m_Father: {fileID: 0}
++  m_RootOrder: 0
++  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+diff --git a/Assets/Models/Characters/Kata/Prefabs/FemaleHead_LP.prefab.meta b/Assets/Models/Characters/Kata/Prefabs/FemaleHead_LP.prefab.meta
+new file mode 100644
+index 0000000..2fe7559
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Prefabs/FemaleHead_LP.prefab.meta
+@@ -0,0 +1,7 @@
++fileFormatVersion: 2
++guid: 5d41dc0ebc22e8b48a45d66b26ce1780
++PrefabImporter:
++  externalObjects: {}
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures.meta b/Assets/Models/Characters/Kata/Textures.meta
+new file mode 100644
+index 0000000..b0ba765
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: 6db874d9080432848802b32cac0cf29a
++folderAsset: yes
++DefaultImporter:
++  externalObjects: {}
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Bust_DiffuseAlpha.png b/Assets/Models/Characters/Kata/Textures/Bust_DiffuseAlpha.png
+new file mode 100644
+index 0000000..7f4c8bb
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Bust_DiffuseAlpha.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:e8219abb2b7475d1be07f7e8b3673dd2f24f7c0e89cb9600afea021d70f7c7eb
++size 13516747
+diff --git a/Assets/Models/Characters/Kata/Textures/Bust_DiffuseAlpha.png.meta b/Assets/Models/Characters/Kata/Textures/Bust_DiffuseAlpha.png.meta
+new file mode 100644
+index 0000000..dbf83e5
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Bust_DiffuseAlpha.png.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: 6e8c34a3408f20c47a5bc86228037d9e
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Bust_Normal.png b/Assets/Models/Characters/Kata/Textures/Bust_Normal.png
+new file mode 100644
+index 0000000..f51c10e
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Bust_Normal.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:c6b74838479540f68ceca51093366471bb87bfa5b0bbdd99a51a9570e180506a
++size 7547999
+diff --git a/Assets/Models/Characters/Kata/Textures/Bust_Normal.png.meta b/Assets/Models/Characters/Kata/Textures/Bust_Normal.png.meta
+new file mode 100644
+index 0000000..4763454
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Bust_Normal.png.meta
+@@ -0,0 +1,101 @@
++fileFormatVersion: 2
++guid: 922e448b5abb94a43ad9cc7de917b47e
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 0
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 1
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  - serializedVersion: 2
++    buildTarget: Standalone
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Bust_SpecularGloss.png b/Assets/Models/Characters/Kata/Textures/Bust_SpecularGloss.png
+new file mode 100644
+index 0000000..ea28a99
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Bust_SpecularGloss.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:d84078ea356598f51df08b9e40bdd6512b84f96367bb0a1382cf068dbde552cb
++size 17891116
+diff --git a/Assets/Models/Characters/Kata/Textures/Bust_SpecularGloss.png.meta b/Assets/Models/Characters/Kata/Textures/Bust_SpecularGloss.png.meta
+new file mode 100644
+index 0000000..91397e1
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Bust_SpecularGloss.png.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: cd5ac653c204c414e998474bbd02940f
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Bust_Subdermis.png b/Assets/Models/Characters/Kata/Textures/Bust_Subdermis.png
+new file mode 100644
+index 0000000..1210b4d
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Bust_Subdermis.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:2416ba8009d95ab467189ffd6e1d2676a9cd82b96f377ff299faac3bf6a6bb5a
++size 18902647
+diff --git a/Assets/Models/Characters/Kata/Textures/Bust_Subdermis.png.meta b/Assets/Models/Characters/Kata/Textures/Bust_Subdermis.png.meta
+new file mode 100644
+index 0000000..0328300
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Bust_Subdermis.png.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: 462ccae7a8eeadd4588f334c446da04e
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Bust_TranslucencyMap.png b/Assets/Models/Characters/Kata/Textures/Bust_TranslucencyMap.png
+new file mode 100644
+index 0000000..7474bf6
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Bust_TranslucencyMap.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:2825511a691962096ca3efffb61b695148a045332d8ec7e1d6332589b3336ef9
++size 1077839
+diff --git a/Assets/Models/Characters/Kata/Textures/Bust_TranslucencyMap.png.meta b/Assets/Models/Characters/Kata/Textures/Bust_TranslucencyMap.png.meta
+new file mode 100644
+index 0000000..9e47b4c
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Bust_TranslucencyMap.png.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: e5ea086c2281ed04b8472d44f5b17cd8
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Eye_DiffuseAlpha.png b/Assets/Models/Characters/Kata/Textures/Eye_DiffuseAlpha.png
+new file mode 100644
+index 0000000..6716545
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eye_DiffuseAlpha.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:444caf37a3bd3de2006303a009ef9d125a9a1af2305b45b3857b4fb5f9612da7
++size 968981
+diff --git a/Assets/Models/Characters/Kata/Textures/Eye_DiffuseAlpha.png.meta b/Assets/Models/Characters/Kata/Textures/Eye_DiffuseAlpha.png.meta
+new file mode 100644
+index 0000000..7a9a52c
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eye_DiffuseAlpha.png.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: beea9e1fe895ffb4d9f7aa3cade8cfaa
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Eye_Normal.png b/Assets/Models/Characters/Kata/Textures/Eye_Normal.png
+new file mode 100644
+index 0000000..ab42f76
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eye_Normal.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:8d86674e4e4eba611a318f908bc97e9d6620526ab29e9cce7c850b62da44ea87
++size 1273043
+diff --git a/Assets/Models/Characters/Kata/Textures/Eye_Normal.png.meta b/Assets/Models/Characters/Kata/Textures/Eye_Normal.png.meta
+new file mode 100644
+index 0000000..b520836
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eye_Normal.png.meta
+@@ -0,0 +1,101 @@
++fileFormatVersion: 2
++guid: 26f18d96ea31edf4ba688bce71b98bc1
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 0
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 1
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  - serializedVersion: 2
++    buildTarget: Standalone
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Eye_SpecularGloss.png b/Assets/Models/Characters/Kata/Textures/Eye_SpecularGloss.png
+new file mode 100644
+index 0000000..0759ae1
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eye_SpecularGloss.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:7123804ffbbb36bd388da184a642174e84145348595dc8a92d03e2e6b0f231fc
++size 332380
+diff --git a/Assets/Models/Characters/Kata/Textures/Eye_SpecularGloss.png.meta b/Assets/Models/Characters/Kata/Textures/Eye_SpecularGloss.png.meta
+new file mode 100644
+index 0000000..5ffcb85
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eye_SpecularGloss.png.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: aa125d38db8d97e4bafa2b59d8a3bbb8
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Eye_Subdermis.png b/Assets/Models/Characters/Kata/Textures/Eye_Subdermis.png
+new file mode 100644
+index 0000000..db2d528
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eye_Subdermis.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:4d20689bd0b2ca6618ef7a263514014f4391911c6befe418eedb7a6673b7bf80
++size 16902
+diff --git a/Assets/Models/Characters/Kata/Textures/Eye_Subdermis.png.meta b/Assets/Models/Characters/Kata/Textures/Eye_Subdermis.png.meta
+new file mode 100644
+index 0000000..a54bc1c
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eye_Subdermis.png.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: f96bb60ce37280341afa74513486b179
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Eye_TranslucencyMap.png b/Assets/Models/Characters/Kata/Textures/Eye_TranslucencyMap.png
+new file mode 100644
+index 0000000..db2d528
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eye_TranslucencyMap.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:4d20689bd0b2ca6618ef7a263514014f4391911c6befe418eedb7a6673b7bf80
++size 16902
+diff --git a/Assets/Models/Characters/Kata/Textures/Eye_TranslucencyMap.png.meta b/Assets/Models/Characters/Kata/Textures/Eye_TranslucencyMap.png.meta
+new file mode 100644
+index 0000000..e665616
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eye_TranslucencyMap.png.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: 184281f50b79bd747989ae466e48a7eb
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Eyelashes_DiffuseAlpha.png b/Assets/Models/Characters/Kata/Textures/Eyelashes_DiffuseAlpha.png
+new file mode 100644
+index 0000000..c20faa0
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eyelashes_DiffuseAlpha.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:45dea8b89e8af6d637dd66adf3caa18701dd44e91d312b7a241c08e331320e78
++size 127055
+diff --git a/Assets/Models/Characters/Kata/Textures/Eyelashes_DiffuseAlpha.png.meta b/Assets/Models/Characters/Kata/Textures/Eyelashes_DiffuseAlpha.png.meta
+new file mode 100644
+index 0000000..b43cc7f
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eyelashes_DiffuseAlpha.png.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: 9edfe093d8e2c9f4980c0a26934065b5
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Eyelashes_Normal.png b/Assets/Models/Characters/Kata/Textures/Eyelashes_Normal.png
+new file mode 100644
+index 0000000..c867f2f
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eyelashes_Normal.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:57e09ca87b14648a937b8f9833c8316bd0d3497441e4ba32e11d015222f9a983
++size 77120
+diff --git a/Assets/Models/Characters/Kata/Textures/Eyelashes_Normal.png.meta b/Assets/Models/Characters/Kata/Textures/Eyelashes_Normal.png.meta
+new file mode 100644
+index 0000000..1c0a6e8
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eyelashes_Normal.png.meta
+@@ -0,0 +1,101 @@
++fileFormatVersion: 2
++guid: 8bf0c43f580b9b54aabeb4da4ac4558a
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 0
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 1
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  - serializedVersion: 2
++    buildTarget: Standalone
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Eyelashes_SpecularGloss.png b/Assets/Models/Characters/Kata/Textures/Eyelashes_SpecularGloss.png
+new file mode 100644
+index 0000000..5b86ae5
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eyelashes_SpecularGloss.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:afacca9a31c437cdf7f849ca5cf62003dd547100042c7c88f453a6defb0e0c72
++size 205610
+diff --git a/Assets/Models/Characters/Kata/Textures/Eyelashes_SpecularGloss.png.meta b/Assets/Models/Characters/Kata/Textures/Eyelashes_SpecularGloss.png.meta
+new file mode 100644
+index 0000000..afb6ce1
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Eyelashes_SpecularGloss.png.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: ade17adb75687a44f9e54caadedf9148
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_AlbedoTransparency.tga b/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_AlbedoTransparency.tga
+new file mode 100644
+index 0000000..4b95a12
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_AlbedoTransparency.tga
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:6d5d2a1277a67ab001e3de4f0538c9a66e8b853de4bd3e69220ba8a205ace65e
++size 12582956
+diff --git a/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_AlbedoTransparency.tga.meta b/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_AlbedoTransparency.tga.meta
+new file mode 100644
+index 0000000..9dca5e2
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_AlbedoTransparency.tga.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: 4994265bfebdcbc4aa129bde8b1ed44d
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_Normal.tga b/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_Normal.tga
+new file mode 100644
+index 0000000..396509e
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_Normal.tga
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:e5b03195cecf718881a88030fcddd4a8c73d844bc41d23e688d4365fad083207
++size 12582956
+diff --git a/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_Normal.tga.meta b/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_Normal.tga.meta
+new file mode 100644
+index 0000000..c95c221
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_Normal.tga.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: 0b511c50d68fcb84997de0896922e9c6
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 0
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 1
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_SpecularSmoothness.tga b/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_SpecularSmoothness.tga
+new file mode 100644
+index 0000000..457ca95
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_SpecularSmoothness.tga
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:95040ea34c47ffc51e4c5025052d007d4df42250f5635bd4e4a56e9e2f2c36d0
++size 16777260
+diff --git a/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_SpecularSmoothness.tga.meta b/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_SpecularSmoothness.tga.meta
+new file mode 100644
+index 0000000..5f7e84e
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/FemaleHead_LP_Eye_SpecularSmoothness.tga.meta
+@@ -0,0 +1,101 @@
++fileFormatVersion: 2
++guid: ba6cc94bd7c789d47a00dba01acb5e4d
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 1
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  - serializedVersion: 2
++    buildTarget: Standalone
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Shirt_DiffuseAlpha.png b/Assets/Models/Characters/Kata/Textures/Shirt_DiffuseAlpha.png
+new file mode 100644
+index 0000000..38cb5f7
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Shirt_DiffuseAlpha.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:fe8f441a8bb6afb22818a206649b0b9ac9f5bfbe53074334d5d176a6472b3c37
++size 4684910
+diff --git a/Assets/Models/Characters/Kata/Textures/Shirt_DiffuseAlpha.png.meta b/Assets/Models/Characters/Kata/Textures/Shirt_DiffuseAlpha.png.meta
+new file mode 100644
+index 0000000..a7e6143
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Shirt_DiffuseAlpha.png.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: c5bba8f27e705a148803852bfbfe1fe2
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Shirt_Normal.png b/Assets/Models/Characters/Kata/Textures/Shirt_Normal.png
+new file mode 100644
+index 0000000..a7a82be
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Shirt_Normal.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:b31fe9ccfe0757394e66afdc0608d9e24279d3adb93d1e7badf4e2a09ff70549
++size 5876186
+diff --git a/Assets/Models/Characters/Kata/Textures/Shirt_Normal.png.meta b/Assets/Models/Characters/Kata/Textures/Shirt_Normal.png.meta
+new file mode 100644
+index 0000000..c4ca5b1
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Shirt_Normal.png.meta
+@@ -0,0 +1,101 @@
++fileFormatVersion: 2
++guid: 0dc3ecf668a68f7409f00ab5166eebfe
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 0
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 1
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  - serializedVersion: 2
++    buildTarget: Standalone
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Models/Characters/Kata/Textures/Shirt_SpecularGloss.png b/Assets/Models/Characters/Kata/Textures/Shirt_SpecularGloss.png
+new file mode 100644
+index 0000000..d02b6d2
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Shirt_SpecularGloss.png
+@@ -0,0 +1,3 @@
++version https://git-lfs.github.com/spec/v1
++oid sha256:ef58b0937a1c0d4b6da00d436b7a77695e905ad24d3789412d20326c8eee5616
++size 2458267
+diff --git a/Assets/Models/Characters/Kata/Textures/Shirt_SpecularGloss.png.meta b/Assets/Models/Characters/Kata/Textures/Shirt_SpecularGloss.png.meta
+new file mode 100644
+index 0000000..e9275b4
+--- /dev/null
++++ b/Assets/Models/Characters/Kata/Textures/Shirt_SpecularGloss.png.meta
+@@ -0,0 +1,90 @@
++fileFormatVersion: 2
++guid: 11bb2946584511941adefd3b80fd96c2
++TextureImporter:
++  internalIDToNameTable: []
++  externalObjects: {}
++  serializedVersion: 10
++  mipmaps:
++    mipMapMode: 0
++    enableMipMap: 1
++    sRGBTexture: 1
++    linearTexture: 0
++    fadeOut: 0
++    borderMipMap: 0
++    mipMapsPreserveCoverage: 0
++    alphaTestReferenceValue: 0.5
++    mipMapFadeDistanceStart: 1
++    mipMapFadeDistanceEnd: 3
++  bumpmap:
++    convertToNormalMap: 0
++    externalNormalMap: 0
++    heightScale: 0.25
++    normalMapFilter: 0
++  isReadable: 0
++  streamingMipmaps: 0
++  streamingMipmapsPriority: 0
++  grayScaleToAlpha: 0
++  generateCubemap: 6
++  cubemapConvolution: 0
++  seamlessCubemap: 0
++  textureFormat: 1
++  maxTextureSize: 2048
++  textureSettings:
++    serializedVersion: 2
++    filterMode: -1
++    aniso: -1
++    mipBias: -100
++    wrapU: -1
++    wrapV: -1
++    wrapW: -1
++  nPOTScale: 1
++  lightmap: 0
++  compressionQuality: 50
++  spriteMode: 0
++  spriteExtrude: 1
++  spriteMeshType: 1
++  alignment: 0
++  spritePivot: {x: 0.5, y: 0.5}
++  spritePixelsToUnits: 100
++  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
++  spriteGenerateFallbackPhysicsShape: 1
++  alphaUsage: 1
++  alphaIsTransparency: 0
++  spriteTessellationDetail: -1
++  textureType: 0
++  textureShape: 1
++  singleChannelComponent: 0
++  maxTextureSizeSet: 0
++  compressionQualitySet: 0
++  textureFormatSet: 0
++  platformSettings:
++  - serializedVersion: 2
++    buildTarget: DefaultTexturePlatform
++    maxTextureSize: 2048
++    resizeAlgorithm: 0
++    textureFormat: -1
++    textureCompression: 1
++    compressionQuality: 50
++    crunchedCompression: 0
++    allowsAlphaSplitting: 0
++    overridden: 0
++    androidETC2FallbackOverride: 0
++  spriteSheet:
++    serializedVersion: 2
++    sprites: []
++    outline: []
++    physicsShape: []
++    bones: []
++    spriteID: 
++    internalID: 0
++    vertices: []
++    indices: 
++    edges: []
++    weights: []
++    secondaryTextures: []
++  spritePackingTag: 
++  pSDRemoveMatte: 0
++  pSDShowRemoveMatteOption: 0
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+diff --git a/Assets/Scenes/MarmosetBaseScene.unity b/Assets/Scenes/MarmosetBaseScene.unity
+index 8119b7f..9f0bf09 100644
+--- a/Assets/Scenes/MarmosetBaseScene.unity
++++ b/Assets/Scenes/MarmosetBaseScene.unity
+@@ -54,7 +54,7 @@ LightmapSettings:
+     m_EnableBakedLightmaps: 1
+     m_EnableRealtimeLightmaps: 1
+   m_LightmapEditorSettings:
+-    serializedVersion: 10
++    serializedVersion: 12
+     m_Resolution: 10
+     m_BakeResolution: 30
+     m_AtlasSize: 1024
+@@ -62,6 +62,7 @@ LightmapSettings:
+     m_AOMaxDistance: 1
+     m_CompAOExponent: 4.91
+     m_CompAOExponentDirect: 0.07
++    m_ExtractAmbientOcclusion: 0
+     m_Padding: 5
+     m_LightmapParameters: {fileID: 15200, guid: 0000000000000000f000000000000000,
+       type: 0}
+@@ -77,10 +78,16 @@ LightmapSettings:
+     m_PVRDirectSampleCount: 64
+     m_PVRSampleCount: 128
+     m_PVRBounces: 4
++    m_PVREnvironmentSampleCount: 128
++    m_PVREnvironmentReferencePointCount: 2048
++    m_PVRFilteringMode: 2
++    m_PVRDenoiserTypeDirect: 0
++    m_PVRDenoiserTypeIndirect: 0
++    m_PVRDenoiserTypeAO: 0
+     m_PVRFilterTypeDirect: 0
+     m_PVRFilterTypeIndirect: 0
+     m_PVRFilterTypeAO: 0
+-    m_PVRFilteringMode: 2
++    m_PVREnvironmentMIS: 0
+     m_PVRCulling: 1
+     m_PVRFilteringGaussRadiusDirect: 1
+     m_PVRFilteringGaussRadiusIndirect: 1
+@@ -89,6 +96,7 @@ LightmapSettings:
+     m_PVRFilteringAtrousPositionSigmaIndirect: 2
+     m_PVRFilteringAtrousPositionSigmaAO: 1
+     m_ShowResolutionOverlay: 1
++    m_ExportTrainingData: 0
+   m_LightingDataAsset: {fileID: 112000000, guid: 2e5a910af54649646b8bc31a471e4561,
+     type: 2}
+   m_UseShadowmask: 1
+@@ -439,6 +447,90 @@ MeshFilter:
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 48881986}
+   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
++--- !u!1001 &67777518
++PrefabInstance:
++  m_ObjectHideFlags: 0
++  serializedVersion: 2
++  m_Modification:
++    m_TransformParent: {fileID: 0}
++    m_Modifications:
++    - target: {fileID: -927199367670048503, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_Name
++      value: FemaleHead_LP
++      objectReference: {fileID: 0}
++    - target: {fileID: -927199367670048503, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_Layer
++      value: 9
++      objectReference: {fileID: 0}
++    - target: {fileID: -4041384864010643706, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_Layer
++      value: 9
++      objectReference: {fileID: 0}
++    - target: {fileID: 6850563744628480250, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_Layer
++      value: 9
++      objectReference: {fileID: 0}
++    - target: {fileID: -4216859302048453862, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_LocalPosition.x
++      value: 2.908
++      objectReference: {fileID: 0}
++    - target: {fileID: -4216859302048453862, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_LocalPosition.y
++      value: 1.585
++      objectReference: {fileID: 0}
++    - target: {fileID: -4216859302048453862, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_LocalPosition.z
++      value: -0.293
++      objectReference: {fileID: 0}
++    - target: {fileID: -4216859302048453862, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_LocalRotation.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -4216859302048453862, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_LocalRotation.y
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -4216859302048453862, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_LocalRotation.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -4216859302048453862, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_LocalRotation.w
++      value: 1
++      objectReference: {fileID: 0}
++    - target: {fileID: -4216859302048453862, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_RootOrder
++      value: 1
++      objectReference: {fileID: 0}
++    - target: {fileID: -4216859302048453862, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_LocalEulerAnglesHint.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -4216859302048453862, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_LocalEulerAnglesHint.y
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: -4216859302048453862, guid: 79e36125a0a20be458031b2eb749d6cf,
++        type: 3}
++      propertyPath: m_LocalEulerAnglesHint.z
++      value: 0
++      objectReference: {fileID: 0}
++    m_RemovedComponents: []
++  m_SourcePrefab: {fileID: 100100000, guid: 79e36125a0a20be458031b2eb749d6cf, type: 3}
+ --- !u!1 &110930143
+ GameObject:
+   m_ObjectHideFlags: 0
+@@ -1197,7 +1289,7 @@ Transform:
+   - {fileID: 1409024971}
+   - {fileID: 580025571}
+   m_Father: {fileID: 0}
+-  m_RootOrder: 11
++  m_RootOrder: 13
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &168916691
+ GameObject:
+@@ -1276,7 +1368,7 @@ Transform:
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 2
++  m_RootOrder: 4
+   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
+ --- !u!1 &172724904
+ GameObject:
+@@ -1432,7 +1524,7 @@ Transform:
+   m_LocalScale: {x: 2.2922342, y: 2.2922342, z: 2.2922342}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 3
++  m_RootOrder: 5
+   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
+ --- !u!1 &230801196
+ GameObject:
+@@ -1498,7 +1590,7 @@ Transform:
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 16
++  m_RootOrder: 18
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1001 &245221138
+ PrefabInstance:
+@@ -2228,6 +2320,83 @@ Transform:
+     type: 3}
+   m_PrefabInstance: {fileID: 318320787}
+   m_PrefabAsset: {fileID: 0}
++--- !u!1 &329602962
++GameObject:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  serializedVersion: 6
++  m_Component:
++  - component: {fileID: 329602965}
++  - component: {fileID: 329602964}
++  - component: {fileID: 329602963}
++  m_Layer: 0
++  m_Name: Hair.001
++  m_TagString: Untagged
++  m_Icon: {fileID: 0}
++  m_NavMeshLayer: 0
++  m_StaticEditorFlags: 0
++  m_IsActive: 1
++--- !u!23 &329602963
++MeshRenderer:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 329602962}
++  m_Enabled: 1
++  m_CastShadows: 1
++  m_ReceiveShadows: 1
++  m_DynamicOccludee: 1
++  m_MotionVectors: 1
++  m_LightProbeUsage: 1
++  m_ReflectionProbeUsage: 1
++  m_RenderingLayerMask: 1
++  m_RendererPriority: 0
++  m_Materials:
++  - {fileID: 0}
++  m_StaticBatchInfo:
++    firstSubMesh: 0
++    subMeshCount: 0
++  m_StaticBatchRoot: {fileID: 0}
++  m_ProbeAnchor: {fileID: 0}
++  m_LightProbeVolumeOverride: {fileID: 0}
++  m_ScaleInLightmap: 1
++  m_PreserveUVs: 0
++  m_IgnoreNormalsForChartDetection: 0
++  m_ImportantGI: 0
++  m_StitchLightmapSeams: 1
++  m_SelectedEditorRenderState: 3
++  m_MinimumChartSize: 4
++  m_AutoUVMaxDistance: 0.5
++  m_AutoUVMaxAngle: 89
++  m_LightmapParameters: {fileID: 0}
++  m_SortingLayerID: 0
++  m_SortingLayer: 0
++  m_SortingOrder: 0
++--- !u!33 &329602964
++MeshFilter:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 329602962}
++  m_Mesh: {fileID: 4300010, guid: 797f8c9ae9af54b448fd2d849e5a188e, type: 3}
++--- !u!4 &329602965
++Transform:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 329602962}
++  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
++  m_LocalPosition: {x: 3.008, y: 1.3554946, z: -0.2418862}
++  m_LocalScale: {x: 1, y: 1, z: 1}
++  m_Children: []
++  m_Father: {fileID: 0}
++  m_RootOrder: 23
++  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &348594296
+ GameObject:
+   m_ObjectHideFlags: 0
+@@ -2253,12 +2422,13 @@ Light:
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 348594296}
+   m_Enabled: 1
+-  serializedVersion: 8
++  serializedVersion: 9
+   m_Type: 2
+   m_Color: {r: 0.7735849, g: 0.6699115, b: 0.52910286, a: 1}
+   m_Intensity: 1.15
+   m_Range: 10
+   m_SpotAngle: 30
++  m_InnerSpotAngle: 21.80208
+   m_CookieSize: 10
+   m_Shadows:
+     m_Type: 0
+@@ -2268,6 +2438,24 @@ Light:
+     m_Bias: 0.05
+     m_NormalBias: 0.4
+     m_NearPlane: 0.2
++    m_CullingMatrixOverride:
++      e00: 1
++      e01: 0
++      e02: 0
++      e03: 0
++      e10: 0
++      e11: 1
++      e12: 0
++      e13: 0
++      e20: 0
++      e21: 0
++      e22: 1
++      e23: 0
++      e30: 0
++      e31: 0
++      e32: 0
++      e33: 1
++    m_UseCullingMatrixOverride: 0
+   m_Cookie: {fileID: 0}
+   m_DrawHalo: 0
+   m_Flare: {fileID: 0}
+@@ -2275,12 +2463,15 @@ Light:
+   m_CullingMask:
+     serializedVersion: 2
+     m_Bits: 512
++  m_RenderingLayerMask: 1
+   m_Lightmapping: 4
+   m_LightShadowCasterMode: 0
+   m_AreaSize: {x: 1, y: 1}
+   m_BounceIntensity: 0
+   m_ColorTemperature: 6570
+   m_UseColorTemperature: 0
++  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
++  m_UseBoundingSphereOverride: 0
+   m_ShadowRadius: 0
+   m_ShadowAngle: 0
+ --- !u!4 &348594298
+@@ -2295,7 +2486,7 @@ Transform:
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 19
++  m_RootOrder: 21
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &357954322
+ GameObject:
+@@ -2777,7 +2968,7 @@ Transform:
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 8
++  m_RootOrder: 10
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &489261746
+ GameObject:
+@@ -2813,7 +3004,7 @@ Transform:
+   - {fileID: 1046408954}
+   - {fileID: 1192066862}
+   m_Father: {fileID: 0}
+-  m_RootOrder: 10
++  m_RootOrder: 12
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &506543947
+ GameObject:
+@@ -2885,8 +3076,8 @@ MonoBehaviour:
+   _IgnoredLayerCount: 0
+   _GlobalSky: {fileID: 456385211}
+   GlobalBlender:
+-    CurrentSky: {fileID: 7757820788576275360}
+-    PreviousSky: {fileID: 7757820788576275360}
++    CurrentSky: {fileID: 456385211}
++    PreviousSky: {fileID: 456385211}
+     blendTime: 0.25
+   LocalBlendTime: 0.25
+   GlobalBlendTime: 0.25
+@@ -2909,7 +3100,7 @@ Transform:
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 7
++  m_RootOrder: 9
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &542332494
+ GameObject:
+@@ -2957,7 +3148,7 @@ Transform:
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 15
++  m_RootOrder: 17
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &575361013
+ GameObject:
+@@ -2998,12 +3189,13 @@ Light:
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 575361013}
+   m_Enabled: 1
+-  serializedVersion: 8
++  serializedVersion: 9
+   m_Type: 2
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_Intensity: 1.49
+   m_Range: 2.08
+   m_SpotAngle: 30
++  m_InnerSpotAngle: 21.80208
+   m_CookieSize: 10
+   m_Shadows:
+     m_Type: 0
+@@ -3013,6 +3205,24 @@ Light:
+     m_Bias: 0.05
+     m_NormalBias: 0.4
+     m_NearPlane: 0.2
++    m_CullingMatrixOverride:
++      e00: 1
++      e01: 0
++      e02: 0
++      e03: 0
++      e10: 0
++      e11: 1
++      e12: 0
++      e13: 0
++      e20: 0
++      e21: 0
++      e22: 1
++      e23: 0
++      e30: 0
++      e31: 0
++      e32: 0
++      e33: 1
++    m_UseCullingMatrixOverride: 0
+   m_Cookie: {fileID: 0}
+   m_DrawHalo: 0
+   m_Flare: {fileID: 0}
+@@ -3020,12 +3230,15 @@ Light:
+   m_CullingMask:
+     serializedVersion: 2
+     m_Bits: 567
++  m_RenderingLayerMask: 1
+   m_Lightmapping: 4
+   m_LightShadowCasterMode: 0
+   m_AreaSize: {x: 1, y: 1}
+   m_BounceIntensity: 1
+   m_ColorTemperature: 6570
+   m_UseColorTemperature: 0
++  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
++  m_UseBoundingSphereOverride: 0
+   m_ShadowRadius: 0
+   m_ShadowAngle: 0
+ --- !u!1 &580025570
+@@ -3067,12 +3280,13 @@ Light:
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 580025570}
+   m_Enabled: 1
+-  serializedVersion: 8
++  serializedVersion: 9
+   m_Type: 2
+   m_Color: {r: 0.9848749, g: 1, b: 0.7971698, a: 1}
+   m_Intensity: 0.41
+   m_Range: 2.5
+   m_SpotAngle: 30
++  m_InnerSpotAngle: 21.80208
+   m_CookieSize: 10
+   m_Shadows:
+     m_Type: 2
+@@ -3082,6 +3296,24 @@ Light:
+     m_Bias: 0
+     m_NormalBias: 0.4
+     m_NearPlane: 0.2
++    m_CullingMatrixOverride:
++      e00: 1
++      e01: 0
++      e02: 0
++      e03: 0
++      e10: 0
++      e11: 1
++      e12: 0
++      e13: 0
++      e20: 0
++      e21: 0
++      e22: 1
++      e23: 0
++      e30: 0
++      e31: 0
++      e32: 0
++      e33: 1
++    m_UseCullingMatrixOverride: 0
+   m_Cookie: {fileID: 0}
+   m_DrawHalo: 0
+   m_Flare: {fileID: 0}
+@@ -3089,12 +3321,15 @@ Light:
+   m_CullingMask:
+     serializedVersion: 2
+     m_Bits: 4294967295
++  m_RenderingLayerMask: 1
+   m_Lightmapping: 4
+   m_LightShadowCasterMode: 0
+   m_AreaSize: {x: 1, y: 1}
+   m_BounceIntensity: 1
+   m_ColorTemperature: 6570
+   m_UseColorTemperature: 0
++  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
++  m_UseBoundingSphereOverride: 0
+   m_ShadowRadius: 0
+   m_ShadowAngle: 0
+ --- !u!1001 &593550479
+@@ -3646,7 +3881,7 @@ Transform:
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 6
++  m_RootOrder: 8
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1001 &714937220
+ PrefabInstance:
+@@ -3973,7 +4208,7 @@ Transform:
+   - {fileID: 1365757496}
+   - {fileID: 1107481955}
+   m_Father: {fileID: 0}
+-  m_RootOrder: 17
++  m_RootOrder: 19
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &764993354
+ GameObject:
+@@ -4014,12 +4249,13 @@ Light:
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 764993354}
+   m_Enabled: 1
+-  serializedVersion: 8
++  serializedVersion: 9
+   m_Type: 2
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_Intensity: 0.41
+   m_Range: 10
+   m_SpotAngle: 30
++  m_InnerSpotAngle: 21.80208
+   m_CookieSize: 10
+   m_Shadows:
+     m_Type: 2
+@@ -4029,6 +4265,24 @@ Light:
+     m_Bias: 0.05
+     m_NormalBias: 0.4
+     m_NearPlane: 0.2
++    m_CullingMatrixOverride:
++      e00: 1
++      e01: 0
++      e02: 0
++      e03: 0
++      e10: 0
++      e11: 1
++      e12: 0
++      e13: 0
++      e20: 0
++      e21: 0
++      e22: 1
++      e23: 0
++      e30: 0
++      e31: 0
++      e32: 0
++      e33: 1
++    m_UseCullingMatrixOverride: 0
+   m_Cookie: {fileID: 0}
+   m_DrawHalo: 0
+   m_Flare: {fileID: 0}
+@@ -4036,12 +4290,15 @@ Light:
+   m_CullingMask:
+     serializedVersion: 2
+     m_Bits: 512
++  m_RenderingLayerMask: 1
+   m_Lightmapping: 2
+   m_LightShadowCasterMode: 0
+   m_AreaSize: {x: 1, y: 1}
+   m_BounceIntensity: 1
+   m_ColorTemperature: 6570
+   m_UseColorTemperature: 0
++  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
++  m_UseBoundingSphereOverride: 0
+   m_ShadowRadius: 0
+   m_ShadowAngle: 0
+ --- !u!1 &798416106
+@@ -4250,7 +4507,7 @@ Transform:
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 5
++  m_RootOrder: 7
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &1037948256
+ GameObject:
+@@ -4280,7 +4537,7 @@ Transform:
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 12
++  m_RootOrder: 14
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &1046408953
+ GameObject:
+@@ -4321,12 +4578,13 @@ Light:
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 1046408953}
+   m_Enabled: 1
+-  serializedVersion: 8
++  serializedVersion: 9
+   m_Type: 3
+   m_Color: {r: 1, g: 0.8823086, b: 0.7783019, a: 1}
+   m_Intensity: 3.09
+-  m_Range: 10
++  m_Range: 49.182182
+   m_SpotAngle: 30
++  m_InnerSpotAngle: 21.80208
+   m_CookieSize: 10
+   m_Shadows:
+     m_Type: 2
+@@ -4336,6 +4594,24 @@ Light:
+     m_Bias: 0.05
+     m_NormalBias: 0.4
+     m_NearPlane: 0.2
++    m_CullingMatrixOverride:
++      e00: 1
++      e01: 0
++      e02: 0
++      e03: 0
++      e10: 0
++      e11: 1
++      e12: 0
++      e13: 0
++      e20: 0
++      e21: 0
++      e22: 1
++      e23: 0
++      e30: 0
++      e31: 0
++      e32: 0
++      e33: 1
++    m_UseCullingMatrixOverride: 0
+   m_Cookie: {fileID: 0}
+   m_DrawHalo: 0
+   m_Flare: {fileID: 0}
+@@ -4343,12 +4619,15 @@ Light:
+   m_CullingMask:
+     serializedVersion: 2
+     m_Bits: 512
++  m_RenderingLayerMask: 1
+   m_Lightmapping: 2
+   m_LightShadowCasterMode: 0
+   m_AreaSize: {x: 2.28, y: 3.96}
+   m_BounceIntensity: 1
+   m_ColorTemperature: 6570
+   m_UseColorTemperature: 0
++  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
++  m_UseBoundingSphereOverride: 0
+   m_ShadowRadius: 0
+   m_ShadowAngle: 0
+ --- !u!1 &1107481954
+@@ -4381,6 +4660,75 @@ Transform:
+   m_Father: {fileID: 749762584}
+   m_RootOrder: 1
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
++--- !u!1001 &1115840590
++PrefabInstance:
++  m_ObjectHideFlags: 0
++  serializedVersion: 2
++  m_Modification:
++    m_TransformParent: {fileID: 0}
++    m_Modifications:
++    - target: {fileID: 100000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_Name
++      value: hair
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalPosition.x
++      value: 2.5081
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalPosition.y
++      value: 0.171
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalPosition.z
++      value: -0.1502
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalRotation.x
++      value: -0
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalRotation.y
++      value: 0.10003251
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalRotation.z
++      value: -0
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalRotation.w
++      value: 0.9949842
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_RootOrder
++      value: 2
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.y
++      value: 11.482
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalEulerAnglesHint.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalScale.x
++      value: 0.2
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalScale.y
++      value: 0.2
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
++      propertyPath: m_LocalScale.z
++      value: 0.2
++      objectReference: {fileID: 0}
++    m_RemovedComponents: []
++  m_SourcePrefab: {fileID: 100100000, guid: a871972d7fe94e541a515b84ca8eeca8, type: 3}
+ --- !u!1001 &1166117991
+ PrefabInstance:
+   m_ObjectHideFlags: 0
+@@ -4834,12 +5182,13 @@ Light:
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 1192066861}
+   m_Enabled: 1
+-  serializedVersion: 8
++  serializedVersion: 9
+   m_Type: 3
+   m_Color: {r: 1, g: 0.8823086, b: 0.7783019, a: 1}
+   m_Intensity: 3.09
+-  m_Range: 10
++  m_Range: 98.561485
+   m_SpotAngle: 30
++  m_InnerSpotAngle: 21.80208
+   m_CookieSize: 10
+   m_Shadows:
+     m_Type: 2
+@@ -4849,6 +5198,24 @@ Light:
+     m_Bias: 0.05
+     m_NormalBias: 0.4
+     m_NearPlane: 0.2
++    m_CullingMatrixOverride:
++      e00: 1
++      e01: 0
++      e02: 0
++      e03: 0
++      e10: 0
++      e11: 1
++      e12: 0
++      e13: 0
++      e20: 0
++      e21: 0
++      e22: 1
++      e23: 0
++      e30: 0
++      e31: 0
++      e32: 0
++      e33: 1
++    m_UseCullingMatrixOverride: 0
+   m_Cookie: {fileID: 0}
+   m_DrawHalo: 0
+   m_Flare: {fileID: 0}
+@@ -4856,12 +5223,15 @@ Light:
+   m_CullingMask:
+     serializedVersion: 2
+     m_Bits: 512
++  m_RenderingLayerMask: 1
+   m_Lightmapping: 2
+   m_LightShadowCasterMode: 0
+   m_AreaSize: {x: 2.28, y: 7.935872}
+   m_BounceIntensity: 1
+   m_ColorTemperature: 6570
+   m_UseColorTemperature: 0
++  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
++  m_UseBoundingSphereOverride: 0
+   m_ShadowRadius: 0
+   m_ShadowAngle: 0
+ --- !u!1001 &1250861363
+@@ -5679,7 +6049,7 @@ Transform:
+   m_Children:
+   - {fileID: 1655576082}
+   m_Father: {fileID: 0}
+-  m_RootOrder: 14
++  m_RootOrder: 16
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &1405034266
+ GameObject:
+@@ -5706,12 +6076,13 @@ Light:
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 1405034266}
+   m_Enabled: 1
+-  serializedVersion: 8
++  serializedVersion: 9
+   m_Type: 2
+   m_Color: {r: 0.89744437, g: 0.8820755, b: 1, a: 1}
+   m_Intensity: 1.45
+   m_Range: 14.76
+   m_SpotAngle: 30
++  m_InnerSpotAngle: 21.80208
+   m_CookieSize: 10
+   m_Shadows:
+     m_Type: 0
+@@ -5721,6 +6092,24 @@ Light:
+     m_Bias: 0.05
+     m_NormalBias: 0.4
+     m_NearPlane: 0.2
++    m_CullingMatrixOverride:
++      e00: 1
++      e01: 0
++      e02: 0
++      e03: 0
++      e10: 0
++      e11: 1
++      e12: 0
++      e13: 0
++      e20: 0
++      e21: 0
++      e22: 1
++      e23: 0
++      e30: 0
++      e31: 0
++      e32: 0
++      e33: 1
++    m_UseCullingMatrixOverride: 0
+   m_Cookie: {fileID: 0}
+   m_DrawHalo: 0
+   m_Flare: {fileID: 0}
+@@ -5728,12 +6117,15 @@ Light:
+   m_CullingMask:
+     serializedVersion: 2
+     m_Bits: 512
++  m_RenderingLayerMask: 1
+   m_Lightmapping: 4
+   m_LightShadowCasterMode: 0
+   m_AreaSize: {x: 1, y: 1}
+   m_BounceIntensity: 0
+   m_ColorTemperature: 6570
+   m_UseColorTemperature: 0
++  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
++  m_UseBoundingSphereOverride: 0
+   m_ShadowRadius: 0
+   m_ShadowAngle: 0
+ --- !u!4 &1405034268
+@@ -5748,7 +6140,7 @@ Transform:
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 20
++  m_RootOrder: 22
+   m_LocalEulerAnglesHint: {x: 0, y: 106.200005, z: 0}
+ --- !u!1 &1409024970
+ GameObject:
+@@ -5789,12 +6181,13 @@ Light:
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 1409024970}
+   m_Enabled: 1
+-  serializedVersion: 8
++  serializedVersion: 9
+   m_Type: 2
+   m_Color: {r: 0.9848749, g: 1, b: 0.7971698, a: 1}
+   m_Intensity: 0.47
+   m_Range: 10
+   m_SpotAngle: 30
++  m_InnerSpotAngle: 21.80208
+   m_CookieSize: 10
+   m_Shadows:
+     m_Type: 2
+@@ -5804,6 +6197,24 @@ Light:
+     m_Bias: 0
+     m_NormalBias: 0.4
+     m_NearPlane: 0.2
++    m_CullingMatrixOverride:
++      e00: 1
++      e01: 0
++      e02: 0
++      e03: 0
++      e10: 0
++      e11: 1
++      e12: 0
++      e13: 0
++      e20: 0
++      e21: 0
++      e22: 1
++      e23: 0
++      e30: 0
++      e31: 0
++      e32: 0
++      e33: 1
++    m_UseCullingMatrixOverride: 0
+   m_Cookie: {fileID: 0}
+   m_DrawHalo: 0
+   m_Flare: {fileID: 0}
+@@ -5811,12 +6222,15 @@ Light:
+   m_CullingMask:
+     serializedVersion: 2
+     m_Bits: 4294967295
++  m_RenderingLayerMask: 1
+   m_Lightmapping: 4
+   m_LightShadowCasterMode: 0
+   m_AreaSize: {x: 1, y: 1}
+   m_BounceIntensity: 1
+   m_ColorTemperature: 6570
+   m_UseColorTemperature: 0
++  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
++  m_UseBoundingSphereOverride: 0
+   m_ShadowRadius: 0
+   m_ShadowAngle: 0
+ --- !u!1 &1426382957
+@@ -6595,6 +7009,14 @@ PrefabInstance:
+       propertyPath: m_Layer
+       value: 9
+       objectReference: {fileID: 0}
++    - target: {fileID: 219860005, guid: 18fa1e5ebcfba814087c8b6ff0591f60, type: 3}
++      propertyPath: m_LocalPosition.x
++      value: -0.058
++      objectReference: {fileID: 0}
++    - target: {fileID: 219860005, guid: 18fa1e5ebcfba814087c8b6ff0591f60, type: 3}
++      propertyPath: m_LocalPosition.z
++      value: -0.135
++      objectReference: {fileID: 0}
+     m_RemovedComponents: []
+   m_SourcePrefab: {fileID: 100100000, guid: 18fa1e5ebcfba814087c8b6ff0591f60, type: 3}
+ --- !u!1 &1511459751
+@@ -6711,7 +7133,7 @@ Transform:
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 13
++  m_RootOrder: 15
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &1527870067
+ GameObject:
+@@ -7234,7 +7656,7 @@ Transform:
+   m_Children:
+   - {fileID: 36250848}
+   m_Father: {fileID: 0}
+-  m_RootOrder: 18
++  m_RootOrder: 20
+   m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
+ --- !u!1 &1746936172
+ GameObject:
+@@ -7264,7 +7686,7 @@ Transform:
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 4
++  m_RootOrder: 6
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &1806386984
+ GameObject:
+@@ -7305,12 +7727,13 @@ Light:
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 1806386984}
+   m_Enabled: 1
+-  serializedVersion: 8
++  serializedVersion: 9
+   m_Type: 1
+   m_Color: {r: 1, g: 0.16509432, b: 0.16509432, a: 1}
+   m_Intensity: 1.98
+   m_Range: 10
+   m_SpotAngle: 30
++  m_InnerSpotAngle: 21.80208
+   m_CookieSize: 10
+   m_Shadows:
+     m_Type: 0
+@@ -7320,6 +7743,24 @@ Light:
+     m_Bias: 0.05
+     m_NormalBias: 0.4
+     m_NearPlane: 0.2
++    m_CullingMatrixOverride:
++      e00: 1
++      e01: 0
++      e02: 0
++      e03: 0
++      e10: 0
++      e11: 1
++      e12: 0
++      e13: 0
++      e20: 0
++      e21: 0
++      e22: 1
++      e23: 0
++      e30: 0
++      e31: 0
++      e32: 0
++      e33: 1
++    m_UseCullingMatrixOverride: 0
+   m_Cookie: {fileID: 0}
+   m_DrawHalo: 0
+   m_Flare: {fileID: 0}
+@@ -7327,12 +7768,15 @@ Light:
+   m_CullingMask:
+     serializedVersion: 2
+     m_Bits: 512
++  m_RenderingLayerMask: 1
+   m_Lightmapping: 4
+   m_LightShadowCasterMode: 0
+   m_AreaSize: {x: 1, y: 1}
+   m_BounceIntensity: 1
+   m_ColorTemperature: 6570
+   m_UseColorTemperature: 0
++  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
++  m_UseBoundingSphereOverride: 0
+   m_ShadowRadius: 0
+   m_ShadowAngle: 0
+ --- !u!1 &1827394677
+@@ -7534,12 +7978,13 @@ Light:
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 1877399703}
+   m_Enabled: 1
+-  serializedVersion: 8
++  serializedVersion: 9
+   m_Type: 1
+   m_Color: {r: 0.16470587, g: 1, b: 0.1647242, a: 1}
+   m_Intensity: 1.98
+   m_Range: 10
+   m_SpotAngle: 30
++  m_InnerSpotAngle: 21.80208
+   m_CookieSize: 10
+   m_Shadows:
+     m_Type: 0
+@@ -7549,6 +7994,24 @@ Light:
+     m_Bias: 0.05
+     m_NormalBias: 0.4
+     m_NearPlane: 0.2
++    m_CullingMatrixOverride:
++      e00: 1
++      e01: 0
++      e02: 0
++      e03: 0
++      e10: 0
++      e11: 1
++      e12: 0
++      e13: 0
++      e20: 0
++      e21: 0
++      e22: 1
++      e23: 0
++      e30: 0
++      e31: 0
++      e32: 0
++      e33: 1
++    m_UseCullingMatrixOverride: 0
+   m_Cookie: {fileID: 0}
+   m_DrawHalo: 0
+   m_Flare: {fileID: 0}
+@@ -7556,12 +8019,15 @@ Light:
+   m_CullingMask:
+     serializedVersion: 2
+     m_Bits: 512
++  m_RenderingLayerMask: 1
+   m_Lightmapping: 4
+   m_LightShadowCasterMode: 0
+   m_AreaSize: {x: 1, y: 1}
+   m_BounceIntensity: 1
+   m_ColorTemperature: 6570
+   m_UseColorTemperature: 0
++  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
++  m_UseBoundingSphereOverride: 0
+   m_ShadowRadius: 0
+   m_ShadowAngle: 0
+ --- !u!1 &1923941923
+@@ -7946,9 +8412,10 @@ Camera:
+   m_ClearFlags: 1
+   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+   m_projectionMatrixMode: 1
++  m_GateFitMode: 2
++  m_FOVAxisMode: 0
+   m_SensorSize: {x: 36, y: 24}
+   m_LensShift: {x: 0, y: 0}
+-  m_GateFitMode: 2
+   m_FocalLength: 50
+   m_NormalizedViewPortRect:
+     serializedVersion: 2
+@@ -8009,7 +8476,7 @@ Transform:
+   - {fileID: 1527870068}
+   - {fileID: 609464889}
+   m_Father: {fileID: 0}
+-  m_RootOrder: 1
++  m_RootOrder: 3
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &2114386863
+ GameObject:
+@@ -8531,7 +8998,7 @@ PrefabInstance:
+     - target: {fileID: 7757820790095683197, guid: f5566da9374f38e4fa1a984b588f35be,
+         type: 3}
+       propertyPath: m_RootOrder
+-      value: 9
++      value: 11
+       objectReference: {fileID: 0}
+     - target: {fileID: 7757820790095683197, guid: f5566da9374f38e4fa1a984b588f35be,
+         type: 3}
+@@ -8630,15 +9097,3 @@ PrefabInstance:
+       objectReference: {fileID: 0}
+     m_RemovedComponents: []
+   m_SourcePrefab: {fileID: 100100000, guid: f5566da9374f38e4fa1a984b588f35be, type: 3}
+---- !u!114 &7757820788576275360 stripped
+-MonoBehaviour:
+-  m_CorrespondingSourceObject: {fileID: 7757820790095683198, guid: f5566da9374f38e4fa1a984b588f35be,
+-    type: 3}
+-  m_PrefabInstance: {fileID: 7757820788576275359}
+-  m_PrefabAsset: {fileID: 0}
+-  m_GameObject: {fileID: 0}
+-  m_Enabled: 1
+-  m_EditorHideFlags: 0
+-  m_Script: {fileID: 11500000, guid: c992e8fbb96f7b3498a28a9e664f95df, type: 3}
+-  m_Name: 
+-  m_EditorClassIdentifier: 
+diff --git a/Packages/manifest.json b/Packages/manifest.json
+index bd0c348..9685f21 100644
+--- a/Packages/manifest.json
++++ b/Packages/manifest.json
+@@ -1,11 +1,14 @@
+ {
+   "dependencies": {
+     "com.unity.ads": "2.0.8",
+-    "com.unity.analytics": "3.2.2",
+-    "com.unity.collab-proxy": "1.2.15",
+-    "com.unity.package-manager-ui": "2.0.3",
+-    "com.unity.purchasing": "2.0.3",
+-    "com.unity.textmeshpro": "1.3.0",
++    "com.unity.analytics": "3.3.2",
++    "com.unity.collab-proxy": "1.2.16",
++    "com.unity.multiplayer-hlapi": "1.0.2",
++    "com.unity.package-manager-ui": "2.1.2",
++    "com.unity.purchasing": "2.0.6",
++    "com.unity.textmeshpro": "2.0.0",
++    "com.unity.timeline": "1.0.0",
++    "com.unity.xr.legacyinputhelpers": "2.0.2",
+     "com.unity.modules.ai": "1.0.0",
+     "com.unity.modules.animation": "1.0.0",
+     "com.unity.modules.assetbundle": "1.0.0",
+diff --git a/ProjectSettings/ProjectVersion.txt b/ProjectSettings/ProjectVersion.txt
+index 1b2cd94..241ebd0 100644
+--- a/ProjectSettings/ProjectVersion.txt
++++ b/ProjectSettings/ProjectVersion.txt
+@@ -1 +1,2 @@
+-m_EditorVersion: 2018.3.6f1
++m_EditorVersion: 2019.1.0f2
++m_EditorVersionWithRevision: 2019.1.0f2 (292b93d75a2c)
+diff --git a/ProjectSettings/XRSettings.asset b/ProjectSettings/XRSettings.asset
+new file mode 100644
+index 0000000..482590c
+--- /dev/null
++++ b/ProjectSettings/XRSettings.asset
+@@ -0,0 +1,10 @@
++{
++    "m_SettingKeys": [
++        "VR Device Disabled",
++        "VR Device User Alert"
++    ],
++    "m_SettingValues": [
++        "False",
++        "False"
++    ]
++}
+\ No newline at end of file
+-- 
+2.20.1.windows.1
+
