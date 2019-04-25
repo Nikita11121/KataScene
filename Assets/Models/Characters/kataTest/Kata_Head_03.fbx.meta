@@ -1,55 +1,28 @@
 fileFormatVersion: 2
-guid: 0cc4b906aebff834ab8d7d1a548931d4
+guid: dc29a569672b3454ca5e3852fdd680e2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Eyelishes
-    100002: //RootNode
-    100004: pasted__pasted__Hair.001
-    100006: pasted__polySurface15
-    100008: pasted__polySurface18
-    100010: pasted__polySurface19
-    100012: pasted__pTorus3
-    100014: polySurface6
-    100016: pasted__pasted__BodyLow.002
-    400000: Eyelishes
-    400002: //RootNode
-    400004: pasted__pasted__Hair.001
-    400006: pasted__polySurface15
-    400008: pasted__polySurface18
-    400010: pasted__polySurface19
-    400012: pasted__pTorus3
-    400014: polySurface6
-    400016: pasted__pasted__BodyLow.002
-    2100000: blinn2
-    2100002: Eyelashes
-    2100004: lambert1
-    2100006: pasted__blinn2
-    2100008: pasted__blinn1
-    2300000: Eyelishes
-    2300002: pasted__pasted__Hair.001
-    2300004: pasted__polySurface15
-    2300006: pasted__polySurface18
-    2300008: pasted__polySurface19
-    2300010: pasted__pTorus3
-    2300012: polySurface6
-    2300014: pasted__pasted__BodyLow.002
-    3300000: Eyelishes
-    3300002: pasted__pasted__Hair.001
-    3300004: pasted__polySurface15
-    3300006: pasted__polySurface18
-    3300008: pasted__polySurface19
-    3300010: pasted__pTorus3
-    3300012: polySurface6
-    3300014: pasted__pasted__BodyLow.002
-    4300000: polySurface6
-    4300002: Eyelishes
-    4300004: pasted__pTorus3
-    4300006: pasted__pasted__Hair.001
-    4300008: pasted__polySurface15
-    4300010: pasted__polySurface19
-    4300012: pasted__polySurface18
-    4300014: pasted__pasted__BodyLow.002
+    100000: Eye1
+    100002: Hair
+    100004: Head3
+    100006: //RootNode
+    400000: Eye1
+    400002: Hair
+    400004: Head3
+    400006: //RootNode
+    2100000: lambert3
+    2100002: blinn1
+    2100004: kkkkk10_defaultMat1
+    2300000: Eye1
+    2300002: Hair
+    2300004: Head3
+    3300000: Eye1
+    3300002: Hair
+    3300004: Head3
+    4300000: Head3
+    4300002: Eye1
+    4300004: Hair
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -105,13 +78,13 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
-    normalSmoothAngle: 180
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
-    normalSmoothingSource: 2
+    normalSmoothingSource: 0
   importAnimation: 0
   copyAvatar: 0
   humanDescription:
