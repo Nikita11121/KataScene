@@ -60,10 +60,15 @@
 
 			float3 spherical_kernel(float2 uv, float index)
 			{
+				// Uniformaly distributed points
+				// http://mathworld.wolfram.com/SpherePointPicking.html
 				float u = nrand(uv, 0, index) * 2 - 1;
 				float theta = nrand(uv, 1, index) * UNITY_PI * 2;
 				float u2 = sqrt(1 - u * u);
-				return float3(u2 * cos(theta), u2 * sin(theta), u);
+				float3 v = float3(u2 * cos(theta), u2 * sin(theta), u);
+				// Adjustment for distance distribution.
+				float l = index / 3;
+				return v * lerp(0.1, 1.0, l * l);
 			}
 
 			fixed4 fragAO (v2f i) : SV_Target
@@ -81,38 +86,33 @@
 				norm_o = mul((float3x3)unity_WorldToCamera, norm_o * 2 - 1);
 
 				//Noise texture
-				float4 noise = tex2D(_Noise, uv * (_ScreenParams.xy / float2(4, 4)) / _resolution);
+				float4 noise = tex2D(_Noise, uv * (_ScreenParams.xy / float2(4, 4)));
 
 				// Reconstruct the view-space position.
 				float3x3 proj = (float3x3)unity_CameraProjection;
 				float2 p11_22 = float2(unity_CameraProjection._11, unity_CameraProjection._22);
 				float2 p13_31 = float2(unity_CameraProjection._13, unity_CameraProjection._23);
-				float3 pos_o = float3((i.uv * 2 - 1 - p13_31) / p11_22, 1) * depth_o + norm_o * 0.001 * (1 + depth_o);
+				float3 pos_o = float3((i.uv * 2 - 1 - p13_31) / p11_22, 1) * depth_o + norm_o * 0.003 * (1 + depth_o);
 							
 				//Calculate SSAO
 				float4 occ = 0;
-				
-				int raySteps = 3;
-				float rndTable [3] ={
-					0.005 * _scale, 0.06 * _scale, 0.5 * _scale,
-				};
+				float depth_s = 0;
+				float2 uv_s = 0; 
 
-				fixed _samplesCount = 3;
-				
-				for (int s = 0; s < _samplesCount; s++){	
+				float rndLength[3] ={
+					0.05, 0.3, 1,
+				};				
+
+				for (int s = 0; s < 3; s++){	
 
 					//Random vector and ray length
 					float3 delta = spherical_kernel(noise.xy, s);
 					//delta = reflect(delta, noise.xyz);
-					delta *= (dot(norm_o, delta) >= 0) * 2 - 1;
+					delta *= (dot(norm_o, delta) >= 0) * 2 - 1;					
 
-					float depth_s = 0;
-					float2 uv_s = 0;
+					for (int r = 0; r < 3; r++){
 
-					for (int r = 0; r < raySteps; r++){
-
-						float rayStepLength = rndTable[r];
-						float3 pos_s0 = pos_o + delta * rayStepLength;
+						float3 pos_s0 = pos_o + delta * rndLength[r];
 							
 						// Re-project the sampling point.
 						float3 pos_sc = mul(proj, pos_s0);
@@ -120,22 +120,16 @@
 
 						depth_s = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv_s));
 
-						if( (pos_s0.z - depth_s) > 0)
+						if( pos_s0.z - depth_s > 0)
 						{
 							float3 pos_s = float3((uv_s * 2 - 1 - p13_31) / p11_22, 1) * depth_s;
-							float3 v_s2 = pos_s - pos_o;
-
-							float d1 = length(v_s2) * 0.66;
-							occ.a += 1 - min(1, d1 / (0.5 * _scale));
-
-							r = 10;
+							occ.a += 1 - min(1, length(pos_s - pos_o) * 1.5);
+							r = 4;
 						}
 					}
 				}
-
-				occ /= _samplesCount;
-				occ.a = 1 - occ.a;
-
+				occ.a /= 3;
+				occ.a = pow(1 - occ.a, 0.66 * _power);
 				return occ;
 			}
 
@@ -226,7 +220,7 @@
 			
 					for (int s = 0; s < SAMPLE_COUNT; s++)
 					{				
-						float2 newUV = uv + dirKernel[s] * pixelSize * _resolution;
+						float2 newUV = uv + dirKernel[s].xy * pixelSize;
 
 						float3 norm_s = tex2D(_CameraGBufferTexture2, newUV).xyz * 2 - 1;
 						float depth_s = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, newUV);
@@ -260,7 +254,7 @@
 			#include "UnityGBuffer.cginc"
 
 			//Input data
-				#pragma multi_compile _DEBUG_None _DEBUG_Lighting _DEBUG_AO _DEBUG_Bounce
+				#pragma multi_compile _DEBUG_None _DEBUG_Lighting _DEBUG_AO _DEBUG_LightingNoAO
 				#pragma multi_compile _BOUNCE_True _BOUNCE_False
 
 				sampler2D _MainTex;
@@ -321,33 +315,28 @@
 				depth_o = LinearEyeDepth(depth_o);
 				float skyClamp = step(999, depth_o);
 
-				float4 combine = scene;
-					
-				ao.rgb = ao.rgb * _power * 1;
-				ao = lerp(ao, float4(0,0,0,1), skyClamp);	
-				
+				float4 combine = scene;					
+
+				ao.a = lerp(ao.a, 1, skyClamp);					
 
 				#if _DEBUG_None
 
 					ao.a = max(0, lerp(ao.a, 1, shadowmask));
 					combine.rgb *= ao.a;
-					//combine.rgb = max(ao.rgb * sceneColor, combine.rgb);
-					combine.rgb += ao.rgb * sceneAlbedo;
 
 				#elif _DEBUG_Lighting
 
 					ao.a = max(0, lerp(ao.a, 1, shadowmask));
 					combine = sceneLight;
 					combine.rgb *= ao.a;
-					combine.rgb += ao.rgb * sceneAlbedo;
 
 				#elif _DEBUG_AO
 
 					combine.rgb = ao.a;
 
-				#elif _DEBUG_Lighting || _BOUNCE_True
+				#elif _DEBUG_LightingNoAO
 
-					combine.rgb = ao.rgb * sceneAlbedo;
+					combine = sceneLight;
 
 				#endif
 

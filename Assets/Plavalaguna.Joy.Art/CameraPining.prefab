@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 458582042345806171}
   - component: {fileID: 458582042345806166}
   - component: {fileID: 458582042345806169}
-  - component: {fileID: 2073850393430870067}
+  - component: {fileID: 7321659148780457325}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -85,7 +85,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458582042345806170}
   m_Enabled: 1
---- !u!114 &2073850393430870067
+--- !u!114 &7321659148780457325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
