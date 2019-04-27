@@ -62,6 +62,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Mouth
+    second: {fileID: 2100000, guid: 015c89898a579804ea8d1083cb6f84e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Shirt
     second: {fileID: 2100000, guid: 67324bab5a329c040a0e6b0ccb22c1ff, type: 2}
   materials:
