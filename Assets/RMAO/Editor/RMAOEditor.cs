@@ -5,13 +5,11 @@ using UnityEditor;
 [CustomEditor(typeof(RMAO))]
 public class RMAOAOEditor : Editor
 {
-    SerializedProperty _power;
     SerializedProperty _lightContribution;
     SerializedProperty _debugMode;
 
     void OnEnable()
     {
-        _power = serializedObject.FindProperty("_power");
         _lightContribution = serializedObject.FindProperty("_lightContribution");
         _debugMode = serializedObject.FindProperty("_debugMode");
     }
@@ -33,8 +31,6 @@ public class RMAOAOEditor : Editor
         }
         else
         {
-
-            EditorGUILayout.PropertyField(_power);
             EditorGUILayout.PropertyField(_lightContribution);
             EditorGUILayout.PropertyField(_debugMode);
         }

@@ -7,14 +7,6 @@ public class RMAO : MonoBehaviour
 {
     #region Public Properties
 
-    [Range(1.0f, 2.0f)]
-    public float _power = 1.0f;
-    public float power
-    {
-        get { return _power; }
-        set { _power = value; }
-    }
-
     [Range(0.2f, 2)]
     public float _lightContribution = 0.8f; 
     public float lightContribution
@@ -24,7 +16,7 @@ public class RMAO : MonoBehaviour
     }
 
     [SerializeField]
-    public enum DebugMode { None, Lighting, LightingNoAO, AO };
+    public enum DebugMode { None, AO };
     [SerializeField]
     DebugMode _debugMode = DebugMode.None;
     public DebugMode debugMode
@@ -102,7 +94,6 @@ public class RMAO : MonoBehaviour
             screenResCur.y = Camera.current.scaledPixelHeight;
         }
 
-        _material.SetFloat("_power", _power);
         _material.SetFloat("_lightContribution", _lightContribution);
         _material.SetTexture("_Noise", _noise);
         _material.SetInt("_resolution", res);
@@ -111,10 +102,10 @@ public class RMAO : MonoBehaviour
         Graphics.Blit(source, _halfRes, _material, 0);
 
         // blur vertical
-        _material.SetVector("_DenoiseAngle", new Vector2(0, 1));
+        _material.SetVector("_DenoiseAngle", new Vector2(0, 1.5f));
         Graphics.Blit(_halfRes, _denoise, _material, 1);
         // blur horizontal
-        _material.SetVector("_DenoiseAngle", new Vector2(1, 0));
+        _material.SetVector("_DenoiseAngle", new Vector2(1.5f, 0));
         Graphics.Blit(_denoise, _halfRes, _material, 1);
 
         // blur vertical 
