@@ -56,10 +56,7 @@
 
 				float2 uv = i.uv;
 
-				//Noise texture
-				float4 noise = tex2D(_Noise, uv * (_ScreenParams.xy / 4));
-				noise.xyz = noise.xyz * 2 - 1;
-
+				
 				// Sample a view-space normal vector on the g-buffer.
 				float3 norm_o = tex2D(_CameraGBufferTexture2, i.uv).xyz;
 				norm_o = mul((float3x3)unity_WorldToCamera, norm_o * 2 - 1);
@@ -67,6 +64,11 @@
 				// Sample a linear depth on the depth buffer.
 				float depth_o = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, i.uv);
 				depth_o = LinearEyeDepth(depth_o);
+
+				//Noise texture
+				float4 noise = tex2D(_Noise, uv * (_ScreenParams.xy / 8));
+				noise.xy = noise.xy * 2 - 1;
+				noise.w /= depth_o;
 
 				// Reconstruct the view-space position.
 				float3x3 proj = (float3x3)unity_CameraProjection;
@@ -78,35 +80,83 @@
 				float4 occ = 0;
 
 				const float4 rndLength[4] ={
-					0,		 1,		 0,			0.05,
-					0.81,	-0.33,	 0.47,		0.3,
-					-0.81,	-0.33,	 0.47,		0.05,
-					0.0,	-0.33,	-0.94,		0.3,
+					0,		 1,		 0,			0.06,
+					0.81,	-0.33,	 0.47,		0.12,
+					-0.81,	-0.33,	 0.47,		0.25,
+					0.0,	-0.33,	-0.94,		0.5,
 				};
 
-				for (int s = 0; s < 4; s++){
-
+				//////
+				//00//
+				//////
 					//Random vector and ray length
-					float4 delta = rndLength[s];
-					delta.xyz = reflect(delta.xyz, noise.xyz);
-					delta.xyz *= (dot(norm_o, delta.xyz) >= 0) * 2 - 1;
+					float4 delta = rndLength[0];
+					delta.xy = reflect(delta.xy, noise.xy);
 
-					float3 pos_s0 = pos_o + delta.xyz * delta.w * noise.w;
-					
-					// Re-project the sampling point.
-					float3 pos_sc = mul(proj, pos_s0);
-					float2 uv_s = (pos_sc.xy / pos_s0.z + 1) * 0.5;
+					float2 uv_s = uv + normalize(delta.xy + norm_o.xy) * delta.w * noise.w;
 
 					float3 v_s2 = float3((uv_s * 2 - 1 - p13_31) / p11_22, 1) * LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv_s)) - pos_o;
 
-					float a1 = max(dot(normalize(v_s2), norm_o), 0.0);
-					float d1 = 1 - min(1, length(v_s2) / 0.3);
+					float a1 = max(dot(v_s2, norm_o) - 0.002 * depth_o, 0.0);
+					float a2 = dot(v_s2, v_s2) + 0.0001;
+					float d1 = 1 - smoothstep(0, 1, length(v_s2));
 
-					occ += a1 * d1;
-				}
+					occ += a1 / a2 * d1;
+
+				//////
+				//01//
+				//////
+					//Random vector and ray length
+					delta = rndLength[1];
+					delta.xy = reflect(delta.xy, noise.xy);
+
+					uv_s = uv + normalize(delta.xy + norm_o.xy) * delta.w  * noise.w;
+
+					v_s2 = float3((uv_s * 2 - 1 - p13_31) / p11_22, 1) * LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv_s)) - pos_o;
+
+					a1 = max(dot(v_s2, norm_o) - 0.002 * depth_o, 0.0);
+					a2 = dot(v_s2, v_s2) + 0.0001;
+					d1 = 1 - smoothstep(0, 1, length(v_s2));
+
+					occ += a1 / a2 * d1;
+
+				//////
+				//02//
+				//////
+					//Random vector and ray length
+					delta = rndLength[2];
+					delta.xy = reflect(delta.xy, noise.xy);
+
+					uv_s = uv + normalize(delta.xy + norm_o.xy) * delta.w  * noise.w;
+
+					v_s2 = float3((uv_s * 2 - 1 - p13_31) / p11_22, 1) * LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv_s)) - pos_o;
+
+					a1 = max(dot(v_s2, norm_o) - 0.002 * depth_o, 0.0);
+					a2 = dot(v_s2, v_s2) + 0.0001;
+					d1 = 1 - smoothstep(0, 1, length(v_s2));
+
+					occ += a1 / a2 * d1;
+
+				//////
+				//03//
+				//////
+					//Random vector and ray length
+					delta = rndLength[3];
+					delta.xy = reflect(delta.xy, noise.xy);
+
+					uv_s = uv + normalize(delta.xy + norm_o.xy) * delta.w * noise.w;
+
+					v_s2 = float3((uv_s * 2 - 1 - p13_31) / p11_22, 1) * LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv_s)) - pos_o;
+
+					a1 = max(dot(v_s2, norm_o) - 0.002 * depth_o, 0.0);
+					a2 = dot(v_s2, v_s2) + 0.0001;
+					d1 = 1 - smoothstep(0, 1, length(v_s2));
+
+					occ += a1 / a2 * d1;
+
 				occ /= 4;
 
-				occ = (pow(max(0, 1 - occ), 30) + 0.5) / 1.5;
+				occ = max(0, 1 - occ);
 
 				return occ;
 			}
@@ -130,6 +180,7 @@
 				sampler2D _MainTex;
 				uniform half4 _MainTex_TexelSize;
 				float2 _DenoiseAngle;
+				float _BilateralThreshold;
 
 			struct appdata	
 			{
@@ -141,6 +192,8 @@
 			{
 				float2 uv : TEXCOORD0;
 				float4 vertex : SV_POSITION;
+				float4 uv1 : TEXCOORD1;
+				float4 uv2 : TEXCOORD2;
 			};
 
 			v2f vert (appdata v)	
@@ -148,57 +201,44 @@
 				v2f o;
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.uv = v.uv;
+				float2 d1 = 1.3846153846 * _DenoiseAngle * _MainTex_TexelSize.xy;
+				float2 d2 = 3.2307692308 * _DenoiseAngle * _MainTex_TexelSize.xy;
+				o.uv1 = float4(o.uv + d1, o.uv - d1);
+				o.uv2 = float4(o.uv + d2, o.uv - d2);
 				return o;
+			}
+
+			inline half compare(half3 n1, half3 n2)
+			{
+				return pow((dot(n1, n2) + 1.0) * 0.5, 8);
+			}
+
+			inline float3 getNormal(half2 uv)
+			{
+				float3 n = tex2D(_CameraGBufferTexture2, uv).xyz * 2 - 1;
+				return n;
 			}
 
 			fixed4 fragBlur (v2f i) : SV_Target
 			{
 
-				float2 uv = i.uv;
+				half3 n0 = getNormal(i.uv);
 
-				float depth_o = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv));
-				float3 norm_o = tex2D(_CameraGBufferTexture2, uv).xyz * 2 - 1;
+				half w0 = 0.2270270270;
+				half w1 = compare(n0, getNormal(i.uv1.zw)) * 0.3162162162;
+				half w2 = compare(n0, getNormal(i.uv1.xy)) * 0.3162162162;
+				half w3 = compare(n0, getNormal(i.uv2.zw)) * 0.0702702703;
+				half w4 = compare(n0, getNormal(i.uv2.xy)) * 0.0702702703;
+				half accumWeight = w0 + w1 + w2 + w3 + w4;
 
-				// Reconstruct the view-space position.
-					float3x3 proj = (float3x3)unity_CameraProjection;
-					float2 p11_22 = float2(unity_CameraProjection._11, unity_CameraProjection._22);
-					float2 p13_31 = float2(unity_CameraProjection._13, unity_CameraProjection._23);
-					float3 pos_o = float3((i.uv * 2 - 1 - p13_31) / p11_22, 1) * depth_o;
-					float3 viewDir = normalize(mul((float3x3)unity_CameraToWorld, pos_o));
+				half3 accum = tex2D(_MainTex, i.uv).r * w0;
+				accum += tex2D(_MainTex, i.uv1.zw).rgb * w1;
+				accum += tex2D(_MainTex, i.uv1.xy).rgb * w2;
+				accum += tex2D(_MainTex, i.uv2.zw).rgb * w3;
+				accum += tex2D(_MainTex, i.uv2.xy).rgb * w4;
 
-				//Blur
-					float angle = pow(dot(-viewDir, norm_o), 1);
-					float thresh = lerp(0.08, 0.008, angle) * depth_o;
-					//thresh = 0.04;
-					float2 pixelSize = _MainTex_TexelSize.xy * _DenoiseAngle;
-
-					float2 dirKernel[3] = {
-						0, 0,
-						2, 2,
-						-2,-2,
-					};
-
-					float totalWeight = 0;
-					float4 blur_o = 0;
-			
-					for (int s = 0; s < 3; s++)
-					{				
-						float2 newUV = uv + dirKernel[s] * pixelSize;
-
-						float3 norm_s = tex2D(_CameraGBufferTexture2, newUV).xyz * 2 - 1;
-						float depth_s = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, newUV));
-						
-						float weight = saturate(1.0 - abs(depth_o - depth_s) / thresh);
-						weight *= 0.8 < dot(norm_s, norm_o);
-						
-						blur_o += weight * tex2D(_MainTex, newUV);
-						totalWeight += weight;
-					}
-			
-					blur_o = blur_o / totalWeight;
-					//blur_o = tex2D(_MainTex, uv);
-
-				return blur_o;
+				return half4(accum / accumWeight, 1.0);
+				return tex2D(_MainTex, i.uv);
 			}
 
 			ENDCG
@@ -250,24 +290,26 @@
 				float2 uv = i.uv;
 
 				float4 scene = tex2D(_MainTex, uv);
-				float4 ao = tex2D(_HalfRes, uv);
-				ao.a = pow(ao.a, 1.5);
+				float ao = tex2D(_HalfRes, uv).r;
 
 				//Sky Clamp
 					float depth_o = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv);
 					depth_o = LinearEyeDepth(depth_o);
 					float skyClamp = step(999, depth_o);				
-					ao.a = lerp(ao.a, 1, skyClamp);	
-
-				float4 sceneColor = tex2D(_CameraGBufferTexture1, i.uv) + tex2D(_CameraGBufferTexture0, uv);				
+					ao = lerp(ao, 1, skyClamp);	
 
 				#if _DEBUG_None
 					
-					scene.rgb *= ao.a;
+					float4 sceneColor = tex2D(_CameraGBufferTexture1, i.uv) + tex2D(_CameraGBufferTexture0, uv);	
+					float4 sceneLight = scene / sceneColor;
+					sceneLight.a = 0.2126 * sceneLight.r + 0.7152 * sceneLight.g + 0.0722 * sceneLight.b;
+					half shadowmask = smoothstep(0.05, _lightContribution, sceneLight.a);
+					ao = max(0, lerp(ao, 1, shadowmask));
+					scene.rgb *= lerp(sceneColor * sceneColor, 1, ao);
 					
 				#elif _DEBUG_AO
 
-					scene.rgb = ao.a;
+					scene.rgb = ao;
 
 				#endif
 

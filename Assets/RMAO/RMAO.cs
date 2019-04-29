@@ -29,7 +29,7 @@ public class RMAO : MonoBehaviour
 
     #region Private Resources
 
-    RenderTexture _halfRes, _denoise, _downSamplingTex;
+    RenderTexture _halfRes, _denoise, _downSamplingTex00, _downSamplingTex01;
     Material _material;
 
     [SerializeField, HideInInspector]
@@ -72,21 +72,25 @@ public class RMAO : MonoBehaviour
         if (screenResCur.x != Camera.current.scaledPixelWidth || screenResCur.y != Camera.current.scaledPixelHeight)
         {
 
-            _halfRes = new RenderTexture(Camera.current.scaledPixelWidth, Camera.current.scaledPixelHeight, 0, RenderTextureFormat.ARGBFloat)
+            _halfRes = new RenderTexture(Camera.current.scaledPixelWidth, Camera.current.scaledPixelHeight, 0, RenderTextureFormat.R8)
             {
                 filterMode = FilterMode.Bilinear
             };
 
-            _denoise = new RenderTexture(Camera.current.scaledPixelWidth, Camera.current.scaledPixelHeight, 0, RenderTextureFormat.ARGBFloat)
+            _denoise = new RenderTexture(Camera.current.scaledPixelWidth, Camera.current.scaledPixelHeight, 0, RenderTextureFormat.R8)
             {
                 filterMode = FilterMode.Bilinear
             };
 
-            _downSamplingTex = new RenderTexture(Camera.current.scaledPixelWidth / 2, Camera.current.scaledPixelHeight / 2, 0, RenderTextureFormat.ARGBFloat)
+            _downSamplingTex00 = new RenderTexture(Camera.current.scaledPixelWidth / 2, Camera.current.scaledPixelHeight / 2, 0, RenderTextureFormat.R8)
             {
-                filterMode = FilterMode.Bilinear,
+                filterMode = FilterMode.Trilinear,
             };
 
+            _downSamplingTex01 = new RenderTexture(Camera.current.scaledPixelWidth / 2, Camera.current.scaledPixelHeight / 2, 0, RenderTextureFormat.R8)
+            {
+                filterMode = FilterMode.Trilinear,
+            };
             screenResCur.x = Camera.current.scaledPixelWidth;
             screenResCur.y = Camera.current.scaledPixelHeight;
         }
@@ -94,21 +98,21 @@ public class RMAO : MonoBehaviour
         _material.SetFloat("_lightContribution", _lightContribution);
         _material.SetTexture("_Noise", _noise);
 
-        Graphics.Blit(_halfRes, _halfRes, _material, 0);
+        Graphics.Blit(_downSamplingTex01, _downSamplingTex00, _material, 0);
 
-        //// blur vertical
-        //_material.SetVector("_DenoiseAngle", new Vector2(0, 1.5f));
-        //Graphics.Blit(_downSamplingTex, _denoise, _material, 1);
-        //// blur horizontal
-        //_material.SetVector("_DenoiseAngle", new Vector2(1.5f, 0));
-        //Graphics.Blit(_denoise, _halfRes, _material, 1);
+        // blur vertical
+        _material.SetVector("_DenoiseAngle", new Vector2(0, 1f)); 
+        Graphics.Blit(_downSamplingTex00, _downSamplingTex01, _material, 1);
+        // blur horizontal
+        _material.SetVector("_DenoiseAngle", new Vector2(1f, 0));
+        Graphics.Blit(_downSamplingTex01, _downSamplingTex00, _material, 1);
 
-        ////blur vertical
-        //_material.SetVector("_DenoiseAngle", new Vector2(0, 2f));
-        //Graphics.Blit(_halfRes, _denoise, _material, 1);
-        ////blur horizontal
-        //_material.SetVector("_DenoiseAngle", new Vector2(2f, 0));
-        //Graphics.Blit(_denoise, _halfRes, _material, 1);
+        //blur vertical 
+        _material.SetVector("_DenoiseAngle", new Vector2(0, 1f));
+        Graphics.Blit(_downSamplingTex00, _denoise, _material, 1);
+        //blur horizontal
+        _material.SetVector("_DenoiseAngle", new Vector2(1f, 0));
+        Graphics.Blit(_denoise, _halfRes, _material, 1);
 
         //Upscaling    
         _material.SetTexture("_HalfRes", _halfRes);

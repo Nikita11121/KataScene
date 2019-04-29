@@ -1673,7 +1673,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.93971324, b: 0.8632076, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -2073,6 +2073,35 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &328410741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328410735}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a970acddb8696a4792ca6e022840a0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoiseTexture: {fileID: 2800000, guid: 45ca7cd7d934d6245bb4539f780e4892, type: 3}
+  UseHighPrecisionDepthMap: 0
+  Samples: 2
+  Downsampling: 4
+  Radius: 0.3
+  Intensity: 2.5
+  Distance: 1
+  Bias: 0.02
+  LumContribution: 0.5
+  OcclusionColor: {r: 0, g: 0, b: 0, a: 1}
+  CutoffDistance: 150
+  CutoffFalloff: 50
+  Blur: 2
+  BlurDownsampling: 0
+  BlurPasses: 1
+  BlurBilateralThreshold: 10
+  DebugAO: 1
 --- !u!1 &357954322
 GameObject:
   m_ObjectHideFlags: 0
@@ -7823,7 +7852,7 @@ PrefabInstance:
     - target: {fileID: 458582043674880927, guid: b3fbbe2700e9e1140bea8634f79a6053,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.292
+      value: 0.379
       objectReference: {fileID: 0}
     - target: {fileID: 458582043674880927, guid: b3fbbe2700e9e1140bea8634f79a6053,
         type: 3}
@@ -7833,7 +7862,7 @@ PrefabInstance:
     - target: {fileID: 458582043674880927, guid: b3fbbe2700e9e1140bea8634f79a6053,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.88
+      value: -0.447
       objectReference: {fileID: 0}
     - target: {fileID: 458582043674880927, guid: b3fbbe2700e9e1140bea8634f79a6053,
         type: 3}
@@ -7888,7 +7917,7 @@ PrefabInstance:
     - target: {fileID: 7321659148780457325, guid: b3fbbe2700e9e1140bea8634f79a6053,
         type: 3}
       propertyPath: _lightContribution
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7638350009602298519, guid: b3fbbe2700e9e1140bea8634f79a6053,
         type: 3}
