@@ -2001,6 +2001,78 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 318320787}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &328410735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 458582042345806170, guid: b3fbbe2700e9e1140bea8634f79a6053,
+    type: 3}
+  m_PrefabInstance: {fileID: 1370869906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &328410736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 458582042345806171, guid: b3fbbe2700e9e1140bea8634f79a6053,
+    type: 3}
+  m_PrefabInstance: {fileID: 1370869906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &328410737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328410735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 328410736}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 1
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 1
+    keepAlpha: 1
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 1
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &357954322
 GameObject:
   m_ObjectHideFlags: 0
@@ -7723,6 +7795,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraPining
       objectReference: {fileID: 0}
+    - target: {fileID: 458582042345806171, guid: b3fbbe2700e9e1140bea8634f79a6053,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.08715392
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582042345806171, guid: b3fbbe2700e9e1140bea8634f79a6053,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.006520027
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582042345806171, guid: b3fbbe2700e9e1140bea8634f79a6053,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0005704287
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582042345806171, guid: b3fbbe2700e9e1140bea8634f79a6053,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9961734
+      objectReference: {fileID: 0}
+    - target: {fileID: 458582042345806171, guid: b3fbbe2700e9e1140bea8634f79a6053,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 458582043674880927, guid: b3fbbe2700e9e1140bea8634f79a6053,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7781,6 +7878,16 @@ PrefabInstance:
     - target: {fileID: 7321659148780457325, guid: b3fbbe2700e9e1140bea8634f79a6053,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321659148780457325, guid: b3fbbe2700e9e1140bea8634f79a6053,
+        type: 3}
+      propertyPath: _debugMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321659148780457325, guid: b3fbbe2700e9e1140bea8634f79a6053,
+        type: 3}
+      propertyPath: _lightContribution
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7638350009602298519, guid: b3fbbe2700e9e1140bea8634f79a6053,
@@ -12272,6 +12379,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TV_Cabinet_2
       objectReference: {fileID: 0}
+    - target: {fileID: 8771058983666688582, guid: 2ec05970db8ff1142934efffc73fbd44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8771058983666688585, guid: 2ec05970db8ff1142934efffc73fbd44,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12327,6 +12439,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8772937794513676635, guid: 2ec05970db8ff1142934efffc73fbd44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8766606569897930945, guid: 2ec05970db8ff1142934efffc73fbd44,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8766606569897930945, guid: 2ec05970db8ff1142934efffc73fbd44,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000017716795
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772383116680441263, guid: 2ec05970db8ff1142934efffc73fbd44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772344088924283847, guid: 2ec05970db8ff1142934efffc73fbd44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784513480328938079, guid: 2ec05970db8ff1142934efffc73fbd44,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784513480328938079, guid: 2ec05970db8ff1142934efffc73fbd44,
+        type: 3}
+      propertyPath: m_LightProbeVolumeOverride
+      value: 
+      objectReference: {fileID: 2015082763}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec05970db8ff1142934efffc73fbd44, type: 3}
 --- !u!1 &2129447164

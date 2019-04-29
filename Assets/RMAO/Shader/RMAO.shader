@@ -29,7 +29,6 @@
 				sampler2D_float _CameraDepthTexture;
 				sampler2D _CameraGBufferTexture2;
 				sampler2D _Noise;
-				int _resolution;
 				half _scale, _attenuation, _power;
 			
 			struct appdata	
@@ -52,30 +51,13 @@
 				return o;
 			}
 
-			float nrand(float2 uv, float dx, float dy)
-			{
-				uv += float2(dx, dy);
-				return frac(sin(dot(uv, float2(12.9898, 78.233))) * 43758.5453);
-			}
-
-			float3 spherical_kernel(float2 uv, float index)
-			{
-				// Uniformaly distributed points
-				// http://mathworld.wolfram.com/SpherePointPicking.html
-				float u = nrand(uv, 0, index) * 2 - 1;
-				float theta = nrand(uv, 1, index) * UNITY_PI * 2;
-				float u2 = sqrt(1 - u * u);
-				float3 v = float3(u2 * cos(theta), u2 * sin(theta), u);
-				return v;
-			}
-
 			fixed4 fragAO (v2f i) : SV_Target
 			{
 
 				float2 uv = i.uv;
 
 				//Noise texture
-				float4 noise = tex2D(_Noise, uv * (_ScreenParams.xy / float2(4, 4)));
+				float4 noise = tex2D(_Noise, uv * (_ScreenParams.xy / float2(4, 4) / 2));
 				noise.xyz = normalize(noise.xyz * 2 - 1);
 				
 				// Sample a view-space normal vector on the g-buffer.
@@ -96,10 +78,10 @@
 				float4 occ = 0;
 
 				const float4 rndLength[4] ={
-					0,		 1,		 0,			0.04,
-					0.81,	-0.33,	 0.47,		0.075, 
-					-0.81,	-0.33,	 0.47,		0.15, 
-					0.0,	-0.33,	-0.94,		0.3,
+					0,		 1,		 0,			0.025,
+					0.81,	-0.33,	 0.47,		0.05, 
+					-0.81,	-0.33,	 0.47,		0.1, 
+					0.0,	-0.33,	-0.94,		0.2,
 				};
 
 				for (int s = 0; s < 4; s++){	
@@ -124,7 +106,7 @@
 				}
 				occ /= 4;
 
-				occ = (pow(max(0, 1 - occ), 20) + 0.5) / 1.5;
+				occ = (pow(max(0, 1 - occ), 30) + 0.5) / 1.5;
 
 				return occ;
 			}
@@ -281,10 +263,11 @@
 				float4 sceneLight = scene / sceneColor;
 				sceneLight.a = 0.2126 * sceneLight.r + 0.7152 * sceneLight.g + 0.0722 * sceneLight.b;
 				
-				#if _DEBUG_None
+				half shadowmask = smoothstep(_lightContribution - 0.05, _lightContribution + 0.5, sceneLight.a);
+				ao.a = max(0, lerp(ao.a, 1, shadowmask));
 
-					half shadowmask = smoothstep(0.05, _lightContribution, sceneLight.a);
-					ao.a = max(0, lerp(ao.a, 1, shadowmask));
+				#if _DEBUG_None
+					
 					scene.rgb *= lerp(sceneColor, 1, ao.a);
 					
 				#elif _DEBUG_AO

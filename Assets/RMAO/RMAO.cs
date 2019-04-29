@@ -29,7 +29,7 @@ public class RMAO : MonoBehaviour
 
     #region Private Resources
 
-    RenderTexture _halfRes, _denoise, _downSamplingTex, _downSamplingNormalDepth;
+    RenderTexture _halfRes, _denoise, _downSamplingTex;
     Material _material;
 
     [SerializeField, HideInInspector]
@@ -39,9 +39,6 @@ public class RMAO : MonoBehaviour
     Texture2D _noise;
 
     Vector2 screenResCur;
-    int res = 1;
-    int curRes = 0;
-    int samplesCount = 1;
 
     bool CheckDeferredShading()
     {
@@ -85,10 +82,10 @@ public class RMAO : MonoBehaviour
                 filterMode = FilterMode.Bilinear
             };
 
-            //_downSamplingTex = new RenderTexture(Camera.current.scaledPixelWidth / 2, Camera.current.scaledPixelHeight / 2, 0, RenderTextureFormat.ARGBFloat)
-            //{
-            //    filterMode = FilterMode.Bilinear,
-            //};
+            _downSamplingTex = new RenderTexture(Camera.current.scaledPixelWidth / 2, Camera.current.scaledPixelHeight / 2, 0, RenderTextureFormat.ARGBFloat)
+            {
+                filterMode = FilterMode.Bilinear,
+            };
 
             screenResCur.x = Camera.current.scaledPixelWidth;
             screenResCur.y = Camera.current.scaledPixelHeight;
@@ -96,23 +93,21 @@ public class RMAO : MonoBehaviour
 
         _material.SetFloat("_lightContribution", _lightContribution);
         _material.SetTexture("_Noise", _noise);
-        _material.SetInt("_resolution", res);
 
-
-        Graphics.Blit(source, _halfRes, _material, 0);
+        Graphics.Blit(source, _downSamplingTex, _material, 0);
 
         // blur vertical
-        _material.SetVector("_DenoiseAngle", new Vector2(0, 1.5f));
-        Graphics.Blit(_halfRes, _denoise, _material, 1);
+        _material.SetVector("_DenoiseAngle", new Vector2(0, 1f));
+        Graphics.Blit(_downSamplingTex, _denoise, _material, 1);
         // blur horizontal
-        _material.SetVector("_DenoiseAngle", new Vector2(1.5f, 0));
+        _material.SetVector("_DenoiseAngle", new Vector2(1f, 0));
         Graphics.Blit(_denoise, _halfRes, _material, 1);
 
         // blur vertical 
-        _material.SetVector("_DenoiseAngle", new Vector2(0, 1));
+        _material.SetVector("_DenoiseAngle", new Vector2(0, 1.5f));
         Graphics.Blit(_halfRes, _denoise, _material, 1);
         //blur horizontal
-        _material.SetVector("_DenoiseAngle", new Vector2(1, 0));
+        _material.SetVector("_DenoiseAngle", new Vector2(1.5f, 0));
         Graphics.Blit(_denoise, _halfRes, _material, 1);
 
         //Upscaling    
