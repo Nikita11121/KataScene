@@ -57,9 +57,9 @@
 				float2 uv = i.uv;
 
 				//Noise texture
-				float4 noise = tex2D(_Noise, uv * (_ScreenParams.xy / float2(4, 4) / 2));
-				noise.xyz = normalize(noise.xyz * 2 - 1);
-				
+				float4 noise = tex2D(_Noise, uv * (_ScreenParams.xy / 4));
+				noise.xyz = noise.xyz * 2 - 1;
+
 				// Sample a view-space normal vector on the g-buffer.
 				float3 norm_o = tex2D(_CameraGBufferTexture2, i.uv).xyz;
 				norm_o = mul((float3x3)unity_WorldToCamera, norm_o * 2 - 1);
@@ -78,13 +78,13 @@
 				float4 occ = 0;
 
 				const float4 rndLength[4] ={
-					0,		 1,		 0,			0.025,
-					0.81,	-0.33,	 0.47,		0.05, 
-					-0.81,	-0.33,	 0.47,		0.1, 
-					0.0,	-0.33,	-0.94,		0.2,
+					0,		 1,		 0,			0.05,
+					0.81,	-0.33,	 0.47,		0.3,
+					-0.81,	-0.33,	 0.47,		0.05,
+					0.0,	-0.33,	-0.94,		0.3,
 				};
 
-				for (int s = 0; s < 4; s++){	
+				for (int s = 0; s < 4; s++){
 
 					//Random vector and ray length
 					float4 delta = rndLength[s];
@@ -92,7 +92,7 @@
 					delta.xyz *= (dot(norm_o, delta.xyz) >= 0) * 2 - 1;
 
 					float3 pos_s0 = pos_o + delta.xyz * delta.w * noise.w;
-							
+					
 					// Re-project the sampling point.
 					float3 pos_sc = mul(proj, pos_s0);
 					float2 uv_s = (pos_sc.xy / pos_s0.z + 1) * 0.5;
@@ -168,7 +168,8 @@
 
 				//Blur
 					float angle = pow(dot(-viewDir, norm_o), 1);
-					float thresh = lerp(0.04, 0.004, angle) * depth_o;
+					float thresh = lerp(0.08, 0.008, angle) * depth_o;
+					//thresh = 0.04;
 					float2 pixelSize = _MainTex_TexelSize.xy * _DenoiseAngle;
 
 					float2 dirKernel[3] = {
@@ -257,18 +258,12 @@
 					depth_o = LinearEyeDepth(depth_o);
 					float skyClamp = step(999, depth_o);				
 					ao.a = lerp(ao.a, 1, skyClamp);	
-								
-				float4 sceneAlbedo = tex2D(_CameraGBufferTexture0, uv);
-				float4 sceneColor = tex2D(_CameraGBufferTexture1, i.uv) + sceneAlbedo;
-				float4 sceneLight = scene / sceneColor;
-				sceneLight.a = 0.2126 * sceneLight.r + 0.7152 * sceneLight.g + 0.0722 * sceneLight.b;
-				
-				half shadowmask = smoothstep(_lightContribution - 0.05, _lightContribution + 0.5, sceneLight.a);
-				ao.a = max(0, lerp(ao.a, 1, shadowmask));
+
+				float4 sceneColor = tex2D(_CameraGBufferTexture1, i.uv) + tex2D(_CameraGBufferTexture0, uv);				
 
 				#if _DEBUG_None
 					
-					scene.rgb *= lerp(sceneColor, 1, ao.a);
+					scene.rgb *= ao.a;
 					
 				#elif _DEBUG_AO
 

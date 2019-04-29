@@ -94,21 +94,21 @@ public class RMAO : MonoBehaviour
         _material.SetFloat("_lightContribution", _lightContribution);
         _material.SetTexture("_Noise", _noise);
 
-        Graphics.Blit(source, _downSamplingTex, _material, 0);
+        Graphics.Blit(_halfRes, _halfRes, _material, 0);
 
-        // blur vertical
-        _material.SetVector("_DenoiseAngle", new Vector2(0, 1f));
-        Graphics.Blit(_downSamplingTex, _denoise, _material, 1);
-        // blur horizontal
-        _material.SetVector("_DenoiseAngle", new Vector2(1f, 0));
-        Graphics.Blit(_denoise, _halfRes, _material, 1);
+        //// blur vertical
+        //_material.SetVector("_DenoiseAngle", new Vector2(0, 1.5f));
+        //Graphics.Blit(_downSamplingTex, _denoise, _material, 1);
+        //// blur horizontal
+        //_material.SetVector("_DenoiseAngle", new Vector2(1.5f, 0));
+        //Graphics.Blit(_denoise, _halfRes, _material, 1);
 
-        // blur vertical 
-        _material.SetVector("_DenoiseAngle", new Vector2(0, 1.5f));
-        Graphics.Blit(_halfRes, _denoise, _material, 1);
-        //blur horizontal
-        _material.SetVector("_DenoiseAngle", new Vector2(1.5f, 0));
-        Graphics.Blit(_denoise, _halfRes, _material, 1);
+        ////blur vertical
+        //_material.SetVector("_DenoiseAngle", new Vector2(0, 2f));
+        //Graphics.Blit(_halfRes, _denoise, _material, 1);
+        ////blur horizontal
+        //_material.SetVector("_DenoiseAngle", new Vector2(2f, 0));
+        //Graphics.Blit(_denoise, _halfRes, _material, 1);
 
         //Upscaling    
         _material.SetTexture("_HalfRes", _halfRes);
