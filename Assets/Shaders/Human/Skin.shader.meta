@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d1128844445d4e547a195a85a5276a02
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _Albedo: {fileID: 2800000, guid: 3185c9c390d5e4249a5877f8dac13690, type: 3}
+  - _BumpMap: {fileID: 2800000, guid: f79445743be1833418262939e0ab40d4, type: 3}
+  - _Metallic: {fileID: 2800000, guid: f6d6f473a127fe748a8bbdf98641bbf0, type: 3}
+  - _SubdermalLightVector: {fileID: 2800000, guid: 1360841c97424314b874971c105f6045,
+      type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
