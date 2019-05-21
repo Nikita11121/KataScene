@@ -11,6 +11,11 @@ ModelImporter:
     100010: Group16509.002
     100012: Plane.092
     100014: Plane.011
+    100016: Group16509.004
+    100018: Group16509.008
+    100020: pasted__pasted__Hair.001
+    100022: pasted__polySurface15
+    100024: pasted__pTorus3
     400000: //RootNode
     400002: Group16509.006
     400004: Plane.054
@@ -19,6 +24,11 @@ ModelImporter:
     400010: Group16509.002
     400012: Plane.092
     400014: Plane.011
+    400016: Group16509.004
+    400018: Group16509.008
+    400020: pasted__pasted__Hair.001
+    400022: pasted__polySurface15
+    400024: pasted__pTorus3
     2100000: Hair
     2100002: Bust
     2100004: Mouth
@@ -27,6 +37,8 @@ ModelImporter:
     2100010: Eye
     2100012: EyeTransparent
     2100014: Eyebrows
+    2100016: lambert1
+    2100018: lambert2
     2300000: Group16509.006
     2300002: Plane.054
     2300004: Group16509.001
@@ -34,6 +46,11 @@ ModelImporter:
     2300008: Group16509.002
     2300010: Plane.092
     2300012: Plane.011
+    2300014: Group16509.004
+    2300016: Group16509.008
+    2300018: pasted__pasted__Hair.001
+    2300020: pasted__polySurface15
+    2300022: pasted__pTorus3
     3300000: Group16509.006
     3300002: Plane.054
     3300004: Group16509.001
@@ -41,6 +58,11 @@ ModelImporter:
     3300008: Group16509.002
     3300010: Plane.092
     3300012: Plane.011
+    3300014: Group16509.004
+    3300016: Group16509.008
+    3300018: pasted__pasted__Hair.001
+    3300020: pasted__polySurface15
+    3300022: pasted__pTorus3
     4300000: Plane.054
     4300002: Group16509.006
     4300004: Plane.063
@@ -48,17 +70,22 @@ ModelImporter:
     4300008: Group16509.002
     4300010: Plane.092
     4300012: Plane.011
+    4300014: Group16509.008
+    4300016: Group16509.004
+    4300018: pasted__polySurface15
+    4300020: pasted__pasted__Hair.001
+    4300022: pasted__pTorus3
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bust
-    second: {fileID: 2100000, guid: 796bb6dcac97115458c53dc46358b84e, type: 2}
+    second: {fileID: 2100000, guid: 1fc8b6cee6a525246ba23b43ba12d407, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eye
-    second: {fileID: 2100000, guid: c2a9541817703b24ca12556dd7384742, type: 2}
+    second: {fileID: 2100000, guid: b9addc950c8c9d842942136b9c1217bd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -78,12 +105,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mouth
-    second: {fileID: 2100000, guid: 015c89898a579804ea8d1083cb6f84e2, type: 2}
+    second: {fileID: 2100000, guid: adf6e190fcdbe004f839355939c60fc2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Shirt
     second: {fileID: 2100000, guid: 67324bab5a329c040a0e6b0ccb22c1ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: b852311cdb3a93a46b50ec74c8dcd3e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 0efcd32cfee281e4691d7d4f43735ba1, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
