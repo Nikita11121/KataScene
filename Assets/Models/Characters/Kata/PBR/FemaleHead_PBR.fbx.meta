@@ -1,0 +1,191 @@
+fileFormatVersion: 2
+guid: 9dbe1c01f0acc034a9fed448a9c802fd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Group16509.006
+    100004: Group61243
+    100006: Group16509.002
+    100008: Plane.011
+    100010: Plane.134
+    100012: Plane.168
+    100014: Plane.184
+    100016: Plane.192
+    100018: Plane.196
+    100020: Hair_Midle.000
+    400000: //RootNode
+    400002: Group16509.006
+    400004: Group61243
+    400006: Group16509.002
+    400008: Plane.011
+    400010: Plane.134
+    400012: Plane.168
+    400014: Plane.184
+    400016: Plane.192
+    400018: Plane.196
+    400020: Hair_Midle.000
+    2100000: Mouth
+    2100002: hair
+    2300000: Group16509.006
+    2300002: Group61243
+    2300004: Group16509.002
+    2300006: Plane.011
+    2300008: Plane.134
+    2300010: Plane.168
+    2300012: Plane.184
+    2300014: Plane.192
+    2300016: Plane.196
+    2300018: Hair_Midle.000
+    3300000: Group16509.006
+    3300002: Group61243
+    3300004: Group16509.002
+    3300006: Plane.011
+    3300008: Plane.134
+    3300010: Plane.168
+    3300012: Plane.184
+    3300014: Plane.192
+    3300016: Plane.196
+    3300018: Hair_Midle.000
+    4300000: Group16509.006
+    4300002: Group61243
+    4300004: Plane.011
+    4300006: Group16509.002
+    4300008: Plane.134
+    4300010: Plane.168
+    4300012: Plane.184
+    4300014: Plane.192
+    4300016: Plane.196
+    4300018: Hair_Midle.000
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bust
+    second: {fileID: 2100000, guid: 2753bfcdf6a119048b53d34763c18920, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye
+    second: {fileID: 2100000, guid: 2d3c4bf5ed74c894a924e257cc8d45de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EyeTransparent
+    second: {fileID: 2100000, guid: 60aa2d76736f4d54e8a372f05263c856, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyebrows
+    second: {fileID: 2100000, guid: e8d36ccc0802d7242bae96dc6bb58abd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyelashes
+    second: {fileID: 2100000, guid: e8d36ccc0802d7242bae96dc6bb58abd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair
+    second: {fileID: 2100000, guid: 859cd66307f067340866f923e15091cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mouth
+    second: {fileID: 2100000, guid: adf6e190fcdbe004f839355939c60fc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt
+    second: {fileID: 2100000, guid: fcb51d565aecbb14994214bb6f17f21e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hair
+    second: {fileID: 2100000, guid: 859cd66307f067340866f923e15091cd, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

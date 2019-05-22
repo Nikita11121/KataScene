@@ -1,0 +1,208 @@
+fileFormatVersion: 2
+guid: 64a8c364167b4be42b2fe140a9d0c99c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Group16509.006
+    100004: Plane.054
+    100006: Group16509.001
+    100008: Plane.063
+    100010: Group16509.002
+    100012: Plane.092
+    100014: Plane.011
+    100016: Group16509.004
+    100018: Group16509.008
+    100020: pasted__pasted__Hair.001
+    100022: pasted__polySurface15
+    100024: pasted__pTorus3
+    400000: //RootNode
+    400002: Group16509.006
+    400004: Plane.054
+    400006: Group16509.001
+    400008: Plane.063
+    400010: Group16509.002
+    400012: Plane.092
+    400014: Plane.011
+    400016: Group16509.004
+    400018: Group16509.008
+    400020: pasted__pasted__Hair.001
+    400022: pasted__polySurface15
+    400024: pasted__pTorus3
+    2100000: Hair
+    2100002: Bust
+    2100004: Mouth
+    2100006: Eyelashes
+    2100008: Shirt
+    2100010: Eye
+    2100012: EyeTransparent
+    2100014: Eyebrows
+    2100016: lambert1
+    2100018: lambert2
+    2300000: Group16509.006
+    2300002: Plane.054
+    2300004: Group16509.001
+    2300006: Plane.063
+    2300008: Group16509.002
+    2300010: Plane.092
+    2300012: Plane.011
+    2300014: Group16509.004
+    2300016: Group16509.008
+    2300018: pasted__pasted__Hair.001
+    2300020: pasted__polySurface15
+    2300022: pasted__pTorus3
+    3300000: Group16509.006
+    3300002: Plane.054
+    3300004: Group16509.001
+    3300006: Plane.063
+    3300008: Group16509.002
+    3300010: Plane.092
+    3300012: Plane.011
+    3300014: Group16509.004
+    3300016: Group16509.008
+    3300018: pasted__pasted__Hair.001
+    3300020: pasted__polySurface15
+    3300022: pasted__pTorus3
+    4300000: Plane.054
+    4300002: Group16509.006
+    4300004: Plane.063
+    4300006: Group16509.001
+    4300008: Group16509.002
+    4300010: Plane.092
+    4300012: Plane.011
+    4300014: Group16509.008
+    4300016: Group16509.004
+    4300018: pasted__polySurface15
+    4300020: pasted__pasted__Hair.001
+    4300022: pasted__pTorus3
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bust
+    second: {fileID: 2100000, guid: 1fc8b6cee6a525246ba23b43ba12d407, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye
+    second: {fileID: 2100000, guid: b9addc950c8c9d842942136b9c1217bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EyeTransparent
+    second: {fileID: 2100000, guid: 42be5ab34c8f47b42958803261cae97a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyelashes
+    second: {fileID: 2100000, guid: e8d36ccc0802d7242bae96dc6bb58abd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair
+    second: {fileID: 2100000, guid: 8655b8c1ed0b90c4083fe572b9843b16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mouth
+    second: {fileID: 2100000, guid: adf6e190fcdbe004f839355939c60fc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt
+    second: {fileID: 2100000, guid: 67324bab5a329c040a0e6b0ccb22c1ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: b852311cdb3a93a46b50ec74c8dcd3e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 0efcd32cfee281e4691d7d4f43735ba1, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
