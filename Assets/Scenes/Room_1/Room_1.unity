@@ -5161,7 +5161,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 558140c534b299b47aa783602c68942e, type: 3}
       propertyPath: m_Name
-      value: FemaleBody (1)
+      value: FemaleBody SS
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 558140c534b299b47aa783602c68942e, type: 3}
       propertyPath: m_LocalPosition.x
