@@ -7,12 +7,12 @@ Shader "Ciconia Studio/Effects/Skin" {
         _SpecGlossMap ("Specular map(Gloss A)", 2D) = "white" {}
         _SpecularIntensity ("Specular Intensity", Range(0, 8)) = 1
         _SpecularAmbient ("Specular Ambient", Range(0, 8)) = 0
-        [Space(15)]_Glossiness ("Glossiness", Range(0, 2)) = 0.5
+        [Space(15)]_Glossiness ("Glossiness", Range(-8, 8)) = 0.5
         _Ambientlight ("Ambient light", Range(0, 8)) = 0
         [Space(35)]_BumpMap ("Normal map", 2D) = "bump" {}
         _NormalIntensity ("Normal Intensity", Range(0, 2)) = 1
         [Space(35)]_OcclusionMap ("Ambient Occlusion map", 2D) = "white" {}
-        _AoIntensity ("Ao Intensity", Range(0, 2)) = 1
+        _AoIntensity ("Ao Intensity", Range(0, 5)) = 1
         [Space(35)]_EmissionColor ("Emission Color", Color) = (0,0,0,1)
         _EmissionMap ("Emission map", 2D) = "white" {}
         _EmissiveIntensity ("Emissive Intensity", Range(0, 2)) = 1
