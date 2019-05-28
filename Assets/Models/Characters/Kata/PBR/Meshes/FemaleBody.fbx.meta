@@ -10,6 +10,7 @@ ModelImporter:
     100008: pasted__pasted__Hair.001
     100010: pasted__polySurface15
     100012: pasted__pTorus3
+    100014: Model_Body_texturing_SbD.000
     400000: //RootNode
     400002: Group16509.004
     400004: Group16509.008
@@ -17,6 +18,7 @@ ModelImporter:
     400008: pasted__pasted__Hair.001
     400010: pasted__polySurface15
     400012: pasted__pTorus3
+    400014: Model_Body_texturing_SbD.000
     2100000: Bust
     2100002: Eyelashes.001
     2100004: Eye.001
@@ -30,18 +32,21 @@ ModelImporter:
     2300006: pasted__pasted__Hair.001
     2300008: pasted__polySurface15
     2300010: pasted__pTorus3
+    2300012: Model_Body_texturing_SbD.000
     3300000: Group16509.004
     3300002: Group16509.008
     3300004: Model_Body_texturing_SbD
     3300006: pasted__pasted__Hair.001
     3300008: pasted__polySurface15
     3300010: pasted__pTorus3
+    3300012: Model_Body_texturing_SbD.000
     4300000: Model_Body_texturing_SbD
     4300002: Group16509.008
     4300004: pasted__polySurface15
     4300006: pasted__pTorus3
     4300008: Group16509.004
     4300010: pasted__pasted__Hair.001
+    4300012: Model_Body_texturing_SbD.000
   externalObjects:
   - first:
       type: UnityEngine:Material
